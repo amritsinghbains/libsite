@@ -87,6 +87,10 @@ def detail(request,item_id):
         item = Dvd.objects.get(pk=item_id)
     return render(request, 'libapp/detail.html', {'item': item})
 
+def suggestiondetail(request,item_id):
+    item = Suggestion.objects.get(pk=item_id)
+    return render(request, 'libapp/suggestiondetail.html', {'item': item})
+
 def detail1(request, item_id):
     response = HttpResponse()
     type='Book'

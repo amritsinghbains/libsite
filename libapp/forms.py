@@ -34,7 +34,7 @@ class LibuserForm(forms.ModelForm):
         exclude = ['address', 'city', 'province']
 
     username = forms.CharField(widget=forms.TextInput(attrs={'required': True, 'max_length': 100}))
-    password = forms.CharField(widget=forms.TextInput(attrs={'required': True, 'max_length': 100}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'required': True, 'max_length': 100}))
     first_name = forms.CharField(widget=forms.TextInput(attrs={'required': True, 'max_length': 100}))
     last_name = forms.CharField(widget=forms.TextInput(attrs={'required': True, 'max_length': 100}))
     email = forms.CharField(widget=forms.TextInput(attrs={'required': True, 'max_length': 100}))

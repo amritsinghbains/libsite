@@ -1,5 +1,4 @@
 {% extends 'libapp/base.html' %}
-{% block myhdg %}Hello Neel{% endblock %}
 {% block body_block %}
     <div style="width: 18%">
     {% if notfound == True %}
@@ -24,13 +23,13 @@
                 Search returned: {{ bookob.count }} books.<br/>
                 <ol>
                 {% for book in bookob %}
-                    <li><a href="{% url 'libapp:index' %}{{ book.id }}" style="text-decoration: underline; font-size: 130%"><cite>{{ book.title }}</cite></a><br/></li>
+                    <li><a href="/libapp/{{ book.id }}" style="text-decoration: underline; font-size: 130%"><cite>{{ book.title }}</cite></a><br/></li>
                 {% endfor %}
                 </ol>
                 Search returned: {{ dvdob.count }} dvds.<br/>
                 <ol>
                 {% for dvd in dvdob %}
-                    <li><a href="{% url 'libapp:index' %}{{ dvd.id }}" style="text-decoration: underline; font-size: 130%"><cite>{{ dvd.title }}</cite></a><br/></li>
+                    <li><a href="/libapp/{{ dvd.id }}" style="text-decoration: underline; font-size: 130%"><cite>{{ dvd.title }}</cite></a><br/></li>
                 {% endfor %}
                 </ol>
 
@@ -38,14 +37,14 @@
             Search returned: {{ bookob.count }} books.<br/>
             <ol>
             {% for book in bookob %}
-                <li><a href="{% url 'libapp:index' %}{{ book.id }}" style="text-decoration: underline; font-size: 130%"><cite>{{ book.title }}</cite></a><br/></li>
+                <li><a href="/libapp/{{ book.id }}" style="text-decoration: underline; font-size: 130%"><cite>{{ book.title }}</cite></a><br/></li>
             {% endfor %}
             </ol>
             {% elif not bookob and dvdob %}
             Search returned: {{ dvdob.count }} DVDs.<br/>
             <ol>
             {% for dvd in dvdob %}
-                <li><a href="{% url 'libapp:index' %}{{ dvd.id }}" style="text-decoration: underline; font-size: 130%"><cite>{{ dvd.title }}</cite></a><br/></li>
+                <li><a href="/libapp/{{ dvd.id }}" style="text-decoration: underline; font-size: 130%"><cite>{{ dvd.title }}</cite></a><br/></li>
             {% endfor %}
             </ol>
         {% else %}

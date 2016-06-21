@@ -1,8 +1,7 @@
 {% extends 'libapp/base.html' %}
-{% block myhdg %}Hello Neel{% endblock %}
 {% block body_block %}
  {% if item.itemtype == 'Book' %}
-        <h2>Detail of Book items</h2>
+        <h2>Detail of Book Item</h2>
 
         Title : {{ item.title }}<br>
         Publication year:{{ item.pubyr }}<br>
@@ -12,7 +11,7 @@
 
 
     {% else %}
-    <h2>Detail of Dvd items</h2>
+    <h2>Detail of Dvd Item</h2>
          Title   :{{ item.title }}<br>
          Publication year: {{ item.pubyr }} <br>
          Maker   :{{ item.maker }}<br>
