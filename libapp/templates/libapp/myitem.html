@@ -1,0 +1,17 @@
+{% extends 'libapp/base.html' %}
+{% block body_block %}
+{% if itemob %}
+    <h2>Checked out items</h2><br/>
+    <ol>
+    {% for item in itemob %}
+        <li><a href="/libapp/{{ item.id }}"> {{ item.title }}</a></li>
+    {% endfor %}
+    </ol>
+{% else %}
+    <h3>No item</h3>
+{% endif %}
+{% if not request.user.is_authenticated %}
+    <h3>You are not a Libuser!</h3>
+{% endif %}
+
+{% endblock %}

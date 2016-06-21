@@ -1,0 +1,10 @@
+{% extends 'libapp/base.html' %}
+{#{% block myhdg %}Hello Neels {% endblock %}#}
+{% block body_block %}
+
+    {% for slist in itemlist %}
+    <li>{{ slist.title }}</li>
+    {% endfor %}<br/>
+
+
+{% endblock %}

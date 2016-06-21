@@ -1,0 +1,10 @@
+{% extends 'libapp/base.html' %}
+{% block body_block %}
+<h2>This is the Register page</h2>
+    <div id="main" style="width: 25%" class=" form-inline">
+    <form method="post" action=".">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" class="btn btn-primary" value="Submit">
+        </form>
+    </div>
+{% endblock %}

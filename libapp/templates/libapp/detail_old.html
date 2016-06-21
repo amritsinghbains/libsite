@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail</title>
+</head>
+<body>
+
+{% if item.itemtype == 'Book' %}
+        <h2>Detail of Book items</h2>
+
+        Title : {{ item.title }}<br>
+        Publication year:{{ item.pubyr }}<br>
+        Author:{{ item.author }}<br>
+        Category:  {{ item.category }}<br>
+
+
+
+    {% else %}
+    <h2>Detail of Dvd items</h2>
+         Title   :{{ item.title }}<br>
+         Publication year: {{ item.pubyr }} <br>
+         Maker   :{{ item.maker }}<br>
+         Duration   :  {{ item.duration }}<br>
+         Rating   :{{ item.rating }}<br>
+
+    {% endif %}
+<p><a href="{% url 'libapp:index' %}">Index page</a></p>
+
+</body>
+</html>

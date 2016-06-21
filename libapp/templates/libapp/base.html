@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'libapp/style.css' %}" />
+        <title>MAC Library APP - {% block title %}Welcome!{% endblock %}</title>
+    </head>
+
+    <body>
+        <div>
+
+            {% block body_block %}*** {% endblock %}
+        </div>
+        <hr />
+        <div>
+            <ul>
+                <li class="hbar1"><a href="/libapp/about/">Find out about this site</a></li>
+                <li class="hbar1"><a href = "{% url 'libapp:index' %}">Click here to return to main page</a></li>
+                <li class="hbar1"><a href="/libapp/suggestions/">Suggestions</a></li>
+                {% if request.user.username %}
+                    <li class="hbar1"><a href="/libapp/myitems/">My Items </a></li>
+                    <li class="hbar1"><a href="/libapp/logout/">Logout</a></li>
+                {% else %}
+                    <li class="hbar1"><a href="/libapp/login/">Login</a></li>
+                    <li class="hbar1"><a href="/libapp/register/">Register</a></li>
+                {% endif %}
+            </ul>
+        </div>
+
+        <div>
+        {% if request.user.username %}
+            <h1>{% block myhdg %}Hello {{ request.user }}  {% endblock %}</h1><br/><br/>
+        {% endif %}
+        </div>
+
+
+    </body>
+</html>
