@@ -2,11 +2,11 @@
 {% block body_block %}
 {% if itemob %}
     <h2>Checked out items</h2><br/>
-    <ol>
+    <div class="collection">
     {% for item in itemob %}
-        <li><a href="/libapp/{{ item.id }}"> {{ item.title }}</a></li>
+        <a href="/libapp/{{ item.id }}" class="collection-item"> {{ item.title }}</a>
     {% endfor %}
-    </ol>
+    </div>
 {% else %}
     <h3>No items</h3>
 {% endif %}

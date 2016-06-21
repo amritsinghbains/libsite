@@ -15,8 +15,8 @@
     <body>
 
         <nav>
-        <div class="nav-wrapper">
-            <ul class="left hide-on-med-and-down">
+        <div class="nav-wrapper blue">
+            <ul class="left">
 
                 <li class="hbar1"><a href = "{% url 'libapp:index' %}">Home</a></li>
                 <li class="hbar1"><a href="/libapp/searchlib/">Search</a></li>
@@ -37,14 +37,16 @@
         </nav>
         <div>
         {% if request.user.username %}
-            <h4>{% block myhdg %}Hello {{ request.user }}  {% endblock %}</h4>
+{#            <h4>{% block myhdg %}Hello {{ request.user }}  {% endblock %}</h4>#}
         {% endif %}
         </div>
 
         <div>
-
+        <center>
             {% block body_block %}*** {% endblock %}
+        </center>
         </div>
+
 
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script type="text/javascript" src="{% static 'libapp/materialize.min.js' %}"></script>

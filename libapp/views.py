@@ -115,7 +115,11 @@ def detail1(request, item_id):
 
 def index(request):
     itemlist = Libitem.objects.all().order_by('title')[:10]
-    return render(request, 'libapp/index.html', {'itemlist': itemlist})
+    try:
+        request.session['luckynum']
+    except KeyError:
+        request.session['luckynum'] = 0;
+    return render(request, 'libapp/index.html', {'itemlist': itemlist, 'luckynum': request.session['luckynum']})
 
 
 def index1(request):
@@ -137,13 +141,20 @@ def index1(request):
 
 
 def about(request):
-    return render(request, 'libapp/about.html')
+    try:
+        request.session['about_visits'] += 1
+    except KeyError:
+        request.session.set_expiry(300)
+        request.session['about_visits'] = 0;
+    return render(request, 'libapp/about.html', {'about_visits': request.session['about_visits']})
 
 def about1(request):
     response =  HttpResponse()
     heading1 = '<p>' + 'This is a Library APP.' + '</p>'
     response.write(heading1)
     return response
+
+import random
 
 def user_login(request):
     form = LoginForm()
@@ -152,9 +163,14 @@ def user_login(request):
         password = request.POST['password']
         user = authenticate(username=username, password=password)
         if user is not None and user.is_active:
+            request.session.set_expiry(3600)
+            n = random.randint(1, 9)
+            request.session['luckynum'] = n;
             login(request, user)
             userob = Libuser.objects.filter(username=request.user.username)
             request.session['userob'] = serializers.serialize('json', userob)
+
+
             return HttpResponseRedirect('http://127.0.0.1:8000/libapp/')
         elif user is None:
             return render(request, 'libapp/login.html', {'notlogin': True, 'form': form})

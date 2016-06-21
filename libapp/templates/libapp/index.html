@@ -2,13 +2,14 @@
 {% block body_block %}
     {% if itemlist %}
         <h2>List of Library items</h2>
-        <ol>
+        <div class="collection">
             {% for item in itemlist %}
-                <li><a href="/libapp/{{ item.id }}" >{{ item.itemtype }}:  {{ item}}</a> </li>
+                <a href="/libapp/{{ item.id }}" class="collection-item">{{ item.itemtype }}:  {{ item}}</a>
             {% endfor %}
-        </ol>
+        </div>
 
     {% else %}
         <strong>There are no available items!</strong>
     {% endif %}
+    <h2>Lucky Number: {{ luckynum }}</h2>
 {% endblock %}
