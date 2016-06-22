@@ -1,5 +1,6 @@
 from django.conf.urls import url
 from . import views
+from django.contrib.auth.views import password_reset
 
 urlpatterns = [
         url(r'^$', views.index, name='index'),
@@ -13,4 +14,5 @@ urlpatterns = [
         url(r'^logout/$', views.user_logout, name='logout'),
         url(r'^myitems/$', views.myitems, name='myitems'),
         url(r'^register/$', views.register, name='register'),
-        ]
+
+]

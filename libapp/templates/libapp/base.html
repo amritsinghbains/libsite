@@ -27,6 +27,9 @@
 
                 {% if request.user.username %}
                     <li class="hbar1"><a href="/libapp/myitems/">My Items ({{ request.user }}) </a></li>
+                    <li class="hbar1">   <img src="{% static request.session.model_pic %}" height="30px" width="30px" style="margin: 15px 0">
+                    </li>
+
                     <li class="hbar1"><a href="/libapp/logout/">Logout</a></li>
                 {% else %}
                     <li class="hbar1"><a href="/libapp/login/">Login</a></li>
@@ -35,11 +38,6 @@
             </ul>
         </div>
         </nav>
-        <div>
-        {% if request.user.username %}
-{#            <h4>{% block myhdg %}Hello {{ request.user }}  {% endblock %}</h4>#}
-        {% endif %}
-        </div>
 
         <div>
         <center>

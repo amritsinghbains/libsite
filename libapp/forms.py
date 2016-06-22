@@ -1,5 +1,6 @@
 from django import forms
 from libapp.models import Suggestion, Libuser
+from django.forms.widgets import FileInput
 
 class SuggestionForm(forms.ModelForm):
     class Meta:
@@ -30,11 +31,15 @@ class LoginForm(forms.Form):
 class LibuserForm(forms.ModelForm):
     class Meta:
         model = Libuser
-        fields = ['username', 'password', 'first_name', 'last_name', 'email']
+        fields = ['username', 'password', 'first_name', 'last_name', 'email', 'model_pic']
         exclude = ['address', 'city', 'province']
-
     username = forms.CharField(widget=forms.TextInput(attrs={'required': True, 'max_length': 100}))
     password = forms.CharField(widget=forms.PasswordInput(attrs={'required': True, 'max_length': 100}))
     first_name = forms.CharField(widget=forms.TextInput(attrs={'required': True, 'max_length': 100}))
     last_name = forms.CharField(widget=forms.TextInput(attrs={'required': True, 'max_length': 100}))
     email = forms.CharField(widget=forms.TextInput(attrs={'required': True, 'max_length': 100}))
+    model_pic = forms.ImageField()
+
+    def __init__(self, *args, **kwargs):
+        super(LibuserForm, self).__init__(*args, **kwargs)
+        self.fields['model_pic'].required = False

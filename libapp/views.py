@@ -117,9 +117,11 @@ def index(request):
     itemlist = Libitem.objects.all().order_by('title')[:10]
     try:
         request.session['luckynum']
+        request.session['model_pic']
     except KeyError:
         request.session['luckynum'] = 0;
-    return render(request, 'libapp/index.html', {'itemlist': itemlist, 'luckynum': request.session['luckynum']})
+        request.session['model_pic'] = 0;
+    return render(request, 'libapp/index.html', {'itemlist': itemlist, 'luckynum': request.session['luckynum'], 'model_pic' :request.session['model_pic']})
 
 
 def index1(request):
@@ -168,6 +170,13 @@ def user_login(request):
             request.session['luckynum'] = n;
             login(request, user)
             userob = Libuser.objects.filter(username=request.user.username)
+            value = 'pic_folder/download.jpg'
+            # if userob.length > 0:
+            if userob:
+                if str(userob[0].model_pic):
+                    if str(userob[0].model_pic) != 'pic_folder/None/no-img.jpg':
+                        value = str(userob[0].model_pic)[14:]
+            request.session['model_pic'] = value
             request.session['userob'] = serializers.serialize('json', userob)
 
 
@@ -194,7 +203,6 @@ def register(request):
         if form.is_valid():
             libuser = form.save(commit=False)
             libuser.num_interested = 1
-            # libuser.set_unusable_password()
             libuser.password = make_password(form.cleaned_data['password'])
             libuser.save()
             return HttpResponseRedirect('http://127.0.0.1:8000/libapp/login/')

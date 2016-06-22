@@ -1,4 +1,5 @@
 {% extends 'libapp/base.html' %}
+{% load staticfiles %}
 {% block body_block %}
     {% if itemlist %}
         <h2>List of Library items</h2>
@@ -12,4 +13,5 @@
         <strong>There are no available items!</strong>
     {% endif %}
     <h2>Lucky Number: {{ luckynum }}</h2>
+
 {% endblock %}

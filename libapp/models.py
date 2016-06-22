@@ -16,6 +16,8 @@ class Libuser(User):
     # age = models.IntegerField()
     phone = models.IntegerField(null=True)
     postalcode = models.CharField(max_length=7, blank=True,null=True)
+    model_pic = models.ImageField(upload_to='libapp/static/pic_folder/', default='pic_folder/None/no-img.jpg', blank=True, null=True)
+
     def __str__(self):
         return self.first_name + ' ' + self.last_name
 
@@ -37,7 +39,7 @@ class Libitem(models.Model):
     num_chkout = models.PositiveIntegerField(default=0)
 
     def __str__(self):
-        return self.title + ' by ' + self.itemtype
+        return self.title
 
     def overdue(self):
         if self.checked_out == True:
@@ -78,6 +80,7 @@ class Dvd(Libitem):
     def __str__(self):
         return self.title + ' by ' + self.maker +' of duration ' + str(self.duration) + ' minutes and rating '+ str(self.rating)
 
+from django.core.validators import MaxValueValidator, MinValueValidator
 class Suggestion(models.Model):
 
     TYPE_CHOICES = (
@@ -86,7 +89,7 @@ class Suggestion(models.Model):
         (3, 'Other'),
     )
     title = models.CharField(max_length=100)
-    pubyr = models.IntegerField(null=True, blank=True)
+    pubyr = models.IntegerField(null=True, blank=True, validators=[MaxValueValidator(2016), MinValueValidator(1900)])
     type = models.IntegerField(default=1, choices=TYPE_CHOICES)
     cost = models.IntegerField()
     num_interested = models.IntegerField()

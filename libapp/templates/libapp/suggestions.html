@@ -1,9 +1,12 @@
 {% extends 'libapp/base.html' %}
 {% block body_block %}
+    <h2>
+    <h6>
     <div class="collection">
         {% for slist in itemlist %}
             <a href="/libapp/suggestiondetail/{{ slist.id }}" class="collection-item">{{ slist.title }}</a>
         {% endfor %}<br/>
     </div>
-
+    </h6>
+    </h2>
 {% endblock %}
