@@ -2,7 +2,9 @@
 {% block body_block %}
     <div id="main" style="width: 25%" class=" form-inline">
     <form method="post" action=".">{% csrf_token %}
-    {{ form.as_p }}
+        <h2>
+            {{ form.as_p }}
+        </h2>
     <input type="submit" class="btn btn-primary" value="Submit">
         </form>
     </div>
