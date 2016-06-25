@@ -182,7 +182,7 @@ def user_login(request):
             request.session['userob'] = serializers.serialize('json', userob)
 
 
-            return HttpResponseRedirect('http://127.0.0.1:8000/libapp/')
+            return HttpResponseRedirect('libapp/')
         elif user is None:
             return render(request, 'libapp/login.html', {'notlogin': True, 'form': form})
         else:
@@ -194,7 +194,7 @@ def user_login(request):
 def user_logout(request):
     logout(request)
     # return HttpResponseRedirect(reverse(('libapp:index')))
-    return HttpResponseRedirect('http://127.0.0.1:8000/libapp/')
+    return HttpResponseRedirect('libapp/')
 
 from django.contrib.auth.hashers import make_password
 
@@ -207,7 +207,7 @@ def register(request):
             libuser.num_interested = 1
             libuser.password = make_password(form.cleaned_data['password'])
             libuser.save()
-            return HttpResponseRedirect('http://127.0.0.1:8000/libapp/login/')
+            return HttpResponseRedirect('libapp/login/')
         else:
             return render(request, 'libapp/register.html', {'form':form})
     else:
