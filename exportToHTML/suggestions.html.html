@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>suggestions.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,0); }
+.s1 { color: rgb(0,0,0); }
+.s2 { color: rgb(0,0,128); font-weight: bold; }
+.s3 { color: rgb(0,128,0); font-weight: bold; }
+.s4 { color: rgb(0,0,255); font-weight: bold; }
+.s5 { color: rgb(0,0,128); font-weight: bold; }
+.s6 { color: rgb(0,0,255); font-weight: bold; }
+.s7 { color: rgb(0,128,0); font-weight: bold; }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+suggestions.html</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">{% </span><span class="s2">extends </span><span class="s3">'libapp/base.html' </span><span class="s0">%} 
+{% </span><span class="s2">block </span><span class="s4">body_block </span><span class="s0">%} 
+    &lt;</span><span class="s5">h2</span><span class="s0">&gt; 
+    &lt;</span><span class="s5">h6</span><span class="s0">&gt; 
+    &lt;</span><span class="s5">div </span><span class="s6">class=</span><span class="s7">&quot;collection&quot;</span><span class="s0">&gt; 
+        {% </span><span class="s2">for </span><span class="s4">slist </span><span class="s2">in </span><span class="s4">itemlist </span><span class="s0">%} 
+            &lt;</span><span class="s5">a </span><span class="s6">href=</span><span class="s7">&quot;/libapp/suggestiondetail/</span><span class="s1">{{ </span><span class="s4">slist</span><span class="s1">.</span><span class="s4">id </span><span class="s1">}}</span><span class="s7">&quot; </span><span class="s6">class=</span><span class="s7">&quot;collection-item&quot;</span><span class="s0">&gt;</span><span class="s1">{{ </span><span class="s4">slist</span><span class="s1">.</span><span class="s4">title </span><span class="s1">}}</span><span class="s0">&lt;/</span><span class="s5">a</span><span class="s0">&gt; 
+        {% </span><span class="s2">endfor </span><span class="s0">%}&lt;</span><span class="s5">br</span><span class="s0">/&gt; 
+    &lt;/</span><span class="s5">div</span><span class="s0">&gt; 
+    &lt;/</span><span class="s5">h6</span><span class="s0">&gt; 
+    &lt;/</span><span class="s5">h2</span><span class="s0">&gt; 
+{% </span><span class="s2">endblock </span><span class="s0">%} 
+</span></pre>
+</body>
+</html>

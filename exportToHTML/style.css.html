@@ -1,0 +1,1101 @@
+<html>
+<head>
+<title>style.css</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(128,128,128); font-style: italic; }
+.s1 { color: rgb(0,0,0); }
+.s2 { color: rgb(0,0,128); font-weight: bold; }
+.s3 { color: rgb(0,0,0); }
+.s4 { color: rgb(0,0,255); font-weight: bold; }
+.s5 { color: rgb(0,0,255); }
+.s6 { color: rgb(0,128,0); font-weight: bold; }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+style.css</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">/* 
+Theme Name: Bent 
+Author: Allie 
+Version: 1.0 
+URL: http://designscrazed.org/ 
+*/</span><span class="s1"> 
+ 
+</span><span class="s0">/* Table of Content 
+================================================== 
+  1. COMMON STYLES 
+  2. SECTION HOME  
+  3. SECTION ABOUT 
+  4. SECTION VIDEO 
+  5. SECTION TESTIMONIAL 
+  6. SECTION FEATURES  
+  7. SECTION CALL TO ACTION 
+  8. SECTION APPS SCREEN  
+  9. SECTION FUN FACTS  
+  10. SECTION DOWNLOAD  
+  11. SECTION CONTACT  
+  12. SECTION SUBSCRIBE 
+  13. SECTION FOOTER  
+ 
+*/</span><span class="s1"> 
+</span><span class="s2">* </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">margin</span><span class="s3">: </span><span class="s5">0</span><span class="s1">; 
+    </span><span class="s4">padding</span><span class="s3">: </span><span class="s5">0</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s2">body </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">font-family</span><span class="s3">: </span><span class="s6">'Raleway'</span><span class="s1">, </span><span class="s6">sans-serif</span><span class="s1">; 
+    </span><span class="s4">overflow-y</span><span class="s3">: </span><span class="s6">scroll</span><span class="s1">; 
+    </span><span class="s4">overflow-x</span><span class="s3">: </span><span class="s6">hidden</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s2">p </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">font-family</span><span class="s3">: </span><span class="s6">'Raleway'</span><span class="s1">, </span><span class="s6">sans-serif</span><span class="s1">; 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">14</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s0">/*--------------------------------------- 
+   COMMON STYLES              
+-----------------------------------------*/</span><span class="s1"> 
+ 
+</span><span class="s3">.</span><span class="s2">section_title </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">padding-top</span><span class="s3">: </span><span class="s5">90</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">padding-bottom</span><span class="s3">: </span><span class="s5">50</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">section_title h2 </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">text-transform</span><span class="s3">: </span><span class="s6">uppercase</span><span class="s1">; 
+    </span><span class="s4">text-align</span><span class="s3">: </span><span class="s6">center</span><span class="s1">; 
+    </span><span class="s4">position</span><span class="s3">: </span><span class="s6">relative</span><span class="s1">; 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#333</span><span class="s1">; 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">30</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">font-weight</span><span class="s3">: </span><span class="s5">400</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">section_title h2</span><span class="s3">:</span><span class="s2">after </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">content</span><span class="s3">: </span><span class="s6">&quot;&quot;</span><span class="s1">; 
+    </span><span class="s4">position</span><span class="s3">: </span><span class="s6">absolute</span><span class="s1">; 
+    </span><span class="s4">bottom</span><span class="s3">: </span><span class="s1">-</span><span class="s5">20</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">width</span><span class="s3">: </span><span class="s5">60</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">height</span><span class="s3">: </span><span class="s5">1</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">background-color</span><span class="s3">: </span><span class="s2">#f39c12</span><span class="s1">; 
+    </span><span class="s4">left</span><span class="s3">: </span><span class="s5">50</span><span class="s1">%; 
+    </span><span class="s4">margin-left</span><span class="s3">: </span><span class="s1">-</span><span class="s5">30</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">section_title p </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">text-align</span><span class="s3">: </span><span class="s6">center</span><span class="s1">; 
+    </span><span class="s4">margin-top</span><span class="s3">: </span><span class="s5">45</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#333</span><span class="s1">; 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">18</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">line-height</span><span class="s3">: </span><span class="s5">28</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">font-weight</span><span class="s3">: </span><span class="s5">300</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">parallax </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">background-attachment</span><span class="s3">: </span><span class="s6">fixed </span><span class="s2">!important</span><span class="s1">; 
+    </span><span class="s4">background-position</span><span class="s3">: </span><span class="s6">center center</span><span class="s1">; 
+    </span><span class="s4">background-repeat</span><span class="s3">: </span><span class="s6">no-repeat</span><span class="s1">; 
+    </span><span class="s4">background-size</span><span class="s3">: </span><span class="s6">cover</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s0">/*--------------------------------------- 
+   SECTION HOME               
+-----------------------------------------*/</span><span class="s1"> 
+</span><span class="s0">/*menu*/</span><span class="s1"> 
+ 
+</span><span class="s3">.</span><span class="s2">header h2 </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">height</span><span class="s3">: </span><span class="s5">0</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">margin</span><span class="s3">: </span><span class="s5">0</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">navbar </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">margin-top</span><span class="s3">: </span><span class="s1">-</span><span class="s5">100</span><span class="s6">px</span><span class="s1"> 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">navbar-brand </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">padding</span><span class="s3">: </span><span class="s5">9</span><span class="s6">px </span><span class="s5">15</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s2">@media</span><span class="s3">(</span><span class="s4">min-width</span><span class="s3">:</span><span class="s5">768</span><span class="s6">px</span><span class="s3">) {</span><span class="s1"> 
+    </span><span class="s3">.</span><span class="s2">navbar-default </span><span class="s3">{</span><span class="s1"> 
+        </span><span class="s4">background-color</span><span class="s3">: </span><span class="s6">transparent</span><span class="s1">; 
+    </span><span class="s3">}</span><span class="s1"> 
+    </span><span class="s3">.</span><span class="s2">navbar-default </span><span class="s3">.</span><span class="s2">navbar-nav</span><span class="s1">&gt;</span><span class="s2">li</span><span class="s1">&gt;</span><span class="s2">a </span><span class="s3">{</span><span class="s1"> 
+        </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#B5B5B5</span><span class="s1">; 
+        </span><span class="s4">font-family</span><span class="s3">: </span><span class="s6">'Raleway'</span><span class="s1">, </span><span class="s6">sans-serif</span><span class="s1">; 
+    </span><span class="s3">}</span><span class="s1"> 
+    </span><span class="s3">.</span><span class="s2">navbar-default </span><span class="s3">.</span><span class="s2">navbar-nav</span><span class="s1">&gt;</span><span class="s2">li</span><span class="s1">&gt;</span><span class="s2">a</span><span class="s3">:</span><span class="s2">hover </span><span class="s3">{</span><span class="s1"> 
+        </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#f39c12</span><span class="s1">; 
+    </span><span class="s3">}</span><span class="s1"> 
+    </span><span class="s3">.</span><span class="s2">navbar-default </span><span class="s3">.</span><span class="s2">navbar-nav</span><span class="s1">&gt;</span><span class="s2">li</span><span class="s1">&gt;</span><span class="s2">a</span><span class="s3">:</span><span class="s2">focus </span><span class="s3">{</span><span class="s1"> 
+        </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#B5B5B5</span><span class="s1">; 
+    </span><span class="s3">}</span><span class="s1"> 
+    </span><span class="s3">.</span><span class="s2">navbar-default </span><span class="s3">{</span><span class="s1"> 
+        </span><span class="s4">-webkit-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+        </span><span class="s4">-moz-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+        </span><span class="s4">-o-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+        </span><span class="s4">transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+        </span><span class="s4">z-index</span><span class="s3">: </span><span class="s5">110</span><span class="s1">; 
+    </span><span class="s3">}</span><span class="s1"> 
+    </span><span class="s3">.</span><span class="s2">navbar-brand img </span><span class="s3">{</span><span class="s1"> 
+        </span><span class="s4">padding-top</span><span class="s3">: </span><span class="s5">25</span><span class="s6">px</span><span class="s1">; 
+        </span><span class="s4">height</span><span class="s3">: </span><span class="s5">45</span><span class="s6">px</span><span class="s1">; 
+        </span><span class="s4">-webkit-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+        </span><span class="s4">-moz-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+        </span><span class="s4">-o-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+        </span><span class="s4">transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s3">}</span><span class="s1"> 
+    </span><span class="s3">.</span><span class="s2">navbar-default </span><span class="s3">.</span><span class="s2">navbar-nav</span><span class="s1">&gt;</span><span class="s2">li</span><span class="s1">&gt;</span><span class="s2">a </span><span class="s3">{</span><span class="s1"> 
+        </span><span class="s4">-webkit-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+        </span><span class="s4">-moz-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+        </span><span class="s4">-o-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+        </span><span class="s4">transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s3">}</span><span class="s1"> 
+    </span><span class="s3">.</span><span class="s2">navbar-nav</span><span class="s1">&gt;</span><span class="s2">li</span><span class="s1">&gt;</span><span class="s2">a </span><span class="s3">{</span><span class="s1"> 
+        </span><span class="s4">padding-top</span><span class="s3">: </span><span class="s5">45</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s2">@media </span><span class="s3">(</span><span class="s4">max-width</span><span class="s3">: </span><span class="s5">768</span><span class="s6">px</span><span class="s3">) {</span><span class="s1"> 
+    </span><span class="s3">.</span><span class="s2">navbar-brand img </span><span class="s3">{} .</span><span class="s2">navbar-default </span><span class="s3">{</span><span class="s1"> 
+        </span><span class="s4">background-color</span><span class="s3">: </span><span class="s2">#fff !important</span><span class="s1">; 
+    </span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">navbar-default </span><span class="s3">.</span><span class="s2">navbar-nav</span><span class="s1">&gt;</span><span class="s3">.</span><span class="s2">active</span><span class="s1">&gt;</span><span class="s2">a</span><span class="s1">, 
+</span><span class="s3">.</span><span class="s2">navbar-default </span><span class="s3">.</span><span class="s2">navbar-nav</span><span class="s1">&gt;</span><span class="s3">.</span><span class="s2">active</span><span class="s1">&gt;</span><span class="s2">a</span><span class="s3">:</span><span class="s2">hover</span><span class="s1">, 
+</span><span class="s3">.</span><span class="s2">navbar-default </span><span class="s3">.</span><span class="s2">navbar-nav</span><span class="s1">&gt;</span><span class="s3">.</span><span class="s2">active</span><span class="s1">&gt;</span><span class="s2">a</span><span class="s3">:</span><span class="s2">focus </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">background</span><span class="s3">: </span><span class="s6">transparent</span><span class="s1">; 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#f39c12</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">header </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">background</span><span class="s3">: </span><span class="s2">url</span><span class="s3">(</span><span class="s6">../images/home.jpg</span><span class="s3">)</span><span class="s1">; 
+    </span><span class="s4">background-size</span><span class="s3">: </span><span class="s6">cover</span><span class="s1">; 
+    </span><span class="s4">background-repeat</span><span class="s3">: </span><span class="s6">no-repeat</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">header </span><span class="s3">.</span><span class="s2">section_overlay </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">background-color</span><span class="s3">: </span><span class="s2">rgba</span><span class="s3">(</span><span class="s5">33</span><span class="s1">, </span><span class="s5">33</span><span class="s1">, </span><span class="s5">33</span><span class="s1">, </span><span class="s5">.75</span><span class="s3">)</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">logo</span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">padding-bottom</span><span class="s3">: </span><span class="s5">50</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">home_text</span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">text-align</span><span class="s3">: </span><span class="s6">left</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">home-iphone</span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">text-align</span><span class="s3">: </span><span class="s6">right</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">home-iphone img</span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">width</span><span class="s3">: </span><span class="s5">100</span><span class="s1">%; 
+</span><span class="s3">}</span><span class="s1"> 
+ 
+</span><span class="s2">@media </span><span class="s3">(</span><span class="s4">max-width</span><span class="s3">: </span><span class="s5">768</span><span class="s6">px</span><span class="s3">){</span><span class="s1"> 
+    </span><span class="s3">.</span><span class="s2">home-iphone</span><span class="s3">{</span><span class="s1"> 
+        </span><span class="s4">display</span><span class="s3">: </span><span class="s6">none</span><span class="s1">; 
+    </span><span class="s3">}</span><span class="s1"> 
+    </span><span class="s3">.</span><span class="s2">home_text</span><span class="s3">{</span><span class="s1"> 
+        </span><span class="s4">text-align</span><span class="s3">: </span><span class="s6">center</span><span class="s1">; 
+    </span><span class="s3">}</span><span class="s1"> 
+ 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">home_text h1 </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#fff</span><span class="s1">; 
+    </span><span class="s4">text-transform</span><span class="s3">: </span><span class="s6">uppercase</span><span class="s1">; 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">35</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">font-weight</span><span class="s3">: </span><span class="s5">300</span><span class="s1">; 
+    </span><span class="s4">line-height</span><span class="s3">: </span><span class="s5">45</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">padding-top</span><span class="s3">: </span><span class="s5">30</span><span class="s6">px</span><span class="s1"> 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">home_text p </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#fff</span><span class="s1">; 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">17</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">line-height</span><span class="s3">: </span><span class="s5">28</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">margin-top</span><span class="s3">: </span><span class="s5">0</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">font-weight</span><span class="s3">: </span><span class="s5">300</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">download-btn </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">margin-top</span><span class="s3">: </span><span class="s5">90</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">margin-bottom</span><span class="s3">: </span><span class="s5">50</span><span class="s6">px</span><span class="s1"> 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">home-btn</span><span class="s1">, 
+</span><span class="s3">.</span><span class="s2">home-btn</span><span class="s3">:</span><span class="s2">focus</span><span class="s1">, 
+</span><span class="s3">.</span><span class="s2">home-btn</span><span class="s3">:</span><span class="s2">active</span><span class="s1">, 
+</span><span class="s3">.</span><span class="s2">home-btn</span><span class="s3">:</span><span class="s2">visited </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">background</span><span class="s3">: </span><span class="s6">transparent</span><span class="s1">; 
+    </span><span class="s4">border-color</span><span class="s3">: </span><span class="s2">#f39c12</span><span class="s1">; 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#f39c12</span><span class="s1">; 
+    </span><span class="s4">padding-top</span><span class="s3">: </span><span class="s5">10</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">padding-bottom</span><span class="s3">: </span><span class="s5">10</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">padding-left</span><span class="s3">: </span><span class="s5">30</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">padding-right</span><span class="s3">: </span><span class="s5">30</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">19</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">text-transform</span><span class="s3">: </span><span class="s6">uppercase</span><span class="s1">; 
+    </span><span class="s4">border-radius</span><span class="s3">: </span><span class="s5">3</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">-webkit-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">-moz-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">-o-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">home-btn</span><span class="s3">:</span><span class="s2">hover </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">background-color</span><span class="s3">: </span><span class="s2">#f39c12</span><span class="s1">; 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#fff</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">tuor</span><span class="s1">, 
+</span><span class="s3">.</span><span class="s2">tuor</span><span class="s3">:</span><span class="s2">focus</span><span class="s1">, 
+</span><span class="s2">tuor</span><span class="s3">:</span><span class="s2">active</span><span class="s1">, 
+</span><span class="s2">tuor</span><span class="s3">:</span><span class="s2">visited </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#A9ADB0</span><span class="s1">; 
+    </span><span class="s4">margin-left</span><span class="s3">: </span><span class="s5">20</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">text-transform</span><span class="s3">: </span><span class="s6">uppercase</span><span class="s1">; 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">19</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">font-weight</span><span class="s3">: </span><span class="s5">500</span><span class="s1">; 
+    </span><span class="s4">background</span><span class="s3">: </span><span class="s6">transparent</span><span class="s1">; 
+    </span><span class="s4">-webkit-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">-moz-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">-o-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">tuor</span><span class="s3">:</span><span class="s2">hover </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#fff</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">tuor i </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">20</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">padding-left</span><span class="s3">: </span><span class="s5">5</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#f39c12</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+ 
+ 
+ 
+</span><span class="s0">/*--------------------------------------- 
+   SECTION ABOUT               
+-----------------------------------------*/</span><span class="s1"> 
+ 
+ 
+ 
+</span><span class="s3">.</span><span class="s2">about </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">background</span><span class="s3">: </span><span class="s2">#F1F1F1</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">inner_about_area </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">padding-top</span><span class="s3">: </span><span class="s5">50</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">inner_about_title </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">padding-bottom</span><span class="s3">: </span><span class="s5">50</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">inner_about_title h2 </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">text-transform</span><span class="s3">: </span><span class="s6">uppercase</span><span class="s1">; 
+    </span><span class="s4">font-weight</span><span class="s3">: </span><span class="s5">800</span><span class="s1">; 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">30</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">line-height</span><span class="s3">: </span><span class="s5">37</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">position</span><span class="s3">: </span><span class="s6">relative</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">inner_about_title h2</span><span class="s3">:</span><span class="s2">after </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">content</span><span class="s3">: </span><span class="s6">&quot;&quot;</span><span class="s1">; 
+    </span><span class="s4">position</span><span class="s3">: </span><span class="s6">absolute</span><span class="s1">; 
+    </span><span class="s4">bottom</span><span class="s3">: </span><span class="s1">-</span><span class="s5">12</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">left</span><span class="s3">: </span><span class="s5">0</span><span class="s1">; 
+    </span><span class="s4">width</span><span class="s3">: </span><span class="s5">70</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">background</span><span class="s3">: </span><span class="s2">#f39c12</span><span class="s1">; 
+    </span><span class="s4">height</span><span class="s3">: </span><span class="s5">1</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">inner_about_title p </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">19</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">line-height</span><span class="s3">: </span><span class="s5">24</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">margin-top</span><span class="s3">: </span><span class="s5">40</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">inner_about_desc </span><span class="s3">{} .</span><span class="s2">single_about_area </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">position</span><span class="s3">: </span><span class="s6">relative</span><span class="s1">; 
+    </span><span class="s4">padding-bottom</span><span class="s3">: </span><span class="s5">4</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">padding-left</span><span class="s3">: </span><span class="s5">80</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">single_about_area div </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">position</span><span class="s3">: </span><span class="s6">absolute</span><span class="s1">; 
+    </span><span class="s4">top</span><span class="s3">: </span><span class="s5">0</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">left</span><span class="s3">: </span><span class="s5">0</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">single_about_area div i </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">55</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#BABABA</span><span class="s1">; 
+    </span><span class="s4">-webkit-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">-moz-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">-o-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">single_about_area h3 </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#343434</span><span class="s1">; 
+    </span><span class="s4">text-transform</span><span class="s3">: </span><span class="s6">uppercase</span><span class="s1">; 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">20</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">font-weight</span><span class="s3">: </span><span class="s5">800</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">single_about_area p </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#727272</span><span class="s1">; 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">15</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">single_about_area</span><span class="s3">:</span><span class="s2">hover div i </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#f39c12</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">about_phone img </span><span class="s3">{} </span><span class="s2">@media </span><span class="s3">(</span><span class="s4">min-width</span><span class="s3">: </span><span class="s5">991</span><span class="s6">px</span><span class="s3">) </span><span class="s2">and </span><span class="s3">(</span><span class="s4">max-width</span><span class="s3">: </span><span class="s5">1200</span><span class="s6">px</span><span class="s3">) {</span><span class="s1"> 
+    </span><span class="s3">.</span><span class="s2">about_phone img </span><span class="s3">{</span><span class="s1"> 
+        </span><span class="s4">margin-top</span><span class="s3">: </span><span class="s5">184</span><span class="s6">px</span><span class="s1">; 
+        </span><span class="s4">width</span><span class="s3">: </span><span class="s5">80</span><span class="s1">%; 
+        </span><span class="s4">margin-right</span><span class="s3">: </span><span class="s5">20</span><span class="s1">% 
+    </span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s0">/*--------------------------------------- 
+   SECTION VIDEO               
+-----------------------------------------*/</span><span class="s1"> 
+ 
+</span><span class="s3">.</span><span class="s2">video_area </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">background</span><span class="s3">: </span><span class="s2">#e4e4e4</span><span class="s1">; 
+    </span><span class="s4">padding-bottom</span><span class="s3">: </span><span class="s5">140</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">padding-top</span><span class="s3">: </span><span class="s5">120</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">video_title </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">padding-bottom</span><span class="s3">: </span><span class="s5">30</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">video_title h2 </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">text-transform</span><span class="s3">: </span><span class="s6">uppercase</span><span class="s1">; 
+    </span><span class="s4">font-weight</span><span class="s3">: </span><span class="s5">800</span><span class="s1">; 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">30</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">line-height</span><span class="s3">: </span><span class="s5">37</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">position</span><span class="s3">: </span><span class="s6">relative</span><span class="s1">; 
+    </span><span class="s4">margin-top</span><span class="s3">: </span><span class="s5">0</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">video_title h2</span><span class="s3">:</span><span class="s2">after </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">content</span><span class="s3">: </span><span class="s6">&quot;&quot;</span><span class="s1">; 
+    </span><span class="s4">position</span><span class="s3">: </span><span class="s6">absolute</span><span class="s1">; 
+    </span><span class="s4">bottom</span><span class="s3">: </span><span class="s1">-</span><span class="s5">12</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">left</span><span class="s3">: </span><span class="s5">0</span><span class="s1">; 
+    </span><span class="s4">width</span><span class="s3">: </span><span class="s5">70</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">background</span><span class="s3">: </span><span class="s2">#f39c12</span><span class="s1">; 
+    </span><span class="s4">height</span><span class="s3">: </span><span class="s5">1</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">video_title p </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">18</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">line-height</span><span class="s3">: </span><span class="s5">28</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">margin-top</span><span class="s3">: </span><span class="s5">40</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#333</span><span class="s1">; 
+    </span><span class="s4">font-weight</span><span class="s3">: </span><span class="s5">300</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">btn-video</span><span class="s1">, 
+</span><span class="s3">.</span><span class="s2">btn-video</span><span class="s3">:</span><span class="s2">active</span><span class="s1">, 
+</span><span class="s3">.</span><span class="s2">btn-video</span><span class="s3">:</span><span class="s2">focus</span><span class="s1">, 
+</span><span class="s3">.</span><span class="s2">btn-video</span><span class="s3">:</span><span class="s2">visited </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">background</span><span class="s3">: </span><span class="s6">transparent</span><span class="s1">; 
+    </span><span class="s4">border</span><span class="s3">: </span><span class="s5">1</span><span class="s6">px solid </span><span class="s2">#929292</span><span class="s1">; 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#686868</span><span class="s1">; 
+    </span><span class="s4">border-radius</span><span class="s3">: </span><span class="s5">3</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">padding</span><span class="s3">: </span><span class="s5">12</span><span class="s6">px </span><span class="s5">35</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">text-transform</span><span class="s3">: </span><span class="s6">uppercase</span><span class="s1">; 
+    </span><span class="s4">-webkit-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">-moz-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">-o-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">btn-video</span><span class="s3">:</span><span class="s2">hover </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">background</span><span class="s3">: </span><span class="s2">#f39c12</span><span class="s1">; 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#fff</span><span class="s1">; 
+    </span><span class="s4">border</span><span class="s3">: </span><span class="s5">1</span><span class="s6">px solid </span><span class="s2">#f39c12</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">video </span><span class="s3">{} .</span><span class="s2">video iframe </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">width</span><span class="s3">: </span><span class="s5">100</span><span class="s1">%; 
+    </span><span class="s4">border</span><span class="s3">: </span><span class="s5">1</span><span class="s6">px solid </span><span class="s2">#999999</span><span class="s1">; 
+    </span><span class="s4">padding</span><span class="s3">: </span><span class="s5">5</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s0">/*--------------------------------------- 
+   SECTION TESTIMONIAL               
+-----------------------------------------*/</span><span class="s1"> 
+ 
+</span><span class="s2">#owl-demo </span><span class="s3">.</span><span class="s2">item </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">margin-left</span><span class="s3">: </span><span class="s5">90</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">margin-right</span><span class="s3">: </span><span class="s5">90</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">margin-bottom</span><span class="s3">: </span><span class="s5">50</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s2">#owl-demo </span><span class="s3">.</span><span class="s2">item img </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">display</span><span class="s3">: </span><span class="s6">block</span><span class="s1">; 
+    </span><span class="s4">width</span><span class="s3">: </span><span class="s5">100</span><span class="s1">%; 
+    </span><span class="s4">height</span><span class="s3">: </span><span class="s6">auto</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">testimonial </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">background</span><span class="s3">: </span><span class="s2">url</span><span class="s3">(</span><span class="s6">../images/testimonial.jpg</span><span class="s3">)</span><span class="s1">; 
+    </span><span class="s4">background-size</span><span class="s3">: </span><span class="s6">cover</span><span class="s1">; 
+    </span><span class="s4">background-repeat</span><span class="s3">: </span><span class="s6">no-repeat</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">testimonial </span><span class="s3">.</span><span class="s2">section_overlay </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">background</span><span class="s3">: </span><span class="s2">rgba</span><span class="s3">(</span><span class="s5">0</span><span class="s1">, </span><span class="s5">0</span><span class="s1">, </span><span class="s5">0</span><span class="s1">, </span><span class="s5">.6</span><span class="s3">)</span><span class="s1">; 
+    </span><span class="s4">padding-top</span><span class="s3">: </span><span class="s5">80</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">padding-bottom</span><span class="s3">: </span><span class="s5">80</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">carousel-indicators </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">bottom</span><span class="s3">: </span><span class="s1">-</span><span class="s5">8</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s2">div</span><span class="s3">.</span><span class="s2">carousel-inner </span><span class="s3">.</span><span class="s2">item img </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">border</span><span class="s3">: </span><span class="s5">2</span><span class="s6">px solid </span><span class="s2">#f39c12</span><span class="s1">; 
+    </span><span class="s4">border-radius</span><span class="s3">: </span><span class="s5">50</span><span class="s1">%; 
+    </span><span class="s4">padding</span><span class="s3">: </span><span class="s5">3</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">testimonial_caption </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">padding-bottom</span><span class="s3">: </span><span class="s5">70</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">testimonial_caption p </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#D8D8D8</span><span class="s1">; 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">18</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">line-height</span><span class="s3">: </span><span class="s5">27</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">padding-top</span><span class="s3">: </span><span class="s5">50</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">testimonial_caption h2 </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#f39c12</span><span class="s1">; 
+    </span><span class="s4">text-transform</span><span class="s3">: </span><span class="s6">uppercase</span><span class="s1">; 
+    </span><span class="s4">font-weight</span><span class="s3">: </span><span class="s5">900</span><span class="s1">; 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">30</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">margin-top</span><span class="s3">: </span><span class="s5">25</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">testimonial_caption h4 </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#f39c12</span><span class="s1"> 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">testimonial_caption h4 span </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#D8D8D8</span><span class="s1">; 
+    </span><span class="s4">font-style</span><span class="s3">: </span><span class="s6">italic</span><span class="s1">; 
+    </span><span class="s4">font-weight</span><span class="s3">: </span><span class="s5">300</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">testimonial ol</span><span class="s3">.</span><span class="s2">carousel-indicators li </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">width</span><span class="s3">: </span><span class="s5">12</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">height</span><span class="s3">: </span><span class="s5">12</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">border</span><span class="s3">: </span><span class="s5">1</span><span class="s6">px solid </span><span class="s2">#f39c12</span><span class="s1">; 
+    </span><span class="s4">margin</span><span class="s3">: </span><span class="s5">1</span><span class="s6">PX</span><span class="s1"> 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">testimonial ol</span><span class="s3">.</span><span class="s2">carousel-indicators li</span><span class="s3">.</span><span class="s2">active </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">width</span><span class="s3">: </span><span class="s5">12</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">height</span><span class="s3">: </span><span class="s5">12</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">border</span><span class="s3">: </span><span class="s5">0</span><span class="s6">px solid </span><span class="s2">#f39c12</span><span class="s1">; 
+    </span><span class="s4">background</span><span class="s3">: </span><span class="s2">#f39c12</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s0">/*--------------------------------------- 
+   SECTION FEATURES               
+-----------------------------------------*/</span><span class="s1"> 
+ 
+</span><span class="s3">.</span><span class="s2">features </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">background-color</span><span class="s3">: </span><span class="s2">#f1f1f1</span><span class="s1"> 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">feature_inner </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">padding-top</span><span class="s3">: </span><span class="s5">30</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">padding-bottom</span><span class="s3">: </span><span class="s5">70</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">feature_iphone </span><span class="s3">{} .</span><span class="s2">feature_iphone img </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">width</span><span class="s3">: </span><span class="s5">100</span><span class="s1">%; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">right_single_feature </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">position</span><span class="s3">: </span><span class="s6">relative</span><span class="s1">; 
+    </span><span class="s4">padding-left</span><span class="s3">: </span><span class="s5">90</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">margin-bottom</span><span class="s3">: </span><span class="s5">65</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">margin-top</span><span class="s3">: </span><span class="s5">35</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">right_single_feature div </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">position</span><span class="s3">: </span><span class="s6">absolute</span><span class="s1">; 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">40</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#f39c12</span><span class="s1">; 
+    </span><span class="s4">left</span><span class="s3">: </span><span class="s5">0</span><span class="s1">; 
+    </span><span class="s4">width</span><span class="s3">: </span><span class="s5">90</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">height</span><span class="s3">: </span><span class="s5">90</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">text-align</span><span class="s3">: </span><span class="s6">center</span><span class="s1">; 
+    </span><span class="s4">top</span><span class="s3">: </span><span class="s1">-</span><span class="s5">8</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">right_single_feature h3 </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">text-transform</span><span class="s3">: </span><span class="s6">uppercase</span><span class="s1">; 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">25</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">font-weight</span><span class="s3">: </span><span class="s5">700</span><span class="s1">; 
+    </span><span class="s4">margin-bottom</span><span class="s3">: </span><span class="s5">21</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#333333</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">right_single_feature h3 span </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#f39c12</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">right_single_feature p </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#333</span><span class="s1">; 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">16</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">font-weight</span><span class="s3">: </span><span class="s5">300</span><span class="s1">; 
+    </span><span class="s4">line-height</span><span class="s3">: </span><span class="s5">25</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s0">/*left feature*/</span><span class="s1"> 
+ 
+</span><span class="s3">.</span><span class="s2">left_single_feature </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">position</span><span class="s3">: </span><span class="s6">relative</span><span class="s1">; 
+    </span><span class="s4">padding-right</span><span class="s3">: </span><span class="s5">90</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">margin-bottom</span><span class="s3">: </span><span class="s5">65</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">text-align</span><span class="s3">: </span><span class="s6">right</span><span class="s1">; 
+    </span><span class="s4">margin-top</span><span class="s3">: </span><span class="s5">35</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">left_single_feature div </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">position</span><span class="s3">: </span><span class="s6">absolute</span><span class="s1">; 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">40</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#f39c12</span><span class="s1">; 
+    </span><span class="s4">right</span><span class="s3">: </span><span class="s5">0</span><span class="s1">; 
+    </span><span class="s4">width</span><span class="s3">: </span><span class="s5">90</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">height</span><span class="s3">: </span><span class="s5">90</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">text-align</span><span class="s3">: </span><span class="s6">center</span><span class="s1">; 
+    </span><span class="s4">top</span><span class="s3">: </span><span class="s1">-</span><span class="s5">8</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">left_single_feature h3 </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">text-transform</span><span class="s3">: </span><span class="s6">uppercase</span><span class="s1">; 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">25</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">font-weight</span><span class="s3">: </span><span class="s5">700</span><span class="s1">; 
+    </span><span class="s4">margin-bottom</span><span class="s3">: </span><span class="s5">21</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#333333</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">left_single_feature h3 span </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#f39c12</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">left_single_feature p </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#333</span><span class="s1">; 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">16</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">font-weight</span><span class="s3">: </span><span class="s5">300</span><span class="s1">; 
+    </span><span class="s4">line-height</span><span class="s3">: </span><span class="s5">25</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">right_no_padding </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">padding-left</span><span class="s3">: </span><span class="s5">15</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">left_no_padding </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">padding-right</span><span class="s3">: </span><span class="s5">15</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s2">@media </span><span class="s3">(</span><span class="s4">min-width</span><span class="s3">: </span><span class="s5">991</span><span class="s6">px</span><span class="s3">) </span><span class="s2">and </span><span class="s3">(</span><span class="s4">max-width</span><span class="s3">: </span><span class="s5">1200</span><span class="s6">px</span><span class="s3">) {</span><span class="s1"> 
+    </span><span class="s3">.</span><span class="s2">right_single_feature </span><span class="s3">{</span><span class="s1"> 
+        </span><span class="s4">margin-left</span><span class="s3">: </span><span class="s1">-</span><span class="s5">60</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s3">}</span><span class="s1"> 
+    </span><span class="s3">.</span><span class="s2">left_single_feature </span><span class="s3">{</span><span class="s1"> 
+        </span><span class="s4">margin-right</span><span class="s3">: </span><span class="s1">-</span><span class="s5">60</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s3">}</span><span class="s1"> 
+    </span><span class="s3">.</span><span class="s2">feature_iphone </span><span class="s3">{</span><span class="s1"> 
+        </span><span class="s4">margin-top</span><span class="s3">: </span><span class="s5">35</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s3">}</span><span class="s1"> 
+    </span><span class="s3">.</span><span class="s2">right_single_feature h3</span><span class="s1">, 
+    </span><span class="s3">.</span><span class="s2">left_single_feature h3 </span><span class="s3">{</span><span class="s1"> 
+        </span><span class="s4">margin-top</span><span class="s3">: </span><span class="s5">0</span><span class="s6">px</span><span class="s1">; 
+        </span><span class="s4">margin-bottom</span><span class="s3">: </span><span class="s5">15</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">}</span><span class="s1"> 
+ 
+ 
+</span><span class="s0">/*--------------------------------------- 
+   SECTION CALL TO ACTION               
+-----------------------------------------*/</span><span class="s1"> 
+ 
+</span><span class="s3">.</span><span class="s2">call_to_action </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">background-color</span><span class="s3">: </span><span class="s2">#1a1a1a</span><span class="s1">; 
+    </span><span class="s4">padding-top</span><span class="s3">: </span><span class="s5">100</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">padding-bottom</span><span class="s3">: </span><span class="s5">100</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">call_to_action p </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#dfdfdf</span><span class="s1">; 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">18</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">font-weight</span><span class="s3">: </span><span class="s5">300</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">call_to_action a </span><span class="s3">{} .</span><span class="s2">btn-action</span><span class="s1">, 
+</span><span class="s3">.</span><span class="s2">btn-action</span><span class="s3">:</span><span class="s2">active</span><span class="s1">, 
+</span><span class="s3">.</span><span class="s2">btn-action</span><span class="s3">:</span><span class="s2">focus</span><span class="s1">, 
+</span><span class="s3">.</span><span class="s2">btn-action</span><span class="s3">:</span><span class="s2">visited </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">background</span><span class="s3">: </span><span class="s2">#f39c12</span><span class="s1">; 
+    </span><span class="s4">border</span><span class="s3">: </span><span class="s5">1</span><span class="s6">px solid </span><span class="s2">#f39c12</span><span class="s1">; 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#fff</span><span class="s1">; 
+    </span><span class="s4">border-radius</span><span class="s3">: </span><span class="s5">3</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">padding</span><span class="s3">: </span><span class="s5">15</span><span class="s6">px </span><span class="s5">35</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">text-transform</span><span class="s3">: </span><span class="s6">uppercase</span><span class="s1">; 
+    </span><span class="s4">-webkit-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">-moz-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">-o-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">btn-action</span><span class="s3">:</span><span class="s2">hover </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">background</span><span class="s3">: </span><span class="s2">#FF6B80</span><span class="s1">; 
+    </span><span class="s4">border-color</span><span class="s3">: </span><span class="s2">#FF6B80</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+ 
+</span><span class="s0">/*--------------------------------------- 
+   SECTION APPS SCREEN              
+-----------------------------------------*/</span><span class="s1"> 
+ 
+</span><span class="s3">.</span><span class="s2">apps_screen </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">background</span><span class="s3">: </span><span class="s2">#f1f1f1</span><span class="s1">; 
+    </span><span class="s4">padding-bottom</span><span class="s3">: </span><span class="s5">96</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">screen_slider </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">padding-top</span><span class="s3">: </span><span class="s5">50</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">owl-theme </span><span class="s3">.</span><span class="s2">owl-controls </span><span class="s3">.</span><span class="s2">owl-page span </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">display</span><span class="s3">: </span><span class="s6">block</span><span class="s1">; 
+    </span><span class="s4">width</span><span class="s3">: </span><span class="s5">12</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">height</span><span class="s3">: </span><span class="s5">12</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">margin</span><span class="s3">: </span><span class="s5">5</span><span class="s6">px </span><span class="s5">7</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">filter</span><span class="s3">: </span><span class="s2">Alpha</span><span class="s3">(</span><span class="s6">Opacity</span><span class="s1">=</span><span class="s5">50</span><span class="s3">)</span><span class="s1">; 
+    </span><span class="s4">opacity</span><span class="s3">: </span><span class="s5">0.5</span><span class="s1">; 
+    </span><span class="s4">-webkit-border-radius</span><span class="s3">: </span><span class="s5">20</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">-moz-border-radius</span><span class="s3">: </span><span class="s5">20</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">border-radius</span><span class="s3">: </span><span class="s5">20</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">background</span><span class="s3">: </span><span class="s6">transparent</span><span class="s1">; 
+    </span><span class="s4">border</span><span class="s3">: </span><span class="s5">1</span><span class="s6">px solid </span><span class="s2">#f39c12</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">owl-theme </span><span class="s3">.</span><span class="s2">owl-controls </span><span class="s3">.</span><span class="s2">owl-page</span><span class="s3">.</span><span class="s2">active span</span><span class="s1">, 
+</span><span class="s3">.</span><span class="s2">owl-theme </span><span class="s3">.</span><span class="s2">owl-controls</span><span class="s3">.</span><span class="s2">clickable </span><span class="s3">.</span><span class="s2">owl-page</span><span class="s3">:</span><span class="s2">hover span </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">opacity</span><span class="s3">: </span><span class="s5">1</span><span class="s1">; 
+    </span><span class="s4">background</span><span class="s3">: </span><span class="s2">#f39c12</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s0">/*--------------------------------------- 
+   SECTION FUN FACTS               
+-----------------------------------------*/</span><span class="s1"> 
+ 
+</span><span class="s3">.</span><span class="s2">fun_facts </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">background</span><span class="s3">: </span><span class="s2">url</span><span class="s3">(</span><span class="s6">../images/fun_bg.jpg</span><span class="s3">) </span><span class="s6">no-repeat center</span><span class="s1">; 
+    </span><span class="s4">background-size</span><span class="s3">: </span><span class="s6">cover</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">fun_facts </span><span class="s3">.</span><span class="s2">section_overlay </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">padding-top</span><span class="s3">: </span><span class="s5">120</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">padding-bottom</span><span class="s3">: </span><span class="s5">120</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">background</span><span class="s3">: </span><span class="s2">rgba</span><span class="s3">(</span><span class="s5">0</span><span class="s1">, </span><span class="s5">0</span><span class="s1">, </span><span class="s5">0</span><span class="s1">, </span><span class="s5">.4</span><span class="s3">)</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">single_fun_facts </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">font-family</span><span class="s3">: </span><span class="s6">'Source Sans Pro'</span><span class="s1">, </span><span class="s6">sans-serif</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">single_fun_facts i </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#f39c12</span><span class="s1">; 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">60</span><span class="s6">px</span><span class="s1">; 
+    ; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">single_fun_facts h2 </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#D7DADB</span><span class="s1">; 
+    </span><span class="s4">font-weight</span><span class="s3">: </span><span class="s5">700</span><span class="s1">; 
+    </span><span class="s4">text-transform</span><span class="s3">: </span><span class="s6">uppercase</span><span class="s1">; 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">35</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">margin-top</span><span class="s3">: </span><span class="s5">15</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">margin-bottom</span><span class="s3">: </span><span class="s5">1</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">font-family</span><span class="s3">: </span><span class="s6">'Source Sans Pro'</span><span class="s1">, </span><span class="s6">sans-serif</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">single_fun_facts h2 span </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">font-weight</span><span class="s3">: </span><span class="s5">300</span><span class="s1">; 
+    </span><span class="s4">font-family</span><span class="s3">: </span><span class="s6">'Source Sans Pro'</span><span class="s1">, </span><span class="s6">sans-serif</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">single_fun_facts p </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#D7DADB</span><span class="s1">; 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">20</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">margin-top</span><span class="s3">: </span><span class="s5">0</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">font-weight</span><span class="s3">: </span><span class="s5">300</span><span class="s1">; 
+    </span><span class="s4">text-transform</span><span class="s3">: </span><span class="s6">uppercase</span><span class="s1">; 
+    </span><span class="s4">font-family</span><span class="s3">: </span><span class="s6">'Source Sans Pro'</span><span class="s1">, </span><span class="s6">sans-serif</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s0">/*--------------------------------------- 
+   SECTION DOWNLOAD               
+-----------------------------------------*/</span><span class="s1"> 
+ 
+</span><span class="s3">.</span><span class="s2">download </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">background</span><span class="s3">: </span><span class="s2">#f1f1f1</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">download_screen </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">padding-top</span><span class="s3">: </span><span class="s5">45</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">download_screen img </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">width</span><span class="s3">: </span><span class="s5">100</span><span class="s1">% 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">available_store </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">background</span><span class="s3">: </span><span class="s2">#1a1a1a</span><span class="s1">; 
+    </span><span class="s4">margin-top</span><span class="s3">: </span><span class="s1">-</span><span class="s5">8</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">position</span><span class="s3">: </span><span class="s6">relative</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">available_title </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">padding-top</span><span class="s3">: </span><span class="s5">75</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">available_title h2 </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#fff</span><span class="s1">; 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">30</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">available_title p </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#B5B5B5</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">single_store </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">text-align</span><span class="s3">: </span><span class="s6">center</span><span class="s1">; 
+    </span><span class="s4">border-left</span><span class="s3">: </span><span class="s5">1</span><span class="s6">px solid </span><span class="s2">#0F1217</span><span class="s1">; 
+    </span><span class="s4">min-height</span><span class="s3">: </span><span class="s5">230</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">padding-bottom</span><span class="s3">: </span><span class="s5">15</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">position</span><span class="s3">: </span><span class="s6">relative</span><span class="s1">; 
+    </span><span class="s4">-webkit-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">-moz-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">-o-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">single_store i </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#f39c12</span><span class="s1">; 
+    </span><span class="s4">text-align</span><span class="s3">: </span><span class="s6">center</span><span class="s1">; 
+    </span><span class="s4">opacity</span><span class="s3">: </span><span class="s5">1</span><span class="s1">; 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">40</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">padding-top</span><span class="s3">: </span><span class="s5">90</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">-webkit-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">-moz-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">-o-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">store_inner </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">position</span><span class="s3">: </span><span class="s6">absolute</span><span class="s1">; 
+    </span><span class="s4">bottom</span><span class="s3">: </span><span class="s5">93</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">width</span><span class="s3">: </span><span class="s5">100</span><span class="s1">%; 
+    </span><span class="s4">opacity</span><span class="s3">: </span><span class="s5">0</span><span class="s1">; 
+    </span><span class="s4">-webkit-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">-moz-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">-o-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">store_inner h2 </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">text-align</span><span class="s3">: </span><span class="s6">center</span><span class="s1">; 
+    </span><span class="s4">font-weight</span><span class="s3">: </span><span class="s5">300</span><span class="s1">; 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#d7dadb</span><span class="s1">; 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">16</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">single_store</span><span class="s3">:</span><span class="s2">hover </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">background</span><span class="s3">: </span><span class="s2">#121212</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">single_store</span><span class="s3">:</span><span class="s2">hover i </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">opacity</span><span class="s3">: </span><span class="s5">0</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">single_store</span><span class="s3">:</span><span class="s2">hover div</span><span class="s3">.</span><span class="s2">store_inner </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">opacity</span><span class="s3">: </span><span class="s5">1</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">no_padding </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">padding-left</span><span class="s3">: </span><span class="s5">0</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">padding-right</span><span class="s3">: </span><span class="s5">0</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">last </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">border-right</span><span class="s3">: </span><span class="s5">1</span><span class="s6">px solid </span><span class="s2">#0F1217</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s0">/*--------------------------------------- 
+   SECTION CONTACT               
+-----------------------------------------*/</span><span class="s1"> 
+ 
+</span><span class="s3">.</span><span class="s2">contact </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">background</span><span class="s3">: </span><span class="s2">#f1f1f1</span><span class="s1">; 
+    </span><span class="s4">background-repeat</span><span class="s3">: </span><span class="s6">no-repeat</span><span class="s1">; 
+    </span><span class="s4">background-size</span><span class="s3">: </span><span class="s6">cover</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">contact_form </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">padding-top</span><span class="s3">: </span><span class="s5">30</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">contact_form </span><span class="s3">.</span><span class="s2">form-control </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">display</span><span class="s3">: </span><span class="s6">block</span><span class="s1">; 
+    </span><span class="s4">display</span><span class="s3">: </span><span class="s6">block</span><span class="s1">; 
+    </span><span class="s4">width</span><span class="s3">: </span><span class="s5">100</span><span class="s1">%; 
+    </span><span class="s4">height</span><span class="s3">: </span><span class="s5">50</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">padding</span><span class="s3">: </span><span class="s5">6</span><span class="s6">px </span><span class="s5">12</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">14</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">line-height</span><span class="s3">: </span><span class="s5">1.42857143</span><span class="s1">; 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#555</span><span class="s1">; 
+    </span><span class="s4">background-color</span><span class="s3">: </span><span class="s6">transparent</span><span class="s1">; 
+    </span><span class="s4">border</span><span class="s3">: </span><span class="s5">1</span><span class="s6">px solid </span><span class="s2">#aeaeae</span><span class="s1">; 
+    </span><span class="s4">background-image</span><span class="s3">: </span><span class="s6">none</span><span class="s1">; 
+    </span><span class="s4">border-radius</span><span class="s3">: </span><span class="s5">3</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">margin-bottom</span><span class="s3">: </span><span class="s5">15</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">opacity</span><span class="s3">: </span><span class="s5">.8</span><span class="s1">; 
+     </span><span class="s4">-webkit-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">-moz-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">-o-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">outline</span><span class="s3">: </span><span class="s5">0</span><span class="s6">px </span><span class="s2">!important</span><span class="s1">;    
+ 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">contact_form </span><span class="s3">.</span><span class="s2">form-control</span><span class="s3">:</span><span class="s2">focus </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">border</span><span class="s3">: </span><span class="s5">1</span><span class="s6">px solid </span><span class="s2">#f39c12</span><span class="s1">; 
+    </span><span class="s4">border-color</span><span class="s3">: </span><span class="s2">#f39c12</span><span class="s1">; 
+    </span><span class="s4">outline</span><span class="s3">: </span><span class="s5">0</span><span class="s6">px none</span><span class="s1">; 
+    </span><span class="s4">box-shadow</span><span class="s3">: </span><span class="s5">0</span><span class="s6">px </span><span class="s5">0</span><span class="s6">px </span><span class="s5">0</span><span class="s6">px </span><span class="s2">rgba</span><span class="s3">(</span><span class="s5">0</span><span class="s1">, </span><span class="s5">0</span><span class="s1">, </span><span class="s5">0</span><span class="s1">, </span><span class="s5">0.075</span><span class="s3">) </span><span class="s6">inset</span><span class="s1">, </span><span class="s5">0</span><span class="s6">px </span><span class="s5">0</span><span class="s6">px </span><span class="s5">0</span><span class="s6">px </span><span class="s2">rgba</span><span class="s3">(</span><span class="s5">102</span><span class="s1">, </span><span class="s5">175</span><span class="s1">, </span><span class="s5">233</span><span class="s1">, </span><span class="s5">0.6</span><span class="s3">)</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">contact_form </span><span class="s3">{} .</span><span class="s2">form-control</span><span class="s3">:</span><span class="s2">-webkit-input-placeholder </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s6">red</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">form-control</span><span class="s3">:</span><span class="s2">-moz-placeholder </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s0">/* Firefox 18- */</span><span class="s1"> 
+     
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s6">red</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">form-control</span><span class="s3">:</span><span class="s2">-moz-placeholder </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s0">/* Firefox 19+ */</span><span class="s1"> 
+     
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s6">red</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">form-control</span><span class="s3">:</span><span class="s2">-ms-input-placeholder </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s6">red</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">submit-btn</span><span class="s1">, 
+</span><span class="s3">.</span><span class="s2">submit-btn</span><span class="s3">:</span><span class="s2">active</span><span class="s1">, 
+</span><span class="s3">.</span><span class="s2">submit-btn</span><span class="s3">:</span><span class="s2">focus</span><span class="s1">, 
+</span><span class="s3">.</span><span class="s2">submit-btn</span><span class="s3">:</span><span class="s2">visited </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">background-color</span><span class="s3">: </span><span class="s6">transparent</span><span class="s1">; 
+    </span><span class="s4">border</span><span class="s3">: </span><span class="s5">1</span><span class="s6">px solid </span><span class="s2">#f39c12</span><span class="s1">; 
+    </span><span class="s4">border-radius</span><span class="s3">: </span><span class="s5">4</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">width</span><span class="s3">: </span><span class="s5">100</span><span class="s1">%; 
+    </span><span class="s4">height</span><span class="s3">: </span><span class="s5">50</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">text-transform</span><span class="s3">: </span><span class="s6">uppercase</span><span class="s1">; 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">18</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#f39c12</span><span class="s1">; 
+    </span><span class="s4">-webkit-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">-moz-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">-o-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">outline</span><span class="s3">: </span><span class="s5">0</span><span class="s6">px </span><span class="s2">!important</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">submit-btn</span><span class="s3">:</span><span class="s2">hover </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">background-color</span><span class="s3">: </span><span class="s2">#f39c12</span><span class="s1">; 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#fff</span><span class="s1">; 
+    </span><span class="s4">border-color</span><span class="s3">: </span><span class="s2">#f39c12</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">social_icons </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">padding-top</span><span class="s3">: </span><span class="s5">50</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">padding-bottom</span><span class="s3">: </span><span class="s5">70</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">social_icons ul </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">margin</span><span class="s3">: </span><span class="s5">0</span><span class="s1">; 
+    </span><span class="s4">padding</span><span class="s3">: </span><span class="s5">0</span><span class="s1">; 
+    </span><span class="s4">text-align</span><span class="s3">: </span><span class="s6">center</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">social_icons ul li </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">list-style</span><span class="s3">: </span><span class="s6">none</span><span class="s1">; 
+    </span><span class="s4">display</span><span class="s3">: </span><span class="s6">inline</span><span class="s1">; 
+    </span><span class="s4">padding-left</span><span class="s3">: </span><span class="s5">10</span><span class="s6">px</span><span class="s1"> 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">social_icons ul li a </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">text-decoration</span><span class="s3">: </span><span class="s6">none</span><span class="s1">; 
+    </span><span class="s4">display</span><span class="s3">: </span><span class="s6">inline-block</span><span class="s1">; 
+    </span><span class="s4">text-align</span><span class="s3">: </span><span class="s6">center</span><span class="s1">; 
+    </span><span class="s4">border</span><span class="s3">: </span><span class="s5">1</span><span class="s6">px solid </span><span class="s2">#9d9d9d</span><span class="s1">; 
+    </span><span class="s4">border-radius</span><span class="s3">: </span><span class="s5">3</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">width</span><span class="s3">: </span><span class="s5">45</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">height</span><span class="s3">: </span><span class="s5">45</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">line-height</span><span class="s3">: </span><span class="s5">49</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#9d9d9d</span><span class="s1">; 
+    </span><span class="s4">-webkit-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">-moz-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">-o-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">social_icons ul li a i </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">20</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">social_icons ul li a</span><span class="s3">:</span><span class="s2">hover </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">background</span><span class="s3">: </span><span class="s2">#f39c12</span><span class="s1">; 
+    </span><span class="s4">border</span><span class="s3">: </span><span class="s5">1</span><span class="s6">px solid </span><span class="s2">#f39c12</span><span class="s1">; 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#fff</span><span class="s1"> 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">error </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#f39c12</span><span class="s1">; 
+    </span><span class="s4">display</span><span class="s3">: </span><span class="s6">block</span><span class="s1">; 
+    </span><span class="s4">padding-bottom</span><span class="s3">: </span><span class="s5">15</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">18</span><span class="s6">px</span><span class="s1"> 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">error i </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">padding-right</span><span class="s3">: </span><span class="s5">10</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">18</span><span class="s6">px</span><span class="s1"> 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">Sucess </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#4DB849</span><span class="s1">; 
+    </span><span class="s4">display</span><span class="s3">: </span><span class="s6">block</span><span class="s1">; 
+    </span><span class="s4">padding-bottom</span><span class="s3">: </span><span class="s5">15</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">18</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">text-align</span><span class="s3">: </span><span class="s6">center</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">Sucess i </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">padding-right</span><span class="s3">: </span><span class="s5">10</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">18</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#4DB849</span><span class="s1"> 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">contact_form </span><span class="s3">.</span><span class="s2">form-control </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#3d3d3d</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s2">#message </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">height</span><span class="s3">: </span><span class="s5">117</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">resize</span><span class="s3">: </span><span class="s6">none</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s0">/*--------------------------------------- 
+   SECTION SUBSCRIBE               
+-----------------------------------------*/</span><span class="s1"> 
+ 
+</span><span class="s3">.</span><span class="s2">subscribe </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">background-image</span><span class="s3">: </span><span class="s2">url</span><span class="s3">(</span><span class="s6">../images/subscribe.jpg</span><span class="s3">)</span><span class="s1">; 
+    </span><span class="s4">background-size</span><span class="s3">: </span><span class="s6">cover</span><span class="s1">; 
+    </span><span class="s4">background-repeat</span><span class="s3">: </span><span class="s6">no-repeat</span><span class="s1">; 
+    </span><span class="s4">background-position</span><span class="s3">: </span><span class="s6">center</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">subscribe </span><span class="s3">.</span><span class="s2">section_overlay </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">padding-bottom</span><span class="s3">: </span><span class="s5">70</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">background</span><span class="s3">: </span><span class="s6">transparent</span><span class="s1"> 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">subscribe </span><span class="s3">.</span><span class="s2">section_title h2</span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#eaeaea</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">subscribe </span><span class="s3">.</span><span class="s2">section_title p</span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#a4a4a4</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">subscribe_form </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">text-align</span><span class="s3">: </span><span class="s6">center</span><span class="s1">; 
+    </span><span class="s4">padding-top</span><span class="s3">: </span><span class="s5">30</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">subscribe_form </span><span class="s3">.</span><span class="s2">form-group </span><span class="s3">{} .</span><span class="s2">subscribe_form </span><span class="s3">.</span><span class="s2">form-control </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">background</span><span class="s3">: </span><span class="s6">transparent</span><span class="s1">; 
+    </span><span class="s4">border</span><span class="s3">: </span><span class="s5">1</span><span class="s6">px solid </span><span class="s2">#575b63</span><span class="s1">; 
+    </span><span class="s4">border-radius</span><span class="s3">: </span><span class="s5">0</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">height</span><span class="s3">: </span><span class="s5">45</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">border-left</span><span class="s3">: </span><span class="s5">0</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">border-right</span><span class="s3">: </span><span class="s5">0</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">border-top</span><span class="s3">: </span><span class="s5">0</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#aeaeae</span><span class="s1">; 
+    </span><span class="s4">-webkit-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">-moz-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">-o-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">subscribe_form </span><span class="s3">.</span><span class="s2">form-control</span><span class="s3">:</span><span class="s2">focus </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">background</span><span class="s3">: </span><span class="s6">transparent</span><span class="s1">; 
+    </span><span class="s4">border-bottom</span><span class="s3">: </span><span class="s5">1</span><span class="s6">px solid </span><span class="s2">#f1f1f1</span><span class="s1">; 
+    </span><span class="s4">box-shadow</span><span class="s3">: </span><span class="s6">none</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">subs-btn</span><span class="s1">, 
+</span><span class="s3">.</span><span class="s2">subs-btn</span><span class="s3">:</span><span class="s2">active</span><span class="s1">, 
+</span><span class="s3">.</span><span class="s2">subs-btn</span><span class="s3">:</span><span class="s2">focus</span><span class="s1">, 
+</span><span class="s3">.</span><span class="s2">subs-btn</span><span class="s3">:</span><span class="s2">visited </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">width</span><span class="s3">: </span><span class="s5">200</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">background</span><span class="s3">: </span><span class="s6">transparent</span><span class="s1">; 
+    </span><span class="s4">border</span><span class="s3">: </span><span class="s5">1</span><span class="s6">px solid </span><span class="s2">#f39c12</span><span class="s1">; 
+    </span><span class="s4">border-radius</span><span class="s3">: </span><span class="s5">4</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">height</span><span class="s3">: </span><span class="s5">45</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">margin-left</span><span class="s3">: </span><span class="s5">0</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">margin-bottom</span><span class="s3">: </span><span class="s5">1</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#f39c12</span><span class="s1">; 
+    </span><span class="s4">text-transform</span><span class="s3">: </span><span class="s6">uppercase</span><span class="s1">; 
+    </span><span class="s4">font-weight</span><span class="s3">: </span><span class="s5">600</span><span class="s1">; 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">17</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">-webkit-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">-moz-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">-o-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">outline</span><span class="s3">: </span><span class="s5">0</span><span class="s6">px </span><span class="s2">!important</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">subs-btn</span><span class="s3">:</span><span class="s2">hover </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">background-color</span><span class="s3">: </span><span class="s2">#f39c12</span><span class="s1">; 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#fff</span><span class="s1">; 
+    </span><span class="s4">border-color</span><span class="s3">: </span><span class="s2">#f39c12</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s2">@media </span><span class="s3">(</span><span class="s4">min-width</span><span class="s3">: </span><span class="s5">300</span><span class="s6">px</span><span class="s3">) {</span><span class="s1"> 
+    </span><span class="s3">.</span><span class="s2">subscribe_form </span><span class="s3">.</span><span class="s2">form-control </span><span class="s3">{</span><span class="s1"> 
+        </span><span class="s4">width</span><span class="s3">: </span><span class="s5">100</span><span class="s1">% 
+    </span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">subscription-success </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#fff</span><span class="s1">; 
+    </span><span class="s4">text-align</span><span class="s3">: </span><span class="s6">center</span><span class="s1">; 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">20</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">subscription-error </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#fff</span><span class="s1">; 
+    </span><span class="s4">text-align</span><span class="s3">: </span><span class="s6">center</span><span class="s1">; 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">20</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s0">/*--------------------------------------- 
+   SECTION FOOTER               
+-----------------------------------------*/</span><span class="s1"> 
+ 
+</span><span class="s3">.</span><span class="s2">copyright </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">background-color</span><span class="s3">: </span><span class="s2">#1A1D22</span><span class="s1">; 
+    </span><span class="s4">padding-bottom</span><span class="s3">: </span><span class="s5">65</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">padding-top</span><span class="s3">: </span><span class="s5">65</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">border-bottom</span><span class="s3">: </span><span class="s5">3</span><span class="s6">px solid </span><span class="s2">#f39c12</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">copyright h2 </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">height</span><span class="s3">: </span><span class="s5">0</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">margin</span><span class="s3">: </span><span class="s5">0</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">copy_right_text </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">width</span><span class="s3">: </span><span class="s5">50</span><span class="s1">%; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">copy_right_text p </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#8C8B8A</span><span class="s1">; 
+    </span><span class="s4">font-weight</span><span class="s3">: </span><span class="s5">600</span><span class="s1">; 
+    </span><span class="s4">text-transform</span><span class="s3">: </span><span class="s6">uppercase</span><span class="s1">; 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">15</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">copy_right_text p a </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">text-decoration</span><span class="s3">: </span><span class="s6">none</span><span class="s1">; 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#f39c12</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">copy_right_text p span </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">font-weight</span><span class="s3">: </span><span class="s5">300</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">scroll_top </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">text-align</span><span class="s3">: </span><span class="s6">right</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">scroll_top a </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">background</span><span class="s3">: </span><span class="s2">#f39c12</span><span class="s1">; 
+    </span><span class="s4">padding</span><span class="s3">: </span><span class="s5">25</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">scroll_top a i </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">#fff</span><span class="s1">; 
+    </span><span class="s4">font-size</span><span class="s3">: </span><span class="s5">25</span><span class="s6">px</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s2">input</span><span class="s3">:</span><span class="s2">-webkit-autofill</span><span class="s1">, 
+</span><span class="s2">textarea</span><span class="s3">:</span><span class="s2">-webkit-autofill</span><span class="s1">, 
+</span><span class="s2">select</span><span class="s3">:</span><span class="s2">-webkit-autofill </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">background-color</span><span class="s3">: </span><span class="s6">red</span><span class="s1">; 
+    </span><span class="s4">background-image</span><span class="s3">: </span><span class="s6">none</span><span class="s1">; 
+    </span><span class="s4">color</span><span class="s3">: </span><span class="s2">rgb</span><span class="s3">(</span><span class="s5">0</span><span class="s1">, </span><span class="s5">0</span><span class="s1">, </span><span class="s5">0</span><span class="s3">)</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">spn_hol </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">position</span><span class="s3">: </span><span class="s6">fixed</span><span class="s1">; 
+    </span><span class="s4">top</span><span class="s3">: </span><span class="s5">0</span><span class="s1">; 
+    </span><span class="s4">left</span><span class="s3">: </span><span class="s5">0</span><span class="s1">; 
+    </span><span class="s4">right</span><span class="s3">: </span><span class="s5">0</span><span class="s1">; 
+    </span><span class="s4">bottom</span><span class="s3">: </span><span class="s5">0</span><span class="s1">; 
+    </span><span class="s4">background</span><span class="s3">: </span><span class="s2">#fff</span><span class="s1">; 
+    </span><span class="s4">z-index</span><span class="s3">: </span><span class="s5">50000</span><span class="s1">; 
+    </span><span class="s4">opacity</span><span class="s3">: </span><span class="s5">1</span><span class="s1">; 
+     </span><span class="s4">-webkit-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">-moz-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">-o-transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">transition</span><span class="s3">: </span><span class="s6">all </span><span class="s5">1</span><span class="s6">s</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">spinner </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">position</span><span class="s3">: </span><span class="s6">absolute</span><span class="s1">; 
+    </span><span class="s4">top</span><span class="s3">: </span><span class="s5">50</span><span class="s1">%; 
+    </span><span class="s4">margin-top</span><span class="s3">: </span><span class="s1">-</span><span class="s5">12</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">left</span><span class="s3">: </span><span class="s5">50</span><span class="s1">%; 
+    </span><span class="s4">margin-left</span><span class="s3">: </span><span class="s1">-</span><span class="s5">35</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">height</span><span class="s3">: </span><span class="s5">24</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">width</span><span class="s3">: </span><span class="s5">70</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">text-align</span><span class="s3">: </span><span class="s6">center</span><span class="s1">; 
+    </span><span class="s4">display</span><span class="s3">: </span><span class="s6">block</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">spinner </span><span class="s1">&gt; </span><span class="s2">div </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">width</span><span class="s3">: </span><span class="s5">18</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">height</span><span class="s3">: </span><span class="s5">18</span><span class="s6">px</span><span class="s1">; 
+    </span><span class="s4">background-color</span><span class="s3">: </span><span class="s2">#333</span><span class="s1">; 
+    </span><span class="s4">border-radius</span><span class="s3">: </span><span class="s5">100</span><span class="s1">%; 
+    </span><span class="s4">display</span><span class="s3">: </span><span class="s6">inline-block</span><span class="s1">; 
+    </span><span class="s4">-webkit-animation</span><span class="s3">: </span><span class="s2">bouncedelay </span><span class="s5">1.4</span><span class="s6">s infinite ease-in-out</span><span class="s1">; 
+    </span><span class="s4">animation</span><span class="s3">: </span><span class="s2">bouncedelay </span><span class="s5">1.4</span><span class="s6">s infinite ease-in-out</span><span class="s1">; 
+    </span><span class="s0">/* Prevent first frame from flickering when animation starts */</span><span class="s1"> 
+     
+    </span><span class="s4">-webkit-animation-fill-mode</span><span class="s3">: </span><span class="s6">both</span><span class="s1">; 
+    </span><span class="s4">animation-fill-mode</span><span class="s3">: </span><span class="s6">both</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">spinner </span><span class="s3">.</span><span class="s2">bounce1 </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">-webkit-animation-delay</span><span class="s3">: </span><span class="s1">-</span><span class="s5">0.32</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">animation-delay</span><span class="s3">: </span><span class="s1">-</span><span class="s5">0.32</span><span class="s6">s</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">.</span><span class="s2">spinner </span><span class="s3">.</span><span class="s2">bounce2 </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s4">-webkit-animation-delay</span><span class="s3">: </span><span class="s1">-</span><span class="s5">0.16</span><span class="s6">s</span><span class="s1">; 
+    </span><span class="s4">animation-delay</span><span class="s3">: </span><span class="s1">-</span><span class="s5">0.16</span><span class="s6">s</span><span class="s1">; 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s2">@-webkit-keyframes bouncedelay </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s2">0%</span><span class="s1">, </span><span class="s2">80%</span><span class="s1">, </span><span class="s2">100% </span><span class="s3">{</span><span class="s1"> 
+        </span><span class="s4">-webkit-transform</span><span class="s3">: </span><span class="s2">scale</span><span class="s3">(</span><span class="s5">0.0</span><span class="s3">)</span><span class="s1"> 
+    </span><span class="s3">}</span><span class="s1"> 
+    </span><span class="s2">40% </span><span class="s3">{</span><span class="s1"> 
+        </span><span class="s4">-webkit-transform</span><span class="s3">: </span><span class="s2">scale</span><span class="s3">(</span><span class="s5">1.0</span><span class="s3">)</span><span class="s1"> 
+    </span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">}</span><span class="s1"> 
+</span><span class="s2">@keyframes bouncedelay </span><span class="s3">{</span><span class="s1"> 
+    </span><span class="s2">0%</span><span class="s1">, </span><span class="s2">80%</span><span class="s1">, </span><span class="s2">100% </span><span class="s3">{</span><span class="s1"> 
+        </span><span class="s4">transform</span><span class="s3">: </span><span class="s2">scale</span><span class="s3">(</span><span class="s5">0.0</span><span class="s3">)</span><span class="s1">; 
+        </span><span class="s4">-webkit-transform</span><span class="s3">: </span><span class="s2">scale</span><span class="s3">(</span><span class="s5">0.0</span><span class="s3">)</span><span class="s1">; 
+    </span><span class="s3">}</span><span class="s1"> 
+    </span><span class="s2">40% </span><span class="s3">{</span><span class="s1"> 
+        </span><span class="s4">transform</span><span class="s3">: </span><span class="s2">scale</span><span class="s3">(</span><span class="s5">1.0</span><span class="s3">)</span><span class="s1">; 
+        </span><span class="s4">-webkit-transform</span><span class="s3">: </span><span class="s2">scale</span><span class="s3">(</span><span class="s5">1.0</span><span class="s3">)</span><span class="s1">; 
+    </span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">}</span><span class="s1"> 
+</span></pre>
+</body>
+</html>

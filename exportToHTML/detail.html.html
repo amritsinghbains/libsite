@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>detail.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,0); }
+.s1 { color: rgb(0,0,0); }
+.s2 { color: rgb(0,0,128); font-weight: bold; }
+.s3 { color: rgb(0,128,0); font-weight: bold; }
+.s4 { color: rgb(0,0,255); font-weight: bold; }
+.s5 { color: rgb(0,0,128); font-weight: bold; }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+detail.html</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">{% </span><span class="s2">extends </span><span class="s3">'libapp/base.html' </span><span class="s0">%} 
+{% </span><span class="s2">block </span><span class="s4">body_block </span><span class="s0">%} 
+ {% </span><span class="s2">if </span><span class="s4">item</span><span class="s1">.</span><span class="s4">itemtype </span><span class="s1">== </span><span class="s3">'Book' </span><span class="s0">%} 
+        &lt;</span><span class="s5">h2</span><span class="s0">&gt;Detail of Book Item&lt;/</span><span class="s5">h2</span><span class="s0">&gt; 
+ 
+        Title : </span><span class="s1">{{ </span><span class="s4">item</span><span class="s1">.</span><span class="s4">title </span><span class="s1">}}</span><span class="s0">&lt;</span><span class="s5">br</span><span class="s0">&gt; 
+        Publication year:</span><span class="s1">{{ </span><span class="s4">item</span><span class="s1">.</span><span class="s4">pubyr </span><span class="s1">}}</span><span class="s0">&lt;</span><span class="s5">br</span><span class="s0">&gt; 
+        Author:</span><span class="s1">{{ </span><span class="s4">item</span><span class="s1">.</span><span class="s4">author </span><span class="s1">}}</span><span class="s0">&lt;</span><span class="s5">br</span><span class="s0">&gt; 
+        Category:  </span><span class="s1">{{ </span><span class="s4">item</span><span class="s1">.</span><span class="s4">category </span><span class="s1">}}</span><span class="s0">&lt;</span><span class="s5">br</span><span class="s0">&gt; 
+ 
+ 
+ 
+    {% </span><span class="s2">else </span><span class="s0">%} 
+    &lt;</span><span class="s5">h2</span><span class="s0">&gt;Detail of Dvd Item&lt;/</span><span class="s5">h2</span><span class="s0">&gt; 
+         Title   :</span><span class="s1">{{ </span><span class="s4">item</span><span class="s1">.</span><span class="s4">title </span><span class="s1">}}</span><span class="s0">&lt;</span><span class="s5">br</span><span class="s0">&gt; 
+         Publication year: </span><span class="s1">{{ </span><span class="s4">item</span><span class="s1">.</span><span class="s4">pubyr </span><span class="s1">}} </span><span class="s0">&lt;</span><span class="s5">br</span><span class="s0">&gt; 
+         Maker   :</span><span class="s1">{{ </span><span class="s4">item</span><span class="s1">.</span><span class="s4">maker </span><span class="s1">}}</span><span class="s0">&lt;</span><span class="s5">br</span><span class="s0">&gt; 
+         Duration   :  </span><span class="s1">{{ </span><span class="s4">item</span><span class="s1">.</span><span class="s4">duration </span><span class="s1">}}</span><span class="s0">&lt;</span><span class="s5">br</span><span class="s0">&gt; 
+         Rating   :</span><span class="s1">{{ </span><span class="s4">item</span><span class="s1">.</span><span class="s4">rating </span><span class="s1">}}</span><span class="s0">&lt;</span><span class="s5">br</span><span class="s0">&gt; 
+ 
+    {% </span><span class="s2">endif </span><span class="s0">%} 
+{% </span><span class="s2">endblock </span><span class="s0">%} 
+</span></pre>
+</body>
+</html>

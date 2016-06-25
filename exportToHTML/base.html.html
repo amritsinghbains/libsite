@@ -1,0 +1,90 @@
+<html>
+<head>
+<title>base.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,0); }
+.s1 { color: rgb(0,0,255); font-weight: bold; }
+.s2 { color: rgb(0,0,0); }
+.s3 { color: rgb(0,0,128); font-weight: bold; }
+.s4 { color: rgb(0,0,255); font-weight: bold; }
+.s5 { color: rgb(0,0,128); font-weight: bold; }
+.s6 { color: rgb(0,128,0); font-weight: bold; }
+.s7 { color: rgb(128,128,128); font-style: italic; }
+.s8 { color: rgb(0,128,0); font-weight: bold; }
+.s9 { color: rgb(0,0,255); }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+base.html</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">&lt;!DOCTYPE </span><span class="s1">html</span><span class="s0">&gt; 
+{% </span><span class="s3">load </span><span class="s4">staticfiles </span><span class="s0">%} 
+ 
+&lt;</span><span class="s5">html</span><span class="s0">&gt; 
+    &lt;</span><span class="s5">head</span><span class="s0">&gt; 
+        &lt;</span><span class="s5">link </span><span class="s1">href=</span><span class="s6">&quot;http://fonts.googleapis.com/icon?family=Material+Icons&quot; </span><span class="s1">rel=</span><span class="s6">&quot;stylesheet&quot;</span><span class="s0">&gt; 
+      </span><span class="s7">&lt;!--Let browser know website is optimized for mobile--&gt;</span><span class="s0"> 
+      &lt;</span><span class="s5">meta </span><span class="s1">charset=</span><span class="s6">&quot;utf-8&quot;</span><span class="s0">&gt; 
+    &lt;</span><span class="s5">meta </span><span class="s1">http-equiv=</span><span class="s6">&quot;X-UA-Compatible&quot; </span><span class="s1">content=</span><span class="s6">&quot;IE=edge&quot;</span><span class="s0">&gt; 
+    &lt;</span><span class="s5">meta </span><span class="s1">name=</span><span class="s6">&quot;viewport&quot; </span><span class="s1">content=</span><span class="s6">&quot;width=device-width, initial-scale=1&quot;</span><span class="s0">&gt; 
+ 
+        &lt;</span><span class="s5">link </span><span class="s1">rel=</span><span class="s6">&quot;stylesheet&quot; </span><span class="s1">type=</span><span class="s6">&quot;text/css&quot; </span><span class="s1">href=</span><span class="s6">&quot;</span><span class="s0">{% </span><span class="s3">static </span><span class="s8">'libapp/materialize.min.css' </span><span class="s0">%}</span><span class="s6">&quot; </span><span class="s1">media=</span><span class="s6">&quot;screen,projection&quot;</span><span class="s0">/&gt; 
+        &lt;</span><span class="s5">link </span><span class="s1">href=</span><span class="s6">&quot;</span><span class="s0">{% </span><span class="s3">static </span><span class="s8">'css/style.css' </span><span class="s0">%}</span><span class="s6">&quot; </span><span class="s1">rel=</span><span class="s6">&quot;stylesheet&quot;</span><span class="s0">&gt; 
+        &lt;</span><span class="s5">link </span><span class="s1">href=</span><span class="s6">&quot;</span><span class="s0">{% </span><span class="s3">static </span><span class="s8">'css/responsive.css' </span><span class="s0">%}</span><span class="s6">&quot; </span><span class="s1">rel=</span><span class="s6">&quot;stylesheet&quot;</span><span class="s0">&gt; 
+        &lt;</span><span class="s5">link </span><span class="s1">href=</span><span class="s6">'https://fonts.googleapis.com/css?family=Raleway:500,600,700,800,900,400,300' </span><span class="s1">rel=</span><span class="s6">'stylesheet' </span><span class="s1">type=</span><span class="s6">'text/css'</span><span class="s0">&gt; 
+ 
+        &lt;</span><span class="s5">link </span><span class="s1">href=</span><span class="s6">'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900,300italic,400italic' </span><span class="s1">rel=</span><span class="s6">'stylesheet' </span><span class="s1">type=</span><span class="s6">'text/css'</span><span class="s0">&gt; 
+    &lt;</span><span class="s5">link </span><span class="s1">href=</span><span class="s6">&quot;</span><span class="s0">{% </span><span class="s3">static </span><span class="s8">'css/animate.css' </span><span class="s0">%}</span><span class="s6">&quot; </span><span class="s1">rel=</span><span class="s6">&quot;stylesheet&quot;</span><span class="s0">&gt; 
+ 
+        &lt;</span><span class="s5">title</span><span class="s0">&gt;MAC Library APP - {% </span><span class="s3">block </span><span class="s4">title </span><span class="s0">%}Welcome!{% </span><span class="s3">endblock </span><span class="s0">%}&lt;/</span><span class="s5">title</span><span class="s0">&gt; 
+    &lt;/</span><span class="s5">head</span><span class="s0">&gt; 
+ 
+    &lt;</span><span class="s5">body</span><span class="s0">&gt; 
+ 
+        &lt;</span><span class="s5">nav</span><span class="s0">&gt; 
+        &lt;</span><span class="s5">div </span><span class="s1">class=</span><span class="s6">&quot;nav-wrapper blue&quot;</span><span class="s0">&gt; 
+            &lt;</span><span class="s5">ul </span><span class="s1">class=</span><span class="s6">&quot;left&quot;</span><span class="s0">&gt; 
+ 
+                &lt;</span><span class="s5">li </span><span class="s1">class=</span><span class="s6">&quot;hbar1&quot;</span><span class="s0">&gt;&lt;</span><span class="s5">a </span><span class="s1">href = </span><span class="s6">&quot;/libapp/home/&quot;</span><span class="s0">&gt;Home&lt;/</span><span class="s5">a</span><span class="s0">&gt;&lt;/</span><span class="s5">li</span><span class="s0">&gt; 
+                &lt;</span><span class="s5">li </span><span class="s1">class=</span><span class="s6">&quot;hbar1&quot;</span><span class="s0">&gt;&lt;</span><span class="s5">a </span><span class="s1">href = </span><span class="s6">&quot;</span><span class="s0">{% </span><span class="s3">url </span><span class="s8">'libapp:index' </span><span class="s0">%}</span><span class="s6">&quot;</span><span class="s0">&gt;List&lt;/</span><span class="s5">a</span><span class="s0">&gt;&lt;/</span><span class="s5">li</span><span class="s0">&gt; 
+                &lt;</span><span class="s5">li </span><span class="s1">class=</span><span class="s6">&quot;hbar1&quot;</span><span class="s0">&gt;&lt;</span><span class="s5">a </span><span class="s1">href=</span><span class="s6">&quot;/libapp/searchlib/&quot;</span><span class="s0">&gt;Search&lt;/</span><span class="s5">a</span><span class="s0">&gt;&lt;/</span><span class="s5">li</span><span class="s0">&gt; 
+                &lt;</span><span class="s5">li </span><span class="s1">class=</span><span class="s6">&quot;hbar1&quot;</span><span class="s0">&gt;&lt;</span><span class="s5">a </span><span class="s1">href=</span><span class="s6">&quot;/libapp/about/&quot;</span><span class="s0">&gt;About&lt;/</span><span class="s5">a</span><span class="s0">&gt;&lt;/</span><span class="s5">li</span><span class="s0">&gt; 
+                &lt;</span><span class="s5">li </span><span class="s1">class=</span><span class="s6">&quot;hbar1&quot;</span><span class="s0">&gt;&lt;</span><span class="s5">a </span><span class="s1">href=</span><span class="s6">&quot;/libapp/suggestions/&quot;</span><span class="s0">&gt;Suggestions&lt;/</span><span class="s5">a</span><span class="s0">&gt;&lt;/</span><span class="s5">li</span><span class="s0">&gt; 
+                &lt;</span><span class="s5">li </span><span class="s1">class=</span><span class="s6">&quot;hbar1&quot;</span><span class="s0">&gt;&lt;</span><span class="s5">a </span><span class="s1">href=</span><span class="s6">&quot;/libapp/newitem/&quot;</span><span class="s0">&gt;New Suggestion&lt;/</span><span class="s5">a</span><span class="s0">&gt;&lt;/</span><span class="s5">li</span><span class="s0">&gt; 
+ 
+ 
+                {% </span><span class="s3">if </span><span class="s4">request</span><span class="s2">.</span><span class="s4">user</span><span class="s2">.</span><span class="s4">username </span><span class="s0">%} 
+                    &lt;</span><span class="s5">li </span><span class="s1">class=</span><span class="s6">&quot;hbar1&quot;</span><span class="s0">&gt;&lt;</span><span class="s5">a </span><span class="s1">href=</span><span class="s6">&quot;/libapp/myitems/&quot;</span><span class="s0">&gt;My Items (</span><span class="s2">{{ </span><span class="s4">request</span><span class="s2">.</span><span class="s4">user </span><span class="s2">}}</span><span class="s0">) &lt;/</span><span class="s5">a</span><span class="s0">&gt;&lt;/</span><span class="s5">li</span><span class="s0">&gt; 
+                    &lt;</span><span class="s5">li </span><span class="s1">class=</span><span class="s6">&quot;hbar1&quot;</span><span class="s0">&gt;   &lt;</span><span class="s5">img </span><span class="s1">src=</span><span class="s6">&quot;</span><span class="s0">{% </span><span class="s3">static </span><span class="s4">request</span><span class="s2">.</span><span class="s4">session</span><span class="s2">.</span><span class="s4">model_pic </span><span class="s0">%}</span><span class="s6">&quot; </span><span class="s1">height=</span><span class="s6">&quot;30px&quot; </span><span class="s1">width=</span><span class="s6">&quot;30px&quot; </span><span class="s1">style=</span><span class="s6">&quot;</span><span class="s1">margin</span><span class="s0">: </span><span class="s9">15</span><span class="s6">px </span><span class="s9">0</span><span class="s6">&quot;</span><span class="s0">&gt; 
+                    &lt;/</span><span class="s5">li</span><span class="s0">&gt; 
+ 
+                    &lt;</span><span class="s5">li </span><span class="s1">class=</span><span class="s6">&quot;hbar1&quot;</span><span class="s0">&gt;&lt;</span><span class="s5">a </span><span class="s1">href=</span><span class="s6">&quot;/libapp/logout/&quot;</span><span class="s0">&gt;Logout&lt;/</span><span class="s5">a</span><span class="s0">&gt;&lt;/</span><span class="s5">li</span><span class="s0">&gt; 
+                {% </span><span class="s3">else </span><span class="s0">%} 
+                    &lt;</span><span class="s5">li </span><span class="s1">class=</span><span class="s6">&quot;hbar1&quot;</span><span class="s0">&gt;&lt;</span><span class="s5">a </span><span class="s1">href=</span><span class="s6">&quot;/libapp/login/&quot;</span><span class="s0">&gt;Login&lt;/</span><span class="s5">a</span><span class="s0">&gt;&lt;/</span><span class="s5">li</span><span class="s0">&gt; 
+                    &lt;</span><span class="s5">li </span><span class="s1">class=</span><span class="s6">&quot;hbar1&quot;</span><span class="s0">&gt;&lt;</span><span class="s5">a </span><span class="s1">href=</span><span class="s6">&quot;/libapp/register/&quot;</span><span class="s0">&gt;Register&lt;/</span><span class="s5">a</span><span class="s0">&gt;&lt;/</span><span class="s5">li</span><span class="s0">&gt; 
+                {% </span><span class="s3">endif </span><span class="s0">%} 
+            &lt;/</span><span class="s5">ul</span><span class="s0">&gt; 
+        &lt;/</span><span class="s5">div</span><span class="s0">&gt; 
+        &lt;/</span><span class="s5">nav</span><span class="s0">&gt; 
+ 
+        &lt;</span><span class="s5">div</span><span class="s0">&gt; 
+        &lt;</span><span class="s5">center</span><span class="s0">&gt; 
+            {% </span><span class="s3">block </span><span class="s4">body_block </span><span class="s0">%}*** {% </span><span class="s3">endblock </span><span class="s0">%} 
+        &lt;/</span><span class="s5">center</span><span class="s0">&gt; 
+        &lt;/</span><span class="s5">div</span><span class="s0">&gt; 
+ 
+ 
+        &lt;</span><span class="s5">script </span><span class="s1">type=</span><span class="s6">&quot;text/javascript&quot; </span><span class="s1">src=</span><span class="s6">&quot;https://code.jquery.com/jquery-2.1.1.min.js&quot;</span><span class="s0">&gt;&lt;/</span><span class="s5">script</span><span class="s0">&gt; 
+      &lt;</span><span class="s5">script </span><span class="s1">type=</span><span class="s6">&quot;text/javascript&quot; </span><span class="s1">src=</span><span class="s6">&quot;</span><span class="s0">{% </span><span class="s3">static </span><span class="s8">'libapp/materialize.min.js' </span><span class="s0">%}</span><span class="s6">&quot;</span><span class="s0">&gt;&lt;/</span><span class="s5">script</span><span class="s0">&gt; 
+ 
+    &lt;/</span><span class="s5">body</span><span class="s0">&gt; 
+&lt;/</span><span class="s5">html</span><span class="s0">&gt; 
+</span></pre>
+</body>
+</html>

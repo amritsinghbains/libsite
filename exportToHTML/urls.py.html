@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>urls.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(128,128,128); font-style: italic; }
+.s1 { color: rgb(0,0,0); }
+.s2 { color: rgb(0,0,128); font-weight: bold; }
+.s3 { color: rgb(0,0,0); }
+.s4 { color: rgb(0,128,128); font-weight: bold; }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+urls.py</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">&quot;&quot;&quot;libsite URL Configuration 
+ 
+The `urlpatterns` list routes URLs to views. For more information please see: 
+    https://docs.djangoproject.com/en/1.9/topics/http/urls/ 
+Examples: 
+Function views 
+    1. Add an import:  from my_app import views 
+    2. Add a URL to urlpatterns:  url(r'^$', views.home, name='home') 
+Class-based views 
+    1. Add an import:  from other_app.views import Home 
+    2. Add a URL to urlpatterns:  url(r'^$', Home.as_view(), name='home') 
+Including another URLconf 
+    1. Import the include() function: from django.conf.urls import url, include 
+    2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls')) 
+&quot;&quot;&quot;</span><span class="s1"> 
+</span><span class="s2">from </span><span class="s1">django</span><span class="s3">.</span><span class="s1">conf</span><span class="s3">.</span><span class="s1">urls </span><span class="s2">import </span><span class="s1">url, include 
+</span><span class="s2">from </span><span class="s1">django</span><span class="s3">.</span><span class="s1">contrib </span><span class="s2">import </span><span class="s1">admin 
+ 
+</span><span class="s2">from </span><span class="s1">libapp </span><span class="s2">import </span><span class="s1">views 
+ 
+urlpatterns = </span><span class="s3">[</span><span class="s1"> 
+    url</span><span class="s3">(</span><span class="s4">r'^$'</span><span class="s1">, include</span><span class="s3">(</span><span class="s4">'libapp.urls'</span><span class="s1">, namespace=</span><span class="s4">'libapp'</span><span class="s3">))</span><span class="s1">, 
+    url</span><span class="s3">(</span><span class="s4">r'^admin/'</span><span class="s1">, admin</span><span class="s3">.</span><span class="s1">site</span><span class="s3">.</span><span class="s1">urls</span><span class="s3">)</span><span class="s1">, 
+    url</span><span class="s3">(</span><span class="s4">r'^libapp/'</span><span class="s1">, include</span><span class="s3">(</span><span class="s4">'libapp.urls'</span><span class="s1">, namespace=</span><span class="s4">'libapp'</span><span class="s3">))</span><span class="s1">, 
+    url</span><span class="s3">(</span><span class="s4">r'^libapp/about/'</span><span class="s1">, include</span><span class="s3">(</span><span class="s4">'libapp.urls'</span><span class="s1">, namespace=</span><span class="s4">'about'</span><span class="s3">))</span><span class="s1">, 
+ 
+ 
+</span><span class="s3">]</span><span class="s1"> 
+</span></pre>
+</body>
+</html>

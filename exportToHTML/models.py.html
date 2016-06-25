@@ -1,0 +1,123 @@
+<html>
+<head>
+<title>models.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,128); font-weight: bold; }
+.s1 { color: rgb(0,0,0); }
+.s2 { color: rgb(0,0,0); }
+.s3 { color: rgb(128,128,128); font-style: italic; }
+.s4 { color: rgb(0,128,128); font-weight: bold; }
+.s5 { color: rgb(0,0,255); }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+models.py</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">from </span><span class="s1">django</span><span class="s2">.</span><span class="s1">db </span><span class="s0">import </span><span class="s1">models 
+</span><span class="s0">import </span><span class="s1">datetime 
+</span><span class="s0">from </span><span class="s1">django</span><span class="s2">.</span><span class="s1">contrib</span><span class="s2">.</span><span class="s1">auth</span><span class="s2">.</span><span class="s1">models </span><span class="s0">import </span><span class="s1">User 
+ 
+</span><span class="s3"># Create your models here.</span><span class="s1"> 
+</span><span class="s0">class </span><span class="s1">Libuser</span><span class="s2">(</span><span class="s1">User</span><span class="s2">)</span><span class="s1">: 
+    PROVINCE_CHOICES = </span><span class="s2">(</span><span class="s1"> 
+        </span><span class="s2">(</span><span class="s4">'AB'</span><span class="s1">,</span><span class="s4">'Alberta'</span><span class="s2">)</span><span class="s1">,  </span><span class="s3"># The first value is actually stored in db, the second is descriptive</span><span class="s1"> 
+        </span><span class="s2">(</span><span class="s4">'MB'</span><span class="s1">, </span><span class="s4">'Manitoba'</span><span class="s2">)</span><span class="s1">, 
+        </span><span class="s2">(</span><span class="s4">'ON'</span><span class="s1">, </span><span class="s4">'Ontario'</span><span class="s2">)</span><span class="s1">, 
+        </span><span class="s2">(</span><span class="s4">'QC'</span><span class="s1">, </span><span class="s4">'Quebec'</span><span class="s2">)</span><span class="s1">, 
+    </span><span class="s2">)</span><span class="s1"> 
+    address = models</span><span class="s2">.</span><span class="s1">CharField</span><span class="s2">(</span><span class="s1">max_length=</span><span class="s5">100</span><span class="s1">, null=</span><span class="s0">True</span><span class="s1">, blank=</span><span class="s0">True</span><span class="s2">)</span><span class="s1"> 
+    city = models</span><span class="s2">.</span><span class="s1">CharField</span><span class="s2">(</span><span class="s1">max_length=</span><span class="s5">20</span><span class="s1">, default=</span><span class="s4">'Windsor'</span><span class="s2">)</span><span class="s1"> 
+    province = models</span><span class="s2">.</span><span class="s1">CharField</span><span class="s2">(</span><span class="s1">max_length=</span><span class="s5">2</span><span class="s1">, choices=PROVINCE_CHOICES, default=</span><span class="s4">'ON'</span><span class="s2">)</span><span class="s1"> 
+    </span><span class="s3"># age = models.IntegerField()</span><span class="s1"> 
+    phone = models</span><span class="s2">.</span><span class="s1">IntegerField</span><span class="s2">(</span><span class="s1">null=</span><span class="s0">True</span><span class="s2">)</span><span class="s1"> 
+    postalcode = models</span><span class="s2">.</span><span class="s1">CharField</span><span class="s2">(</span><span class="s1">max_length=</span><span class="s5">7</span><span class="s1">, blank=</span><span class="s0">True</span><span class="s1">,null=</span><span class="s0">True</span><span class="s2">)</span><span class="s1"> 
+    model_pic = models</span><span class="s2">.</span><span class="s1">ImageField</span><span class="s2">(</span><span class="s1">upload_to=</span><span class="s4">'libapp/static/pic_folder/'</span><span class="s1">, default=</span><span class="s4">'pic_folder/None/no-img.jpg'</span><span class="s1">, blank=</span><span class="s0">True</span><span class="s1">, null=</span><span class="s0">True</span><span class="s2">)</span><span class="s1"> 
+ 
+    </span><span class="s0">def </span><span class="s1">__str__</span><span class="s2">(</span><span class="s1">self</span><span class="s2">)</span><span class="s1">: 
+        </span><span class="s0">return </span><span class="s1">self</span><span class="s2">.</span><span class="s1">first_name + </span><span class="s4">' ' </span><span class="s1">+ self</span><span class="s2">.</span><span class="s1">last_name 
+ 
+ 
+</span><span class="s0">class </span><span class="s1">Libitem</span><span class="s2">(</span><span class="s1">models</span><span class="s2">.</span><span class="s1">Model</span><span class="s2">)</span><span class="s1">: 
+    TYPE_CHOICES = </span><span class="s2">(</span><span class="s1"> 
+        </span><span class="s2">(</span><span class="s4">'Book'</span><span class="s1">, </span><span class="s4">'Book'</span><span class="s2">)</span><span class="s1">, 
+        </span><span class="s2">(</span><span class="s4">'DVD'</span><span class="s1">,</span><span class="s4">'DVD'</span><span class="s2">)</span><span class="s1">, 
+        </span><span class="s2">(</span><span class="s4">'Other'</span><span class="s1">, </span><span class="s4">'Other'</span><span class="s2">)</span><span class="s1">, 
+    </span><span class="s2">)</span><span class="s1"> 
+    title = models</span><span class="s2">.</span><span class="s1">CharField</span><span class="s2">(</span><span class="s1">max_length=</span><span class="s5">100</span><span class="s2">)</span><span class="s1"> 
+    itemtype = models</span><span class="s2">.</span><span class="s1">CharField</span><span class="s2">(</span><span class="s1">max_length=</span><span class="s5">6</span><span class="s1">, choices=TYPE_CHOICES, default=</span><span class="s4">'Book'</span><span class="s2">)</span><span class="s1"> 
+    checked_out=models</span><span class="s2">.</span><span class="s1">BooleanField</span><span class="s2">(</span><span class="s1">default=</span><span class="s0">False</span><span class="s2">)</span><span class="s1"> 
+    user=models</span><span class="s2">.</span><span class="s1">ForeignKey</span><span class="s2">(</span><span class="s1">Libuser, default=</span><span class="s0">None</span><span class="s1">, null=</span><span class="s0">True</span><span class="s1">, blank=</span><span class="s0">True</span><span class="s2">)</span><span class="s1"> 
+    duedate=models</span><span class="s2">.</span><span class="s1">DateField</span><span class="s2">(</span><span class="s1">default=</span><span class="s0">None</span><span class="s1">, null=</span><span class="s0">True</span><span class="s1">, blank=</span><span class="s0">True</span><span class="s2">)</span><span class="s1"> 
+    last_chkout = models</span><span class="s2">.</span><span class="s1">DateField</span><span class="s2">(</span><span class="s1">default=</span><span class="s0">None</span><span class="s1">, null=</span><span class="s0">True</span><span class="s1">, blank=</span><span class="s0">True</span><span class="s2">)</span><span class="s1"> 
+    date_acquired = models</span><span class="s2">.</span><span class="s1">DateField</span><span class="s2">(</span><span class="s1">default=datetime</span><span class="s2">.</span><span class="s1">date</span><span class="s2">.</span><span class="s1">today</span><span class="s2">())</span><span class="s1"> 
+    pubyr = models</span><span class="s2">.</span><span class="s1">IntegerField</span><span class="s2">()</span><span class="s1"> 
+    num_chkout = models</span><span class="s2">.</span><span class="s1">PositiveIntegerField</span><span class="s2">(</span><span class="s1">default=</span><span class="s5">0</span><span class="s2">)</span><span class="s1"> 
+ 
+    </span><span class="s0">def </span><span class="s1">__str__</span><span class="s2">(</span><span class="s1">self</span><span class="s2">)</span><span class="s1">: 
+        </span><span class="s0">return </span><span class="s1">self</span><span class="s2">.</span><span class="s1">title 
+ 
+    </span><span class="s0">def </span><span class="s1">overdue</span><span class="s2">(</span><span class="s1">self</span><span class="s2">)</span><span class="s1">: 
+        </span><span class="s0">if </span><span class="s1">self</span><span class="s2">.</span><span class="s1">checked_out == </span><span class="s0">True</span><span class="s1">: 
+            </span><span class="s0">if </span><span class="s1">self</span><span class="s2">.</span><span class="s1">duedate &lt; datetime</span><span class="s2">.</span><span class="s1">date</span><span class="s2">.</span><span class="s1">today</span><span class="s2">()</span><span class="s1">: 
+                </span><span class="s0">return </span><span class="s4">'Yes'</span><span class="s1"> 
+ 
+</span><span class="s0">class </span><span class="s1">Book</span><span class="s2">(</span><span class="s1">Libitem</span><span class="s2">)</span><span class="s1">: 
+    CATEGORY_CHOICES = </span><span class="s2">(</span><span class="s1"> 
+        </span><span class="s2">(</span><span class="s5">1</span><span class="s1">, </span><span class="s4">'Fiction'</span><span class="s2">)</span><span class="s1">, 
+        </span><span class="s2">(</span><span class="s5">2</span><span class="s1">, </span><span class="s4">'Biography'</span><span class="s2">)</span><span class="s1">, 
+        </span><span class="s2">(</span><span class="s5">3</span><span class="s1">, </span><span class="s4">'Self Help'</span><span class="s2">)</span><span class="s1">, 
+        </span><span class="s2">(</span><span class="s5">4</span><span class="s1">, </span><span class="s4">'Education'</span><span class="s2">)</span><span class="s1">, 
+        </span><span class="s2">(</span><span class="s5">5</span><span class="s1">, </span><span class="s4">'Children'</span><span class="s2">)</span><span class="s1">, 
+        </span><span class="s2">(</span><span class="s5">6</span><span class="s1">, </span><span class="s4">'Teen'</span><span class="s2">)</span><span class="s1">, 
+        </span><span class="s2">(</span><span class="s5">7</span><span class="s1">, </span><span class="s4">'Other'</span><span class="s2">)</span><span class="s1">, 
+    </span><span class="s2">)</span><span class="s1"> 
+    author = models</span><span class="s2">.</span><span class="s1">CharField</span><span class="s2">(</span><span class="s1">max_length=</span><span class="s5">100</span><span class="s2">)</span><span class="s1"> 
+    category = models</span><span class="s2">.</span><span class="s1">IntegerField</span><span class="s2">(</span><span class="s1">choices=CATEGORY_CHOICES, default=</span><span class="s5">1</span><span class="s2">)</span><span class="s1"> 
+ 
+    </span><span class="s0">def </span><span class="s1">__str__</span><span class="s2">(</span><span class="s1">self</span><span class="s2">)</span><span class="s1">: 
+        </span><span class="s0">return </span><span class="s1">self</span><span class="s2">.</span><span class="s1">title + </span><span class="s4">' by ' </span><span class="s1">+ self</span><span class="s2">.</span><span class="s1">author 
+ 
+ 
+</span><span class="s0">class </span><span class="s1">Dvd</span><span class="s2">(</span><span class="s1">Libitem</span><span class="s2">)</span><span class="s1">: 
+    CATEGORY_CHOICES = </span><span class="s2">(</span><span class="s1"> 
+        </span><span class="s2">(</span><span class="s5">1</span><span class="s1">, </span><span class="s4">'G'</span><span class="s2">)</span><span class="s1">, 
+        </span><span class="s2">(</span><span class="s5">2</span><span class="s1">, </span><span class="s4">'PG'</span><span class="s2">)</span><span class="s1">, 
+        </span><span class="s2">(</span><span class="s5">3</span><span class="s1">, </span><span class="s4">'PG-13'</span><span class="s2">)</span><span class="s1">, 
+        </span><span class="s2">(</span><span class="s5">4</span><span class="s1">, </span><span class="s4">'14A'</span><span class="s2">)</span><span class="s1">, 
+        </span><span class="s2">(</span><span class="s5">5</span><span class="s1">, </span><span class="s4">'R'</span><span class="s2">)</span><span class="s1">, 
+        </span><span class="s2">(</span><span class="s5">6</span><span class="s1">, </span><span class="s4">'NR'</span><span class="s2">)</span><span class="s1">, 
+ 
+    </span><span class="s2">)</span><span class="s1"> 
+    maker = models</span><span class="s2">.</span><span class="s1">CharField</span><span class="s2">(</span><span class="s1">max_length=</span><span class="s5">100</span><span class="s2">)</span><span class="s1"> 
+    duration = models</span><span class="s2">.</span><span class="s1">IntegerField</span><span class="s2">(</span><span class="s1">help_text=</span><span class="s4">&quot;In Minutes&quot;</span><span class="s2">)</span><span class="s1"> 
+    rating = models</span><span class="s2">.</span><span class="s1">IntegerField</span><span class="s2">(</span><span class="s1">choices=CATEGORY_CHOICES,max_length=</span><span class="s5">100</span><span class="s2">)</span><span class="s1"> 
+ 
+    </span><span class="s0">def </span><span class="s1">__str__</span><span class="s2">(</span><span class="s1">self</span><span class="s2">)</span><span class="s1">: 
+        </span><span class="s0">return </span><span class="s1">self</span><span class="s2">.</span><span class="s1">title + </span><span class="s4">' by ' </span><span class="s1">+ self</span><span class="s2">.</span><span class="s1">maker +</span><span class="s4">' of duration ' </span><span class="s1">+ str</span><span class="s2">(</span><span class="s1">self</span><span class="s2">.</span><span class="s1">duration</span><span class="s2">) </span><span class="s1">+ </span><span class="s4">' minutes and rating '</span><span class="s1">+ str</span><span class="s2">(</span><span class="s1">self</span><span class="s2">.</span><span class="s1">rating</span><span class="s2">)</span><span class="s1"> 
+ 
+</span><span class="s0">from </span><span class="s1">django</span><span class="s2">.</span><span class="s1">core</span><span class="s2">.</span><span class="s1">validators </span><span class="s0">import </span><span class="s1">MaxValueValidator, MinValueValidator 
+</span><span class="s0">class </span><span class="s1">Suggestion</span><span class="s2">(</span><span class="s1">models</span><span class="s2">.</span><span class="s1">Model</span><span class="s2">)</span><span class="s1">: 
+ 
+    TYPE_CHOICES = </span><span class="s2">(</span><span class="s1"> 
+        </span><span class="s2">(</span><span class="s5">1</span><span class="s1">, </span><span class="s4">'Book'</span><span class="s2">)</span><span class="s1">, 
+        </span><span class="s2">(</span><span class="s5">2</span><span class="s1">,</span><span class="s4">'DVD'</span><span class="s2">)</span><span class="s1">, 
+        </span><span class="s2">(</span><span class="s5">3</span><span class="s1">, </span><span class="s4">'Other'</span><span class="s2">)</span><span class="s1">, 
+    </span><span class="s2">)</span><span class="s1"> 
+    title = models</span><span class="s2">.</span><span class="s1">CharField</span><span class="s2">(</span><span class="s1">max_length=</span><span class="s5">100</span><span class="s2">)</span><span class="s1"> 
+    pubyr = models</span><span class="s2">.</span><span class="s1">IntegerField</span><span class="s2">(</span><span class="s1">null=</span><span class="s0">True</span><span class="s1">, blank=</span><span class="s0">True</span><span class="s1">, validators=</span><span class="s2">[</span><span class="s1">MaxValueValidator</span><span class="s2">(</span><span class="s5">2016</span><span class="s2">)</span><span class="s1">, MinValueValidator</span><span class="s2">(</span><span class="s5">1900</span><span class="s2">)])</span><span class="s1"> 
+    type = models</span><span class="s2">.</span><span class="s1">IntegerField</span><span class="s2">(</span><span class="s1">default=</span><span class="s5">1</span><span class="s1">, choices=TYPE_CHOICES</span><span class="s2">)</span><span class="s1"> 
+    cost = models</span><span class="s2">.</span><span class="s1">IntegerField</span><span class="s2">()</span><span class="s1"> 
+    num_interested = models</span><span class="s2">.</span><span class="s1">IntegerField</span><span class="s2">()</span><span class="s1"> 
+    comments = models</span><span class="s2">.</span><span class="s1">TextField</span><span class="s2">(</span><span class="s1">null=</span><span class="s0">True</span><span class="s1">, blank=</span><span class="s0">True</span><span class="s2">)</span><span class="s1"> 
+ 
+    </span><span class="s0">def </span><span class="s1">__str__</span><span class="s2">(</span><span class="s1">self</span><span class="s2">)</span><span class="s1">: 
+        </span><span class="s0">return </span><span class="s1">self</span><span class="s2">.</span><span class="s1">title 
+</span></pre>
+</body>
+</html>

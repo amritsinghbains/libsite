@@ -1,0 +1,96 @@
+<html>
+<head>
+<title>owl.carousel.css</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(128,128,128); font-style: italic; }
+.s1 { color: rgb(0,0,0); }
+.s2 { color: rgb(0,0,0); }
+.s3 { color: rgb(0,0,128); font-weight: bold; }
+.s4 { color: rgb(0,0,255); font-weight: bold; }
+.s5 { color: rgb(0,128,0); font-weight: bold; }
+.s6 { color: rgb(0,0,255); }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+owl.carousel.css</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">/*  
+ *  Core Owl Carousel CSS File 
+ *  v1.3.3 
+ */</span><span class="s1"> 
+ 
+</span><span class="s0">/* clearfix */</span><span class="s1"> 
+</span><span class="s2">.</span><span class="s3">owl-carousel </span><span class="s2">.</span><span class="s3">owl-wrapper</span><span class="s2">:</span><span class="s3">after </span><span class="s2">{</span><span class="s1"> 
+    </span><span class="s4">content</span><span class="s2">: </span><span class="s5">&quot;.&quot;</span><span class="s1">; 
+    </span><span class="s4">display</span><span class="s2">: </span><span class="s5">block</span><span class="s1">; 
+    </span><span class="s4">clear</span><span class="s2">: </span><span class="s5">both</span><span class="s1">; 
+    </span><span class="s4">visibility</span><span class="s2">: </span><span class="s5">hidden</span><span class="s1">; 
+    </span><span class="s4">line-height</span><span class="s2">: </span><span class="s6">0</span><span class="s1">; 
+    </span><span class="s4">height</span><span class="s2">: </span><span class="s6">0</span><span class="s1">; 
+</span><span class="s2">}</span><span class="s1"> 
+</span><span class="s0">/* display none until init */</span><span class="s1"> 
+</span><span class="s2">.</span><span class="s3">owl-carousel</span><span class="s2">{</span><span class="s1"> 
+    </span><span class="s4">display</span><span class="s2">: </span><span class="s5">none</span><span class="s1">; 
+    </span><span class="s4">position</span><span class="s2">: </span><span class="s5">relative</span><span class="s1">; 
+    </span><span class="s4">width</span><span class="s2">: </span><span class="s6">100</span><span class="s1">%; 
+    </span><span class="s4">-ms-touch-action</span><span class="s2">: </span><span class="s5">pan-y</span><span class="s1">; 
+</span><span class="s2">}</span><span class="s1"> 
+</span><span class="s2">.</span><span class="s3">owl-carousel </span><span class="s2">.</span><span class="s3">owl-wrapper</span><span class="s2">{</span><span class="s1"> 
+    </span><span class="s4">display</span><span class="s2">: </span><span class="s5">none</span><span class="s1">; 
+    </span><span class="s4">position</span><span class="s2">: </span><span class="s5">relative</span><span class="s1">; 
+    </span><span class="s4">-webkit-transform</span><span class="s2">: </span><span class="s3">translate3d</span><span class="s2">(</span><span class="s6">0</span><span class="s5">px</span><span class="s1">, </span><span class="s6">0</span><span class="s5">px</span><span class="s1">, </span><span class="s6">0</span><span class="s5">px</span><span class="s2">)</span><span class="s1">; 
+</span><span class="s2">}</span><span class="s1"> 
+</span><span class="s2">.</span><span class="s3">owl-carousel </span><span class="s2">.</span><span class="s3">owl-wrapper-outer</span><span class="s2">{</span><span class="s1"> 
+    </span><span class="s4">overflow</span><span class="s2">: </span><span class="s5">hidden</span><span class="s1">; 
+    </span><span class="s4">position</span><span class="s2">: </span><span class="s5">relative</span><span class="s1">; 
+    </span><span class="s4">width</span><span class="s2">: </span><span class="s6">100</span><span class="s1">%; 
+</span><span class="s2">}</span><span class="s1"> 
+</span><span class="s2">.</span><span class="s3">owl-carousel </span><span class="s2">.</span><span class="s3">owl-wrapper-outer</span><span class="s2">.</span><span class="s3">autoHeight</span><span class="s2">{</span><span class="s1"> 
+    </span><span class="s4">-webkit-transition</span><span class="s2">: </span><span class="s5">height </span><span class="s6">500</span><span class="s5">ms ease-in-out</span><span class="s1">; 
+    </span><span class="s4">-moz-transition</span><span class="s2">: </span><span class="s5">height </span><span class="s6">500</span><span class="s5">ms ease-in-out</span><span class="s1">; 
+    </span><span class="s4">-ms-transition</span><span class="s2">: </span><span class="s5">height </span><span class="s6">500</span><span class="s5">ms ease-in-out</span><span class="s1">; 
+    </span><span class="s4">-o-transition</span><span class="s2">: </span><span class="s5">height </span><span class="s6">500</span><span class="s5">ms ease-in-out</span><span class="s1">; 
+    </span><span class="s4">transition</span><span class="s2">: </span><span class="s5">height </span><span class="s6">500</span><span class="s5">ms ease-in-out</span><span class="s1">; 
+</span><span class="s2">}</span><span class="s1"> 
+     
+</span><span class="s2">.</span><span class="s3">owl-carousel </span><span class="s2">.</span><span class="s3">owl-item</span><span class="s2">{</span><span class="s1"> 
+    </span><span class="s4">float</span><span class="s2">: </span><span class="s5">left</span><span class="s1">; 
+</span><span class="s2">}</span><span class="s1"> 
+</span><span class="s2">.</span><span class="s3">owl-controls </span><span class="s2">.</span><span class="s3">owl-page</span><span class="s1">, 
+</span><span class="s2">.</span><span class="s3">owl-controls </span><span class="s2">.</span><span class="s3">owl-buttons div</span><span class="s2">{</span><span class="s1"> 
+    </span><span class="s4">cursor</span><span class="s2">: </span><span class="s5">pointer</span><span class="s1">; 
+</span><span class="s2">}</span><span class="s1"> 
+</span><span class="s2">.</span><span class="s3">owl-controls </span><span class="s2">{</span><span class="s1"> 
+    </span><span class="s4">-webkit-user-select</span><span class="s2">: </span><span class="s5">none</span><span class="s1">; 
+    </span><span class="s4">-khtml-user-select</span><span class="s2">: </span><span class="s5">none</span><span class="s1">; 
+    </span><span class="s4">-moz-user-select</span><span class="s2">: </span><span class="s5">none</span><span class="s1">; 
+    </span><span class="s4">-ms-user-select</span><span class="s2">: </span><span class="s5">none</span><span class="s1">; 
+    </span><span class="s4">user-select</span><span class="s2">: </span><span class="s5">none</span><span class="s1">; 
+    </span><span class="s4">-webkit-tap-highlight-color</span><span class="s2">: </span><span class="s3">rgba</span><span class="s2">(</span><span class="s6">0</span><span class="s1">, </span><span class="s6">0</span><span class="s1">, </span><span class="s6">0</span><span class="s1">, </span><span class="s6">0</span><span class="s2">)</span><span class="s1">; 
+</span><span class="s2">}</span><span class="s1"> 
+ 
+</span><span class="s0">/* mouse grab icon */</span><span class="s1"> 
+</span><span class="s2">.</span><span class="s3">grabbing </span><span class="s2">{</span><span class="s1">  
+    </span><span class="s4">cursor</span><span class="s2">:</span><span class="s3">url</span><span class="s2">(</span><span class="s5">grabbing.png</span><span class="s2">) </span><span class="s6">8 8</span><span class="s1">, </span><span class="s5">move</span><span class="s1">; 
+</span><span class="s2">}</span><span class="s1"> 
+ 
+</span><span class="s0">/* fix */</span><span class="s1"> 
+</span><span class="s2">.</span><span class="s3">owl-carousel  </span><span class="s2">.</span><span class="s3">owl-wrapper</span><span class="s1">, 
+</span><span class="s2">.</span><span class="s3">owl-carousel  </span><span class="s2">.</span><span class="s3">owl-item</span><span class="s2">{</span><span class="s1"> 
+    </span><span class="s4">-webkit-backface-visibility</span><span class="s2">: </span><span class="s5">hidden</span><span class="s1">; 
+    </span><span class="s4">-moz-backface-visibility</span><span class="s2">:    </span><span class="s5">hidden</span><span class="s1">; 
+    </span><span class="s4">-ms-backface-visibility</span><span class="s2">:     </span><span class="s5">hidden</span><span class="s1">; 
+  </span><span class="s4">-webkit-transform</span><span class="s2">: </span><span class="s3">translate3d</span><span class="s2">(</span><span class="s6">0</span><span class="s1">,</span><span class="s6">0</span><span class="s1">,</span><span class="s6">0</span><span class="s2">)</span><span class="s1">; 
+  </span><span class="s4">-moz-transform</span><span class="s2">: </span><span class="s3">translate3d</span><span class="s2">(</span><span class="s6">0</span><span class="s1">,</span><span class="s6">0</span><span class="s1">,</span><span class="s6">0</span><span class="s2">)</span><span class="s1">; 
+  </span><span class="s4">-ms-transform</span><span class="s2">: </span><span class="s3">translate3d</span><span class="s2">(</span><span class="s6">0</span><span class="s1">,</span><span class="s6">0</span><span class="s1">,</span><span class="s6">0</span><span class="s2">)</span><span class="s1">; 
+</span><span class="s2">}</span><span class="s1"> 
+ 
+</span></pre>
+</body>
+</html>

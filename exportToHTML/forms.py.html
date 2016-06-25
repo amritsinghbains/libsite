@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>forms.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,128); font-weight: bold; }
+.s1 { color: rgb(0,0,0); }
+.s2 { color: rgb(0,0,0); }
+.s3 { color: rgb(0,128,128); font-weight: bold; }
+.s4 { color: rgb(0,0,255); }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+forms.py</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">from </span><span class="s1">django </span><span class="s0">import </span><span class="s1">forms 
+</span><span class="s0">from </span><span class="s1">libapp</span><span class="s2">.</span><span class="s1">models </span><span class="s0">import </span><span class="s1">Suggestion, Libuser 
+</span><span class="s0">from </span><span class="s1">django</span><span class="s2">.</span><span class="s1">forms</span><span class="s2">.</span><span class="s1">widgets </span><span class="s0">import </span><span class="s1">FileInput 
+ 
+</span><span class="s0">class </span><span class="s1">SuggestionForm</span><span class="s2">(</span><span class="s1">forms</span><span class="s2">.</span><span class="s1">ModelForm</span><span class="s2">)</span><span class="s1">: 
+    </span><span class="s0">class </span><span class="s1">Meta: 
+        model = Suggestion 
+        exclude = </span><span class="s2">[</span><span class="s3">'num_interested'</span><span class="s2">]</span><span class="s1"> 
+        labels = </span><span class="s2">{</span><span class="s3">'cost'</span><span class="s1">:</span><span class="s3">'Estimated Cost in Dollars'</span><span class="s2">}</span><span class="s1"> 
+ 
+        title = forms</span><span class="s2">.</span><span class="s1">CharField</span><span class="s2">(</span><span class="s1">widget=forms</span><span class="s2">.</span><span class="s1">TextInput</span><span class="s2">(</span><span class="s1">attrs=</span><span class="s2">{</span><span class="s3">'required'</span><span class="s1">: </span><span class="s0">True</span><span class="s1">, </span><span class="s3">'max_length'</span><span class="s1">: </span><span class="s4">100</span><span class="s2">}))</span><span class="s1"> 
+        pubyr = forms</span><span class="s2">.</span><span class="s1">IntegerField</span><span class="s2">(</span><span class="s1">widget=forms</span><span class="s2">.</span><span class="s1">NumberInput</span><span class="s2">())</span><span class="s1"> 
+        type = forms</span><span class="s2">.</span><span class="s1">IntegerField</span><span class="s2">(</span><span class="s1">widget=forms</span><span class="s2">.</span><span class="s1">NumberInput</span><span class="s2">())</span><span class="s1"> 
+        cost = forms</span><span class="s2">.</span><span class="s1">IntegerField</span><span class="s2">(</span><span class="s1">widget=forms</span><span class="s2">.</span><span class="s1">NumberInput</span><span class="s2">())</span><span class="s1"> 
+        comments = forms</span><span class="s2">.</span><span class="s1">CharField</span><span class="s2">(</span><span class="s1">widget=forms</span><span class="s2">.</span><span class="s1">Textarea</span><span class="s2">())</span><span class="s1"> 
+ 
+ 
+</span><span class="s0">class </span><span class="s1">SearchlibForm</span><span class="s2">(</span><span class="s1">forms</span><span class="s2">.</span><span class="s1">Form</span><span class="s2">)</span><span class="s1">: 
+    title = forms</span><span class="s2">.</span><span class="s1">CharField</span><span class="s2">(</span><span class="s1">widget=forms</span><span class="s2">.</span><span class="s1">TextInput</span><span class="s2">(</span><span class="s1">attrs=</span><span class="s2">{</span><span class="s3">'placeholder'</span><span class="s1">: </span><span class="s3">&quot;Enter Title&quot;</span><span class="s2">})</span><span class="s1">,label=</span><span class="s3">''</span><span class="s1">,required=</span><span class="s0">False</span><span class="s2">)</span><span class="s1"> 
+    author = forms</span><span class="s2">.</span><span class="s1">CharField</span><span class="s2">(</span><span class="s1">widget=forms</span><span class="s2">.</span><span class="s1">TextInput</span><span class="s2">(</span><span class="s1">attrs=</span><span class="s2">{</span><span class="s3">'placeholder'</span><span class="s1">: </span><span class="s3">&quot;Enter Author/Maker&quot;</span><span class="s2">})</span><span class="s1">, label=</span><span class="s3">''</span><span class="s1">,required=</span><span class="s0">False</span><span class="s2">)</span><span class="s1"> 
+ 
+</span><span class="s0">class </span><span class="s1">LoginForm</span><span class="s2">(</span><span class="s1">forms</span><span class="s2">.</span><span class="s1">Form</span><span class="s2">)</span><span class="s1">: 
+    username = forms</span><span class="s2">.</span><span class="s1">CharField</span><span class="s2">(</span><span class="s1">widget= 
+                               forms</span><span class="s2">.</span><span class="s1">TextInput</span><span class="s2">(</span><span class="s1"> 
+                                   attrs=</span><span class="s2">{</span><span class="s3">'required'</span><span class="s1">: </span><span class="s0">True</span><span class="s1">, </span><span class="s3">'class'</span><span class="s1">: </span><span class="s3">'form-control'</span><span class="s1">, </span><span class="s3">'placeholder'</span><span class="s1">: </span><span class="s3">'Enter Username'</span><span class="s2">})</span><span class="s1">, 
+                               label=</span><span class="s3">&quot;&quot;</span><span class="s2">)</span><span class="s1"> 
+    password = forms</span><span class="s2">.</span><span class="s1">CharField</span><span class="s2">(</span><span class="s1"> 
+        widget=forms</span><span class="s2">.</span><span class="s1">PasswordInput</span><span class="s2">(</span><span class="s1">attrs=</span><span class="s2">{</span><span class="s3">'required'</span><span class="s1">: </span><span class="s0">True</span><span class="s1">, </span><span class="s3">'class'</span><span class="s1">: </span><span class="s3">'form-control'</span><span class="s1">, </span><span class="s3">'placeholder'</span><span class="s1">: </span><span class="s3">'Enter Password'</span><span class="s2">})</span><span class="s1">, 
+        label=</span><span class="s3">&quot;&quot;</span><span class="s2">)</span><span class="s1"> 
+ 
+</span><span class="s0">class </span><span class="s1">LibuserForm</span><span class="s2">(</span><span class="s1">forms</span><span class="s2">.</span><span class="s1">ModelForm</span><span class="s2">)</span><span class="s1">: 
+    </span><span class="s0">class </span><span class="s1">Meta: 
+        model = Libuser 
+        fields = </span><span class="s2">[</span><span class="s3">'username'</span><span class="s1">, </span><span class="s3">'password'</span><span class="s1">, </span><span class="s3">'first_name'</span><span class="s1">, </span><span class="s3">'last_name'</span><span class="s1">, </span><span class="s3">'email'</span><span class="s1">, </span><span class="s3">'model_pic'</span><span class="s2">]</span><span class="s1"> 
+        exclude = </span><span class="s2">[</span><span class="s3">'address'</span><span class="s1">, </span><span class="s3">'city'</span><span class="s1">, </span><span class="s3">'province'</span><span class="s2">]</span><span class="s1"> 
+    username = forms</span><span class="s2">.</span><span class="s1">CharField</span><span class="s2">(</span><span class="s1">widget=forms</span><span class="s2">.</span><span class="s1">TextInput</span><span class="s2">(</span><span class="s1">attrs=</span><span class="s2">{</span><span class="s3">'required'</span><span class="s1">: </span><span class="s0">True</span><span class="s1">, </span><span class="s3">'max_length'</span><span class="s1">: </span><span class="s4">100</span><span class="s2">}))</span><span class="s1"> 
+    password = forms</span><span class="s2">.</span><span class="s1">CharField</span><span class="s2">(</span><span class="s1">widget=forms</span><span class="s2">.</span><span class="s1">PasswordInput</span><span class="s2">(</span><span class="s1">attrs=</span><span class="s2">{</span><span class="s3">'required'</span><span class="s1">: </span><span class="s0">True</span><span class="s1">, </span><span class="s3">'max_length'</span><span class="s1">: </span><span class="s4">100</span><span class="s2">}))</span><span class="s1"> 
+    first_name = forms</span><span class="s2">.</span><span class="s1">CharField</span><span class="s2">(</span><span class="s1">widget=forms</span><span class="s2">.</span><span class="s1">TextInput</span><span class="s2">(</span><span class="s1">attrs=</span><span class="s2">{</span><span class="s3">'required'</span><span class="s1">: </span><span class="s0">True</span><span class="s1">, </span><span class="s3">'max_length'</span><span class="s1">: </span><span class="s4">100</span><span class="s2">}))</span><span class="s1"> 
+    last_name = forms</span><span class="s2">.</span><span class="s1">CharField</span><span class="s2">(</span><span class="s1">widget=forms</span><span class="s2">.</span><span class="s1">TextInput</span><span class="s2">(</span><span class="s1">attrs=</span><span class="s2">{</span><span class="s3">'required'</span><span class="s1">: </span><span class="s0">True</span><span class="s1">, </span><span class="s3">'max_length'</span><span class="s1">: </span><span class="s4">100</span><span class="s2">}))</span><span class="s1"> 
+    email = forms</span><span class="s2">.</span><span class="s1">CharField</span><span class="s2">(</span><span class="s1">widget=forms</span><span class="s2">.</span><span class="s1">TextInput</span><span class="s2">(</span><span class="s1">attrs=</span><span class="s2">{</span><span class="s3">'required'</span><span class="s1">: </span><span class="s0">True</span><span class="s1">, </span><span class="s3">'max_length'</span><span class="s1">: </span><span class="s4">100</span><span class="s2">}))</span><span class="s1"> 
+    model_pic = forms</span><span class="s2">.</span><span class="s1">ImageField</span><span class="s2">()</span><span class="s1"> 
+ 
+    </span><span class="s0">def </span><span class="s1">__init__</span><span class="s2">(</span><span class="s1">self, *args, **kwargs</span><span class="s2">)</span><span class="s1">: 
+        super</span><span class="s2">(</span><span class="s1">LibuserForm, self</span><span class="s2">).</span><span class="s1">__init__</span><span class="s2">(</span><span class="s1">*args, **kwargs</span><span class="s2">)</span><span class="s1"> 
+        self</span><span class="s2">.</span><span class="s1">fields</span><span class="s2">[</span><span class="s3">'model_pic'</span><span class="s2">].</span><span class="s1">required = </span><span class="s0">False</span><span class="s1"> 
+</span></pre>
+</body>
+</html>

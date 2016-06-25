@@ -1,0 +1,107 @@
+<html>
+<head>
+<title>jquery.fitvids.js</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(128,128,128); font-style: italic; }
+.s1 { color: rgb(0,0,0); }
+.s2 { color: rgb(0,0,0); }
+.s3 { color: rgb(0,0,128); font-weight: bold; }
+.s4 { color: rgb(0,128,0); font-weight: bold; }
+.s5 { color: rgb(0,0,255); }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+jquery.fitvids.js</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">/*global jQuery */</span><span class="s1"> 
+</span><span class="s0">/*jshint browser:true */</span><span class="s1"> 
+</span><span class="s0">/*! 
+* FitVids 1.1 
+* 
+* Copyright 2013, Chris Coyier - http://css-tricks.com + Dave Rupert - http://daverupert.com 
+* Credit to Thierry Koblentz - http://www.alistapart.com/articles/creating-intrinsic-ratios-for-video/ 
+* Released under the WTFPL license - http://sam.zoy.org/wtfpl/ 
+* 
+*/</span><span class="s1"> 
+ 
+;</span><span class="s2">(</span><span class="s3">function</span><span class="s2">( </span><span class="s1">$ </span><span class="s2">){</span><span class="s1"> 
+ 
+  </span><span class="s4">'use strict'</span><span class="s1">; 
+ 
+  $</span><span class="s2">.</span><span class="s1">fn</span><span class="s2">.</span><span class="s1">fitVids = </span><span class="s3">function</span><span class="s2">( </span><span class="s1">options </span><span class="s2">) {</span><span class="s1"> 
+    </span><span class="s3">var </span><span class="s1">settings = </span><span class="s2">{</span><span class="s1"> 
+      customSelector: </span><span class="s3">null</span><span class="s1">, 
+      ignore: </span><span class="s3">null</span><span class="s1"> 
+    </span><span class="s2">}</span><span class="s1">; 
+ 
+    </span><span class="s3">if</span><span class="s2">(</span><span class="s1">!document</span><span class="s2">.</span><span class="s1">getElementById</span><span class="s2">(</span><span class="s4">'fit-vids-style'</span><span class="s2">)) {</span><span class="s1"> 
+      </span><span class="s0">// appendStyles: https://github.com/toddmotto/fluidvids/blob/master/dist/fluidvids.js</span><span class="s1"> 
+      </span><span class="s3">var </span><span class="s1">head = document</span><span class="s2">.</span><span class="s1">head || document</span><span class="s2">.</span><span class="s1">getElementsByTagName</span><span class="s2">(</span><span class="s4">'head'</span><span class="s2">)[</span><span class="s5">0</span><span class="s2">]</span><span class="s1">; 
+      </span><span class="s3">var </span><span class="s1">css = </span><span class="s4">'.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}'</span><span class="s1">; 
+      </span><span class="s3">var </span><span class="s1">div = document</span><span class="s2">.</span><span class="s1">createElement</span><span class="s2">(</span><span class="s4">&quot;div&quot;</span><span class="s2">)</span><span class="s1">; 
+      div</span><span class="s2">.</span><span class="s1">innerHTML = </span><span class="s4">'&lt;p&gt;x&lt;/p&gt;&lt;style id=&quot;fit-vids-style&quot;&gt;' </span><span class="s1">+ css + </span><span class="s4">'&lt;/style&gt;'</span><span class="s1">; 
+      head</span><span class="s2">.</span><span class="s1">appendChild</span><span class="s2">(</span><span class="s1">div</span><span class="s2">.</span><span class="s1">childNodes</span><span class="s2">[</span><span class="s5">1</span><span class="s2">])</span><span class="s1">; 
+    </span><span class="s2">}</span><span class="s1"> 
+ 
+    </span><span class="s3">if </span><span class="s2">( </span><span class="s1">options </span><span class="s2">) {</span><span class="s1"> 
+      $</span><span class="s2">.</span><span class="s1">extend</span><span class="s2">( </span><span class="s1">settings, options </span><span class="s2">)</span><span class="s1">; 
+    </span><span class="s2">}</span><span class="s1"> 
+ 
+    </span><span class="s3">return this</span><span class="s2">.</span><span class="s1">each</span><span class="s2">(</span><span class="s3">function</span><span class="s2">(){</span><span class="s1"> 
+      </span><span class="s3">var </span><span class="s1">selectors = </span><span class="s2">[</span><span class="s1"> 
+        </span><span class="s4">'iframe[src*=&quot;player.vimeo.com&quot;]'</span><span class="s1">, 
+        </span><span class="s4">'iframe[src*=&quot;youtube.com&quot;]'</span><span class="s1">, 
+        </span><span class="s4">'iframe[src*=&quot;youtube-nocookie.com&quot;]'</span><span class="s1">, 
+        </span><span class="s4">'iframe[src*=&quot;kickstarter.com&quot;][src*=&quot;video.html&quot;]'</span><span class="s1">, 
+        </span><span class="s4">'object'</span><span class="s1">, 
+        </span><span class="s4">'embed'</span><span class="s1"> 
+      </span><span class="s2">]</span><span class="s1">; 
+ 
+      </span><span class="s3">if </span><span class="s2">(</span><span class="s1">settings</span><span class="s2">.</span><span class="s1">customSelector</span><span class="s2">) {</span><span class="s1"> 
+        selectors</span><span class="s2">.</span><span class="s1">push</span><span class="s2">(</span><span class="s1">settings</span><span class="s2">.</span><span class="s1">customSelector</span><span class="s2">)</span><span class="s1">; 
+      </span><span class="s2">}</span><span class="s1"> 
+ 
+      </span><span class="s3">var </span><span class="s1">ignoreList = </span><span class="s4">'.fitvidsignore'</span><span class="s1">; 
+ 
+      </span><span class="s3">if</span><span class="s2">(</span><span class="s1">settings</span><span class="s2">.</span><span class="s1">ignore</span><span class="s2">) {</span><span class="s1"> 
+        ignoreList = ignoreList + </span><span class="s4">', ' </span><span class="s1">+ settings</span><span class="s2">.</span><span class="s1">ignore; 
+      </span><span class="s2">}</span><span class="s1"> 
+ 
+      </span><span class="s3">var </span><span class="s1">$allVideos = $</span><span class="s2">(</span><span class="s3">this</span><span class="s2">).</span><span class="s1">find</span><span class="s2">(</span><span class="s1">selectors</span><span class="s2">.</span><span class="s1">join</span><span class="s2">(</span><span class="s4">','</span><span class="s2">))</span><span class="s1">; 
+      $allVideos = $allVideos</span><span class="s2">.</span><span class="s1">not</span><span class="s2">(</span><span class="s4">'object object'</span><span class="s2">)</span><span class="s1">; </span><span class="s0">// SwfObj conflict patch</span><span class="s1"> 
+      $allVideos = $allVideos</span><span class="s2">.</span><span class="s1">not</span><span class="s2">(</span><span class="s1">ignoreList</span><span class="s2">)</span><span class="s1">; </span><span class="s0">// Disable FitVids on this video.</span><span class="s1"> 
+ 
+      $allVideos</span><span class="s2">.</span><span class="s1">each</span><span class="s2">(</span><span class="s3">function</span><span class="s2">(){</span><span class="s1"> 
+        </span><span class="s3">var </span><span class="s1">$this = $</span><span class="s2">(</span><span class="s3">this</span><span class="s2">)</span><span class="s1">; 
+        </span><span class="s3">if</span><span class="s2">(</span><span class="s1">$this</span><span class="s2">.</span><span class="s1">parents</span><span class="s2">(</span><span class="s1">ignoreList</span><span class="s2">).</span><span class="s1">length &gt; </span><span class="s5">0</span><span class="s2">) {</span><span class="s1"> 
+          </span><span class="s3">return</span><span class="s1">; </span><span class="s0">// Disable FitVids on this video.</span><span class="s1"> 
+        </span><span class="s2">}</span><span class="s1"> 
+        </span><span class="s3">if </span><span class="s2">(</span><span class="s3">this</span><span class="s2">.</span><span class="s1">tagName</span><span class="s2">.</span><span class="s1">toLowerCase</span><span class="s2">() </span><span class="s1">=== </span><span class="s4">'embed' </span><span class="s1">&amp;&amp; $this</span><span class="s2">.</span><span class="s1">parent</span><span class="s2">(</span><span class="s4">'object'</span><span class="s2">).</span><span class="s1">length || $this</span><span class="s2">.</span><span class="s1">parent</span><span class="s2">(</span><span class="s4">'.fluid-width-video-wrapper'</span><span class="s2">).</span><span class="s1">length</span><span class="s2">) { </span><span class="s3">return</span><span class="s1">; </span><span class="s2">}</span><span class="s1"> 
+        </span><span class="s3">if </span><span class="s2">((</span><span class="s1">!$this</span><span class="s2">.</span><span class="s1">css</span><span class="s2">(</span><span class="s4">'height'</span><span class="s2">) </span><span class="s1">&amp;&amp; !$this</span><span class="s2">.</span><span class="s1">css</span><span class="s2">(</span><span class="s4">'width'</span><span class="s2">)) </span><span class="s1">&amp;&amp; </span><span class="s2">(</span><span class="s1">isNaN</span><span class="s2">(</span><span class="s1">$this</span><span class="s2">.</span><span class="s1">attr</span><span class="s2">(</span><span class="s4">'height'</span><span class="s2">)) </span><span class="s1">|| isNaN</span><span class="s2">(</span><span class="s1">$this</span><span class="s2">.</span><span class="s1">attr</span><span class="s2">(</span><span class="s4">'width'</span><span class="s2">))))</span><span class="s1"> 
+        </span><span class="s2">{</span><span class="s1"> 
+          $this</span><span class="s2">.</span><span class="s1">attr</span><span class="s2">(</span><span class="s4">'height'</span><span class="s1">, </span><span class="s5">9</span><span class="s2">)</span><span class="s1">; 
+          $this</span><span class="s2">.</span><span class="s1">attr</span><span class="s2">(</span><span class="s4">'width'</span><span class="s1">, </span><span class="s5">16</span><span class="s2">)</span><span class="s1">; 
+        </span><span class="s2">}</span><span class="s1"> 
+        </span><span class="s3">var </span><span class="s1">height = </span><span class="s2">( </span><span class="s3">this</span><span class="s2">.</span><span class="s1">tagName</span><span class="s2">.</span><span class="s1">toLowerCase</span><span class="s2">() </span><span class="s1">=== </span><span class="s4">'object' </span><span class="s1">|| </span><span class="s2">(</span><span class="s1">$this</span><span class="s2">.</span><span class="s1">attr</span><span class="s2">(</span><span class="s4">'height'</span><span class="s2">) </span><span class="s1">&amp;&amp; !isNaN</span><span class="s2">(</span><span class="s1">parseInt</span><span class="s2">(</span><span class="s1">$this</span><span class="s2">.</span><span class="s1">attr</span><span class="s2">(</span><span class="s4">'height'</span><span class="s2">)</span><span class="s1">, </span><span class="s5">10</span><span class="s2">))) ) </span><span class="s1">? parseInt</span><span class="s2">(</span><span class="s1">$this</span><span class="s2">.</span><span class="s1">attr</span><span class="s2">(</span><span class="s4">'height'</span><span class="s2">)</span><span class="s1">, </span><span class="s5">10</span><span class="s2">) </span><span class="s1">: $this</span><span class="s2">.</span><span class="s1">height</span><span class="s2">()</span><span class="s1">, 
+            width = !isNaN</span><span class="s2">(</span><span class="s1">parseInt</span><span class="s2">(</span><span class="s1">$this</span><span class="s2">.</span><span class="s1">attr</span><span class="s2">(</span><span class="s4">'width'</span><span class="s2">)</span><span class="s1">, </span><span class="s5">10</span><span class="s2">)) </span><span class="s1">? parseInt</span><span class="s2">(</span><span class="s1">$this</span><span class="s2">.</span><span class="s1">attr</span><span class="s2">(</span><span class="s4">'width'</span><span class="s2">)</span><span class="s1">, </span><span class="s5">10</span><span class="s2">) </span><span class="s1">: $this</span><span class="s2">.</span><span class="s1">width</span><span class="s2">()</span><span class="s1">, 
+            aspectRatio = height / width; 
+        </span><span class="s3">if</span><span class="s2">(</span><span class="s1">!$this</span><span class="s2">.</span><span class="s1">attr</span><span class="s2">(</span><span class="s4">'id'</span><span class="s2">)){</span><span class="s1"> 
+          </span><span class="s3">var </span><span class="s1">videoID = </span><span class="s4">'fitvid' </span><span class="s1">+ Math</span><span class="s2">.</span><span class="s1">floor</span><span class="s2">(</span><span class="s1">Math</span><span class="s2">.</span><span class="s1">random</span><span class="s2">()</span><span class="s1">*</span><span class="s5">999999</span><span class="s2">)</span><span class="s1">; 
+          $this</span><span class="s2">.</span><span class="s1">attr</span><span class="s2">(</span><span class="s4">'id'</span><span class="s1">, videoID</span><span class="s2">)</span><span class="s1">; 
+        </span><span class="s2">}</span><span class="s1"> 
+        $this</span><span class="s2">.</span><span class="s1">wrap</span><span class="s2">(</span><span class="s4">'&lt;div class=&quot;fluid-width-video-wrapper&quot;&gt;&lt;/div&gt;'</span><span class="s2">).</span><span class="s1">parent</span><span class="s2">(</span><span class="s4">'.fluid-width-video-wrapper'</span><span class="s2">).</span><span class="s1">css</span><span class="s2">(</span><span class="s4">'padding-top'</span><span class="s1">, </span><span class="s2">(</span><span class="s1">aspectRatio * </span><span class="s5">100</span><span class="s2">)</span><span class="s1">+</span><span class="s4">'%'</span><span class="s2">)</span><span class="s1">; 
+        $this</span><span class="s2">.</span><span class="s1">removeAttr</span><span class="s2">(</span><span class="s4">'height'</span><span class="s2">).</span><span class="s1">removeAttr</span><span class="s2">(</span><span class="s4">'width'</span><span class="s2">)</span><span class="s1">; 
+      </span><span class="s2">})</span><span class="s1">; 
+    </span><span class="s2">})</span><span class="s1">; 
+  </span><span class="s2">}</span><span class="s1">; 
+</span><span class="s0">// Works with either jQuery or Zepto</span><span class="s1"> 
+</span><span class="s2">})( </span><span class="s1">window</span><span class="s2">.</span><span class="s1">jQuery || window</span><span class="s2">.</span><span class="s1">Zepto </span><span class="s2">)</span><span class="s1">; 
+</span></pre>
+</body>
+</html>

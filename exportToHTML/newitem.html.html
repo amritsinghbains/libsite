@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>newitem.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,0); }
+.s1 { color: rgb(0,0,0); }
+.s2 { color: rgb(0,0,128); font-weight: bold; }
+.s3 { color: rgb(0,128,0); font-weight: bold; }
+.s4 { color: rgb(0,0,255); font-weight: bold; }
+.s5 { color: rgb(0,0,128); font-weight: bold; }
+.s6 { color: rgb(0,0,255); font-weight: bold; }
+.s7 { color: rgb(0,128,0); font-weight: bold; }
+.s8 { color: rgb(0,0,255); }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+newitem.html</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">{% </span><span class="s2">extends </span><span class="s3">'libapp/base.html' </span><span class="s0">%} 
+{% </span><span class="s2">block </span><span class="s4">body_block </span><span class="s0">%} 
+    &lt;</span><span class="s5">div </span><span class="s6">id=</span><span class="s7">&quot;main&quot; </span><span class="s6">style=</span><span class="s7">&quot;</span><span class="s6">width</span><span class="s0">: </span><span class="s8">25</span><span class="s0">%</span><span class="s7">&quot; </span><span class="s6">class=</span><span class="s7">&quot; form-inline&quot;</span><span class="s0">&gt; 
+    &lt;</span><span class="s5">form </span><span class="s6">method=</span><span class="s7">&quot;post&quot; </span><span class="s6">action=</span><span class="s7">&quot;.&quot;</span><span class="s0">&gt;{% </span><span class="s2">csrf_token </span><span class="s0">%} 
+    </span><span class="s1">{{ </span><span class="s4">form</span><span class="s1">.</span><span class="s4">as_p </span><span class="s1">}}</span><span class="s0"> 
+    &lt;</span><span class="s5">input </span><span class="s6">type=</span><span class="s7">&quot;submit&quot; </span><span class="s6">class=</span><span class="s7">&quot;btn btn-primary&quot; </span><span class="s6">value=</span><span class="s7">&quot;Submit&quot;</span><span class="s0">&gt; 
+        &lt;/</span><span class="s5">form</span><span class="s0">&gt; 
+    &lt;/</span><span class="s5">div</span><span class="s0">&gt; 
+{% </span><span class="s2">endblock </span><span class="s0">%}</span></pre>
+</body>
+</html>

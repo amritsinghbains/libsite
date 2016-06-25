@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>jquery.ajaxchimp.langs.js</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,0); }
+.s1 { color: rgb(0,0,128); font-weight: bold; }
+.s2 { color: rgb(0,0,0); }
+.s3 { color: rgb(0,128,0); font-weight: bold; }
+.s4 { color: rgb(128,128,128); font-style: italic; }
+.s5 { color: rgb(0,0,255); }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+jquery.ajaxchimp.langs.js</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">(</span><span class="s1">function </span><span class="s0">(</span><span class="s2">$</span><span class="s0">) {</span><span class="s2"> 
+    </span><span class="s3">'use strict'</span><span class="s2">; 
+ 
+    </span><span class="s4">// ISO-693-1 Language codes: http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes</span><span class="s2"> 
+ 
+    </span><span class="s4">// Submit Message</span><span class="s2"> 
+    </span><span class="s4">// 'submit': 'Submitting...'</span><span class="s2"> 
+ 
+    </span><span class="s4">// Mailchimp Responses</span><span class="s2"> 
+    </span><span class="s4">// 0: 'We have sent you a confirmation email'</span><span class="s2"> 
+    </span><span class="s4">// 1: 'Please enter a value'</span><span class="s2"> 
+    </span><span class="s4">// 2: 'An email address must contain a single @'</span><span class="s2"> 
+    </span><span class="s4">// 3: 'The domain portion of the email address is invalid (the portion after the @: )'</span><span class="s2"> 
+    </span><span class="s4">// 4: 'The username portion of the email address is invalid (the portion before the @: )'</span><span class="s2"> 
+    </span><span class="s4">// 5: 'This email address looks fake or invalid. Please enter a real email address'</span><span class="s2"> 
+ 
+    $</span><span class="s0">.</span><span class="s2">ajaxChimp</span><span class="s0">.</span><span class="s2">translations = </span><span class="s0">{</span><span class="s2"> 
+        </span><span class="s4">// Translation via https://github.com/lifeisfoo</span><span class="s2"> 
+        </span><span class="s3">'it'</span><span class="s2">: </span><span class="s0">{</span><span class="s2"> 
+            </span><span class="s3">'submit'</span><span class="s2">: </span><span class="s3">'Registrazione in corso...'</span><span class="s2">, 
+            </span><span class="s5">0</span><span class="s2">: </span><span class="s3">'Ti abbiamo inviato una mail di conferma'</span><span class="s2">, 
+            </span><span class="s5">1</span><span class="s2">: </span><span class="s3">'Per favore inserisci una mail'</span><span class="s2">, 
+            </span><span class="s5">2</span><span class="s2">: </span><span class="s3">'Un indirizzo valido contiene una sola @'</span><span class="s2">, 
+            </span><span class="s5">3</span><span class="s2">: </span><span class="s3">'Il dominio della tua mail non è valido (la porzione dopo la @: )'</span><span class="s2">, 
+            </span><span class="s5">4</span><span class="s2">: </span><span class="s3">'Il nome della mail non è valido (la porzione prima della @: )'</span><span class="s2">, 
+            </span><span class="s5">5</span><span class="s2">: </span><span class="s3">'L</span><span class="s1">\'</span><span class="s3">indirizzo email sembra finto o non valido: per favore inseriscine uno reale'</span><span class="s2"> 
+        </span><span class="s0">}</span><span class="s2">, 
+        </span><span class="s4">// Translation via https://github.com/Cube42</span><span class="s2"> 
+        </span><span class="s3">'de'</span><span class="s2">: </span><span class="s0">{</span><span class="s2"> 
+            </span><span class="s3">'submit'</span><span class="s2">: </span><span class="s3">'Senden...'</span><span class="s2">, 
+            </span><span class="s5">0</span><span class="s2">: </span><span class="s3">'Wir haben Ihnen eine Bestätigungs-E-Mail geschickt'</span><span class="s2">, 
+            </span><span class="s5">1</span><span class="s2">: </span><span class="s3">'Bitte geben Sie Ihre E-Mail-Adresse ein'</span><span class="s2">, 
+            </span><span class="s5">2</span><span class="s2">: </span><span class="s3">'Eine E-Mail-Adresse muss ein @ enthalten'</span><span class="s2">, 
+            </span><span class="s5">3</span><span class="s2">: </span><span class="s3">'Der Domain-Teil der E-Mail-Adresse ist ungültig (der Teil nach dem @)'</span><span class="s2">, 
+            </span><span class="s5">4</span><span class="s2">: </span><span class="s3">'Der Benutzername der E-Mail-Adresse ist ungültig (der Teil vor dem @)'</span><span class="s2">, 
+            </span><span class="s5">5</span><span class="s2">: </span><span class="s3">'Diese E-Mail-Adresse scheint gefälscht oder ungültig zu sein. Bitte geben Sie eine echte E-Mail-Adresse an!'</span><span class="s2"> 
+        </span><span class="s0">}</span><span class="s2">, 
+        </span><span class="s4">// Translation via https://github.com/designorant</span><span class="s2"> 
+        </span><span class="s3">'pl'</span><span class="s2">: </span><span class="s0">{</span><span class="s2"> 
+            </span><span class="s3">'submit'</span><span class="s2">: </span><span class="s3">'Wysyłanie...'</span><span class="s2">, 
+            </span><span class="s5">0</span><span class="s2">: </span><span class="s3">'Email z potwierdzeniem został wysłany'</span><span class="s2">, 
+            </span><span class="s5">1</span><span class="s2">: </span><span class="s3">'Proszę podać adres email'</span><span class="s2">, 
+            </span><span class="s5">2</span><span class="s2">: </span><span class="s3">'Adres email musi zawierać jeden znak @'</span><span class="s2">, 
+            </span><span class="s5">3</span><span class="s2">: </span><span class="s3">'Część adresu z domeną jest niepoprawna (część po znaku @: )'</span><span class="s2">, 
+            </span><span class="s5">4</span><span class="s2">: </span><span class="s3">'Część adresu z użytkownikiem jest niepoprawna (część przed znakiem @: )'</span><span class="s2">, 
+            </span><span class="s5">5</span><span class="s2">: </span><span class="s3">'Ten adres wygląda na nieprawdziwy lub niepoprawny. Proszę podać prawdziwy adres email.'</span><span class="s2"> 
+        </span><span class="s0">}</span><span class="s2">, 
+        </span><span class="s4">// The translations below are from google translate, and may not be accurate.</span><span class="s2"> 
+        </span><span class="s4">// Pull requests with translations for other languages as well as corrections are welcome.</span><span class="s2"> 
+        </span><span class="s3">'es'</span><span class="s2">: </span><span class="s0">{</span><span class="s2"> 
+            </span><span class="s3">'submit'</span><span class="s2">: </span><span class="s3">'Grabación en curso...'</span><span class="s2">, 
+            </span><span class="s5">0</span><span class="s2">: </span><span class="s3">'Te hemos enviado un email de confirmación'</span><span class="s2">, 
+            </span><span class="s5">1</span><span class="s2">: </span><span class="s3">'Por favor, introduzca un valor'</span><span class="s2">, 
+            </span><span class="s5">2</span><span class="s2">: </span><span class="s3">'Una dirección de correo electrónico debe contener una sola @'</span><span class="s2">, 
+            </span><span class="s5">3</span><span class="s2">: </span><span class="s3">'La parte de dominio de la dirección de correo electrónico no es válida (la parte después de la @:)'</span><span class="s2">, 
+            </span><span class="s5">4</span><span class="s2">: </span><span class="s3">'La parte de usuario de la dirección de correo electrónico no es válida (la parte antes de la @:)'</span><span class="s2">, 
+            </span><span class="s5">5</span><span class="s2">: </span><span class="s3">'Esta dirección de correo electrónico se ve falso o no válido. Por favor, introduce una dirección de correo electrónico real'</span><span class="s2"> 
+        </span><span class="s0">}</span><span class="s2">, 
+        </span><span class="s3">'fr'</span><span class="s2">: </span><span class="s0">{</span><span class="s2"> 
+            </span><span class="s3">'submit'</span><span class="s2">: </span><span class="s3">'Enregistrement en cours...'</span><span class="s2">, 
+            </span><span class="s5">0</span><span class="s2">: </span><span class="s3">'Nous vous avons envoyé un e-mail de confirmation'</span><span class="s2">, 
+            </span><span class="s5">1</span><span class="s2">: </span><span class="s3">'S</span><span class="s1">\'</span><span class="s3">il vous plaît entrer une valeur'</span><span class="s2">, 
+            </span><span class="s5">2</span><span class="s2">: </span><span class="s3">'Une adresse e-mail doit contenir un seul @'</span><span class="s2">, 
+            </span><span class="s5">3</span><span class="s2">: </span><span class="s3">'La partie domaine de l</span><span class="s1">\'</span><span class="s3">adresse e-mail n</span><span class="s1">\'</span><span class="s3">est pas valide (la partie après le @:)'</span><span class="s2">, 
+            </span><span class="s5">4</span><span class="s2">: </span><span class="s3">'La partie nom d</span><span class="s1">\'</span><span class="s3">utilisateur de l</span><span class="s1">\'</span><span class="s3">adresse email n</span><span class="s1">\'</span><span class="s3">est pas valide (la partie avant le signe @:)'</span><span class="s2">, 
+            </span><span class="s5">5</span><span class="s2">: </span><span class="s3">'Cette adresse e-mail semble faux ou non valides. S</span><span class="s1">\'</span><span class="s3">il vous plaît entrer une adresse email valide'</span><span class="s2"> 
+        </span><span class="s0">}</span><span class="s2"> 
+    </span><span class="s0">}</span><span class="s2">; 
+</span><span class="s0">})(</span><span class="s2">jQuery</span><span class="s0">)</span><span class="s2">; 
+</span></pre>
+</body>
+</html>

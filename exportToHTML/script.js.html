@@ -1,0 +1,377 @@
+<html>
+<head>
+<title>script.js</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(128,128,128); font-style: italic; }
+.s1 { color: rgb(0,0,0); }
+.s2 { color: rgb(0,0,0); }
+.s3 { color: rgb(0,128,0); font-weight: bold; }
+.s4 { color: rgb(0,0,128); font-weight: bold; }
+.s5 { color: rgb(0,0,255); }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+script.js</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">//LOADER/SPINNER</span><span class="s1"> 
+$</span><span class="s2">(</span><span class="s1">window</span><span class="s2">).</span><span class="s1">bind</span><span class="s2">(</span><span class="s3">&quot;load&quot;</span><span class="s1">, </span><span class="s4">function</span><span class="s2">() {</span><span class="s1"> 
+ 
+    </span><span class="s3">&quot;use strict&quot;</span><span class="s1">; 
+     
+    $</span><span class="s2">(</span><span class="s3">&quot;.spn_hol&quot;</span><span class="s2">).</span><span class="s1">fadeOut</span><span class="s2">(</span><span class="s5">1000</span><span class="s2">)</span><span class="s1">; 
+</span><span class="s2">})</span><span class="s1">; 
+ 
+ 
+</span><span class="s0">//MENU APPEAR AND HIDE</span><span class="s1"> 
+$</span><span class="s2">(</span><span class="s1">document</span><span class="s2">).</span><span class="s1">ready</span><span class="s2">(</span><span class="s4">function</span><span class="s2">() {</span><span class="s1"> 
+ 
+    </span><span class="s3">&quot;use strict&quot;</span><span class="s1">; 
+     
+    $</span><span class="s2">(</span><span class="s1">window</span><span class="s2">).</span><span class="s1">scroll</span><span class="s2">(</span><span class="s4">function</span><span class="s2">() {</span><span class="s1"> 
+ 
+        </span><span class="s3">&quot;use strict&quot;</span><span class="s1">; 
+         
+        </span><span class="s4">if </span><span class="s2">(</span><span class="s1">$</span><span class="s2">(</span><span class="s1">window</span><span class="s2">).</span><span class="s1">scrollTop</span><span class="s2">() </span><span class="s1">&gt; </span><span class="s5">80</span><span class="s2">) {</span><span class="s1"> 
+            $</span><span class="s2">(</span><span class="s3">&quot;.navbar&quot;</span><span class="s2">).</span><span class="s1">css</span><span class="s2">({</span><span class="s1"> 
+                </span><span class="s3">'margin-top'</span><span class="s1">: </span><span class="s3">'0px'</span><span class="s1">, 
+                </span><span class="s3">'opacity'</span><span class="s1">: </span><span class="s3">'1'</span><span class="s1"> 
+            </span><span class="s2">})</span><span class="s1"> 
+            $</span><span class="s2">(</span><span class="s3">&quot;.navbar-nav&gt;li&gt;a&quot;</span><span class="s2">).</span><span class="s1">css</span><span class="s2">({</span><span class="s1"> 
+                </span><span class="s3">'padding-top'</span><span class="s1">: </span><span class="s3">'15px'</span><span class="s1"> 
+            </span><span class="s2">})</span><span class="s1">; 
+            $</span><span class="s2">(</span><span class="s3">&quot;.navbar-brand img&quot;</span><span class="s2">).</span><span class="s1">css</span><span class="s2">({</span><span class="s1"> 
+                </span><span class="s3">'height'</span><span class="s1">: </span><span class="s3">'35px'</span><span class="s1"> 
+            </span><span class="s2">})</span><span class="s1">; 
+            $</span><span class="s2">(</span><span class="s3">&quot;.navbar-brand img&quot;</span><span class="s2">).</span><span class="s1">css</span><span class="s2">({</span><span class="s1"> 
+                </span><span class="s3">'padding-top'</span><span class="s1">: </span><span class="s3">'0px'</span><span class="s1"> 
+            </span><span class="s2">})</span><span class="s1">; 
+            $</span><span class="s2">(</span><span class="s3">&quot;.navbar-default&quot;</span><span class="s2">).</span><span class="s1">css</span><span class="s2">({</span><span class="s1"> 
+                </span><span class="s3">'background-color'</span><span class="s1">: </span><span class="s3">'rgba(59, 59, 59, 0.7)'</span><span class="s1"> 
+            </span><span class="s2">})</span><span class="s1">; 
+        </span><span class="s2">} </span><span class="s4">else </span><span class="s2">{</span><span class="s1"> 
+            $</span><span class="s2">(</span><span class="s3">&quot;.navbar&quot;</span><span class="s2">).</span><span class="s1">css</span><span class="s2">({</span><span class="s1"> 
+                </span><span class="s3">'margin-top'</span><span class="s1">: </span><span class="s3">'-100px'</span><span class="s1">, 
+                </span><span class="s3">'opacity'</span><span class="s1">: </span><span class="s3">'0'</span><span class="s1"> 
+            </span><span class="s2">})</span><span class="s1"> 
+            $</span><span class="s2">(</span><span class="s3">&quot;.navbar-nav&gt;li&gt;a&quot;</span><span class="s2">).</span><span class="s1">css</span><span class="s2">({</span><span class="s1"> 
+                </span><span class="s3">'padding-top'</span><span class="s1">: </span><span class="s3">'45px'</span><span class="s1"> 
+            </span><span class="s2">})</span><span class="s1">; 
+            $</span><span class="s2">(</span><span class="s3">&quot;.navbar-brand img&quot;</span><span class="s2">).</span><span class="s1">css</span><span class="s2">({</span><span class="s1"> 
+                </span><span class="s3">'height'</span><span class="s1">: </span><span class="s3">'45px'</span><span class="s1"> 
+            </span><span class="s2">})</span><span class="s1">; 
+            $</span><span class="s2">(</span><span class="s3">&quot;.navbar-brand img&quot;</span><span class="s2">).</span><span class="s1">css</span><span class="s2">({</span><span class="s1"> 
+                </span><span class="s3">'padding-top'</span><span class="s1">: </span><span class="s3">'20px'</span><span class="s1"> 
+            </span><span class="s2">})</span><span class="s1">; 
+            $</span><span class="s2">(</span><span class="s3">&quot;.navbar-default&quot;</span><span class="s2">).</span><span class="s1">css</span><span class="s2">({</span><span class="s1"> 
+                </span><span class="s3">'background-color'</span><span class="s1">: </span><span class="s3">'rgba(59, 59, 59, 0)'</span><span class="s1"> 
+            </span><span class="s2">})</span><span class="s1">; 
+        </span><span class="s2">}</span><span class="s1"> 
+    </span><span class="s2">})</span><span class="s1">; 
+</span><span class="s2">})</span><span class="s1">; 
+ 
+ 
+ 
+ 
+ </span><span class="s0">// MENU SECTION ACTIVE</span><span class="s1"> 
+$</span><span class="s2">(</span><span class="s1">document</span><span class="s2">).</span><span class="s1">ready</span><span class="s2">(</span><span class="s4">function</span><span class="s2">() {</span><span class="s1"> 
+ 
+    </span><span class="s3">&quot;use strict&quot;</span><span class="s1">; 
+     
+    $</span><span class="s2">(</span><span class="s3">&quot;.navbar-nav li a&quot;</span><span class="s2">).</span><span class="s1">click</span><span class="s2">(</span><span class="s4">function</span><span class="s2">() {</span><span class="s1"> 
+ 
+        </span><span class="s3">&quot;use strict&quot;</span><span class="s1">; 
+         
+        $</span><span class="s2">(</span><span class="s3">&quot;.navbar-nav li a&quot;</span><span class="s2">).</span><span class="s1">parent</span><span class="s2">().</span><span class="s1">removeClass</span><span class="s2">(</span><span class="s3">&quot;active&quot;</span><span class="s2">)</span><span class="s1">; 
+        $</span><span class="s2">(</span><span class="s4">this</span><span class="s2">).</span><span class="s1">parent</span><span class="s2">().</span><span class="s1">addClass</span><span class="s2">(</span><span class="s3">&quot;active&quot;</span><span class="s2">)</span><span class="s1">; 
+    </span><span class="s2">})</span><span class="s1">; 
+</span><span class="s2">})</span><span class="s1">; 
+ 
+ 
+ 
+</span><span class="s0">// Hilight MENU on SCROLl</span><span class="s1"> 
+ 
+$</span><span class="s2">(</span><span class="s1">document</span><span class="s2">).</span><span class="s1">ready</span><span class="s2">(</span><span class="s4">function</span><span class="s2">() {</span><span class="s1"> 
+ 
+    </span><span class="s3">&quot;use strict&quot;</span><span class="s1">; 
+     
+    $</span><span class="s2">(</span><span class="s1">window</span><span class="s2">).</span><span class="s1">scroll</span><span class="s2">(</span><span class="s4">function</span><span class="s2">() {</span><span class="s1"> 
+ 
+        </span><span class="s3">&quot;use strict&quot;</span><span class="s1">; 
+         
+        $</span><span class="s2">(</span><span class="s3">&quot;.page&quot;</span><span class="s2">).</span><span class="s1">each</span><span class="s2">(</span><span class="s4">function</span><span class="s2">() {</span><span class="s1"> 
+ 
+            </span><span class="s3">&quot;use strict&quot;</span><span class="s1">; 
+             
+            </span><span class="s4">var </span><span class="s1">bb = $</span><span class="s2">(</span><span class="s4">this</span><span class="s2">).</span><span class="s1">attr</span><span class="s2">(</span><span class="s3">&quot;id&quot;</span><span class="s2">)</span><span class="s1">; 
+            </span><span class="s4">var </span><span class="s1">hei = $</span><span class="s2">(</span><span class="s4">this</span><span class="s2">).</span><span class="s1">outerHeight</span><span class="s2">()</span><span class="s1">; 
+            </span><span class="s4">var </span><span class="s1">grttop = $</span><span class="s2">(</span><span class="s4">this</span><span class="s2">).</span><span class="s1">offset</span><span class="s2">().</span><span class="s1">top - </span><span class="s5">70</span><span class="s1">; 
+            </span><span class="s4">if </span><span class="s2">(</span><span class="s1">$</span><span class="s2">(</span><span class="s1">window</span><span class="s2">).</span><span class="s1">scrollTop</span><span class="s2">() </span><span class="s1">&gt; grttop - </span><span class="s5">1 </span><span class="s1">&amp;&amp; $</span><span class="s2">(</span><span class="s1">window</span><span class="s2">).</span><span class="s1">scrollTop</span><span class="s2">() </span><span class="s1">&lt; grttop + hei - </span><span class="s5">1</span><span class="s2">) {</span><span class="s1"> 
+                </span><span class="s4">var </span><span class="s1">uu = $</span><span class="s2">(</span><span class="s3">&quot;.navbar-nav li a[href='#&quot; </span><span class="s1">+ bb + </span><span class="s3">&quot;']&quot;</span><span class="s2">).</span><span class="s1">parent</span><span class="s2">().</span><span class="s1">addClass</span><span class="s2">(</span><span class="s3">&quot;active&quot;</span><span class="s2">)</span><span class="s1">; 
+            </span><span class="s2">} </span><span class="s4">else </span><span class="s2">{</span><span class="s1"> 
+                </span><span class="s4">var </span><span class="s1">uu = $</span><span class="s2">(</span><span class="s3">&quot;.navbar-nav li a[href='#&quot; </span><span class="s1">+ bb + </span><span class="s3">&quot;']&quot;</span><span class="s2">).</span><span class="s1">parent</span><span class="s2">().</span><span class="s1">removeClass</span><span class="s2">(</span><span class="s3">&quot;active&quot;</span><span class="s2">)</span><span class="s1">; 
+            </span><span class="s2">}</span><span class="s1"> 
+        </span><span class="s2">})</span><span class="s1">; 
+    </span><span class="s2">})</span><span class="s1">; 
+</span><span class="s2">})</span><span class="s1">; 
+ 
+ 
+ 
+</span><span class="s0">//SMOOTH MENU SCROOL</span><span class="s1"> 
+ 
+ 
+$</span><span class="s2">(</span><span class="s4">function</span><span class="s2">() {</span><span class="s1"> 
+     
+    </span><span class="s3">&quot;use strict&quot;</span><span class="s1">; 
+ 
+  $</span><span class="s2">(</span><span class="s3">'a[href*=#]:not([href=#])'</span><span class="s2">).</span><span class="s1">click</span><span class="s2">(</span><span class="s4">function</span><span class="s2">() {</span><span class="s1"> 
+    </span><span class="s4">if </span><span class="s2">(</span><span class="s1">location</span><span class="s2">.</span><span class="s1">pathname</span><span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s5">/^\//</span><span class="s1">,</span><span class="s3">''</span><span class="s2">) </span><span class="s1">== </span><span class="s4">this</span><span class="s2">.</span><span class="s1">pathname</span><span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s5">/^\//</span><span class="s1">,</span><span class="s3">''</span><span class="s2">) </span><span class="s1">&amp;&amp; location</span><span class="s2">.</span><span class="s1">hostname == </span><span class="s4">this</span><span class="s2">.</span><span class="s1">hostname</span><span class="s2">) {</span><span class="s1"> 
+      </span><span class="s4">var </span><span class="s1">target = $</span><span class="s2">(</span><span class="s4">this</span><span class="s2">.</span><span class="s1">hash</span><span class="s2">)</span><span class="s1">; 
+      target = target</span><span class="s2">.</span><span class="s1">length ? target : $</span><span class="s2">(</span><span class="s3">'[name=' </span><span class="s1">+ </span><span class="s4">this</span><span class="s2">.</span><span class="s1">hash</span><span class="s2">.</span><span class="s1">slice</span><span class="s2">(</span><span class="s5">1</span><span class="s2">) </span><span class="s1">+</span><span class="s3">']'</span><span class="s2">)</span><span class="s1">; 
+      </span><span class="s4">if </span><span class="s2">(</span><span class="s1">target</span><span class="s2">.</span><span class="s1">length</span><span class="s2">) {</span><span class="s1"> 
+        $</span><span class="s2">(</span><span class="s3">'html,body'</span><span class="s2">).</span><span class="s1">animate</span><span class="s2">({</span><span class="s1"> 
+          scrollTop: target</span><span class="s2">.</span><span class="s1">offset</span><span class="s2">().</span><span class="s1">top 
+        </span><span class="s2">}</span><span class="s1">, </span><span class="s5">1000</span><span class="s2">)</span><span class="s1">; 
+        </span><span class="s4">return false</span><span class="s1">; 
+      </span><span class="s2">}</span><span class="s1"> 
+    </span><span class="s2">}</span><span class="s1"> 
+  </span><span class="s2">})</span><span class="s1">; 
+</span><span class="s2">})</span><span class="s1">; 
+ 
+ 
+ 
+</span><span class="s0">// FIX HOME SCREEN HEIGHT</span><span class="s1"> 
+$</span><span class="s2">(</span><span class="s1">document</span><span class="s2">).</span><span class="s1">ready</span><span class="s2">(</span><span class="s4">function</span><span class="s2">() {</span><span class="s1"> 
+ 
+    </span><span class="s3">&quot;use strict&quot;</span><span class="s1">; 
+     
+    setInterval</span><span class="s2">(</span><span class="s4">function</span><span class="s2">() {</span><span class="s1"> 
+ 
+        </span><span class="s3">&quot;use strict&quot;</span><span class="s1">; 
+         
+        </span><span class="s4">var </span><span class="s1">widnowHeight = $</span><span class="s2">(</span><span class="s1">window</span><span class="s2">).</span><span class="s1">height</span><span class="s2">()</span><span class="s1">; 
+        </span><span class="s4">var </span><span class="s1">containerHeight = $</span><span class="s2">(</span><span class="s3">&quot;.home-container&quot;</span><span class="s2">).</span><span class="s1">height</span><span class="s2">()</span><span class="s1">; 
+        </span><span class="s4">var </span><span class="s1">padTop = widnowHeight - containerHeight; 
+        $</span><span class="s2">(</span><span class="s3">&quot;.home-container&quot;</span><span class="s2">).</span><span class="s1">css</span><span class="s2">({</span><span class="s1"> 
+            </span><span class="s3">'padding-top'</span><span class="s1">: Math</span><span class="s2">.</span><span class="s1">round</span><span class="s2">(</span><span class="s1">padTop / </span><span class="s5">2</span><span class="s2">) </span><span class="s1">+ </span><span class="s3">'px'</span><span class="s1">, 
+            </span><span class="s3">'padding-bottom'</span><span class="s1">: Math</span><span class="s2">.</span><span class="s1">round</span><span class="s2">(</span><span class="s1">padTop / </span><span class="s5">2</span><span class="s2">) </span><span class="s1">+ </span><span class="s3">'px'</span><span class="s1"> 
+        </span><span class="s2">})</span><span class="s1">; 
+    </span><span class="s2">}</span><span class="s1">, </span><span class="s5">10</span><span class="s2">)</span><span class="s1"> 
+</span><span class="s2">})</span><span class="s1">; 
+ 
+ 
+ 
+</span><span class="s0">//PARALLAX</span><span class="s1"> 
+$</span><span class="s2">(</span><span class="s1">document</span><span class="s2">).</span><span class="s1">ready</span><span class="s2">(</span><span class="s4">function</span><span class="s2">() {</span><span class="s1"> 
+ 
+    </span><span class="s3">&quot;use strict&quot;</span><span class="s1">; 
+     
+    $</span><span class="s2">(</span><span class="s1">window</span><span class="s2">).</span><span class="s1">bind</span><span class="s2">(</span><span class="s3">'load'</span><span class="s1">, </span><span class="s4">function</span><span class="s2">() {</span><span class="s1"> 
+        </span><span class="s3">&quot;use strict&quot;</span><span class="s1">; 
+        parallaxInit</span><span class="s2">()</span><span class="s1">; 
+    </span><span class="s2">})</span><span class="s1">; 
+ 
+    </span><span class="s4">function </span><span class="s1">parallaxInit</span><span class="s2">() {</span><span class="s1"> 
+        </span><span class="s3">&quot;use strict&quot;</span><span class="s1">; 
+        $</span><span class="s2">(</span><span class="s3">'.home-parallax'</span><span class="s2">).</span><span class="s1">parallax</span><span class="s2">(</span><span class="s3">&quot;30%&quot;</span><span class="s1">, </span><span class="s5">0.1</span><span class="s2">)</span><span class="s1">; 
+        $</span><span class="s2">(</span><span class="s3">'.subscribe-parallax'</span><span class="s2">).</span><span class="s1">parallax</span><span class="s2">(</span><span class="s3">&quot;30%&quot;</span><span class="s1">, </span><span class="s5">0.1</span><span class="s2">)</span><span class="s1">; 
+        $</span><span class="s2">(</span><span class="s3">'.testimonial'</span><span class="s2">).</span><span class="s1">parallax</span><span class="s2">(</span><span class="s3">&quot;10%&quot;</span><span class="s1">, </span><span class="s5">1</span><span class="s2">)</span><span class="s1">; 
+        </span><span class="s0">/*add as necessary*/</span><span class="s1"> 
+    </span><span class="s2">}</span><span class="s1"> 
+</span><span class="s2">})</span><span class="s1">; 
+ 
+ 
+ 
+</span><span class="s0">//OWL CAROSEL</span><span class="s1"> 
+$</span><span class="s2">(</span><span class="s1">document</span><span class="s2">).</span><span class="s1">ready</span><span class="s2">(</span><span class="s4">function</span><span class="s2">() {</span><span class="s1"> 
+ 
+    </span><span class="s3">&quot;use strict&quot;</span><span class="s1">; 
+     
+    $</span><span class="s2">(</span><span class="s3">&quot;#owl-demo&quot;</span><span class="s2">).</span><span class="s1">owlCarousel</span><span class="s2">({</span><span class="s1"> 
+        autoPlay: </span><span class="s5">3000</span><span class="s1">, 
+        items: </span><span class="s5">4</span><span class="s1">, </span><span class="s0">//10 items above 1000px browser width</span><span class="s1"> 
+        itemsDesktop: </span><span class="s2">[</span><span class="s5">1370</span><span class="s1">, </span><span class="s5">3</span><span class="s2">]</span><span class="s1">, </span><span class="s0">//5 items between 1000px and 901px</span><span class="s1"> 
+        itemsDesktopSmall: </span><span class="s2">[</span><span class="s5">900</span><span class="s1">, </span><span class="s5">2</span><span class="s2">]</span><span class="s1">, </span><span class="s0">// betweem 900px and 601px</span><span class="s1"> 
+        itemsTablet: </span><span class="s2">[</span><span class="s5">600</span><span class="s1">, </span><span class="s5">1</span><span class="s2">]</span><span class="s1">, </span><span class="s0">//2 items between 600 and 0</span><span class="s1"> 
+    </span><span class="s2">})</span><span class="s1">; 
+</span><span class="s2">})</span><span class="s1">; 
+ 
+ 
+     
+ </span><span class="s0">//PRETTYPHOTO</span><span class="s1"> 
+ 
+$</span><span class="s2">(</span><span class="s1">document</span><span class="s2">).</span><span class="s1">ready</span><span class="s2">(</span><span class="s4">function</span><span class="s2">() {</span><span class="s1"> 
+ 
+    </span><span class="s3">&quot;use strict&quot;</span><span class="s1">; 
+ 
+    $</span><span class="s2">(</span><span class="s3">&quot;a[rel^='prettyPhoto']&quot;</span><span class="s2">).</span><span class="s1">prettyPhoto</span><span class="s2">({</span><span class="s1"> 
+        show_title: </span><span class="s4">false</span><span class="s1">, 
+        </span><span class="s0">/* true/false */</span><span class="s1"> 
+    </span><span class="s2">})</span><span class="s1">; 
+</span><span class="s2">})</span><span class="s1">; 
+ 
+ 
+ 
+</span><span class="s0">//WOW JS</span><span class="s1"> 
+$</span><span class="s2">(</span><span class="s1">document</span><span class="s2">).</span><span class="s1">ready</span><span class="s2">(</span><span class="s4">function</span><span class="s2">() {</span><span class="s1"> 
+ 
+    </span><span class="s3">&quot;use strict&quot;</span><span class="s1">; 
+  
+    </span><span class="s4">new </span><span class="s1">WOW</span><span class="s2">().</span><span class="s1">init</span><span class="s2">()</span><span class="s1">; 
+</span><span class="s2">})</span><span class="s1">; 
+ 
+ 
+ 
+</span><span class="s0">//RESPONSIVE VIDEO</span><span class="s1"> 
+$</span><span class="s2">(</span><span class="s1">document</span><span class="s2">).</span><span class="s1">ready</span><span class="s2">(</span><span class="s4">function</span><span class="s2">() {</span><span class="s1"> 
+ 
+    </span><span class="s3">&quot;use strict&quot;</span><span class="s1">; 
+     
+    </span><span class="s0">// Basic FitVids Test</span><span class="s1"> 
+    $</span><span class="s2">(</span><span class="s3">&quot;.video&quot;</span><span class="s2">).</span><span class="s1">fitVids</span><span class="s2">()</span><span class="s1">; 
+</span><span class="s2">})</span><span class="s1">; 
+ 
+ 
+ 
+</span><span class="s0">//MAILCHIMP</span><span class="s1"> 
+$</span><span class="s2">(</span><span class="s1">document</span><span class="s2">).</span><span class="s1">ready</span><span class="s2">(</span><span class="s4">function</span><span class="s2">() {</span><span class="s1"> 
+ 
+    </span><span class="s3">&quot;use strict&quot;</span><span class="s1">; 
+     
+    $</span><span class="s2">(</span><span class="s3">'#mc-form'</span><span class="s2">).</span><span class="s1">ajaxChimp</span><span class="s2">({</span><span class="s1"> 
+        callback: mailchimpCallback, 
+        url: </span><span class="s3">&quot;https://themerocks.us9.list-manage.com/subscribe/post?u=f04c804868966b1b4509daa9b&amp;amp;id=ad7b6aba65&quot;</span><span class="s1"> 
+    </span><span class="s2">})</span><span class="s1">; 
+ 
+    </span><span class="s4">function </span><span class="s1">mailchimpCallback</span><span class="s2">(</span><span class="s1">resp</span><span class="s2">) {</span><span class="s1"> 
+ 
+        </span><span class="s3">&quot;use strict&quot;</span><span class="s1">; 
+         
+        </span><span class="s4">if </span><span class="s2">(</span><span class="s1">resp</span><span class="s2">.</span><span class="s1">result === </span><span class="s3">'success'</span><span class="s2">) {</span><span class="s1"> 
+            $</span><span class="s2">(</span><span class="s3">'.subscription-success'</span><span class="s2">).</span><span class="s1">html</span><span class="s2">(</span><span class="s3">'&lt;i class=&quot;pe-7s-check&quot;&gt;&lt;/i&gt;&lt;br/&gt;' </span><span class="s1">+ resp</span><span class="s2">.</span><span class="s1">msg</span><span class="s2">).</span><span class="s1">fadeIn</span><span class="s2">(</span><span class="s5">1000</span><span class="s2">)</span><span class="s1">; 
+            $</span><span class="s2">(</span><span class="s3">'.subscription-error'</span><span class="s2">).</span><span class="s1">fadeOut</span><span class="s2">(</span><span class="s5">500</span><span class="s2">)</span><span class="s1">; 
+        </span><span class="s2">} </span><span class="s4">else if </span><span class="s2">(</span><span class="s1">resp</span><span class="s2">.</span><span class="s1">result === </span><span class="s3">'error'</span><span class="s2">) {</span><span class="s1"> 
+            $</span><span class="s2">(</span><span class="s3">'.subscription-error'</span><span class="s2">).</span><span class="s1">html</span><span class="s2">(</span><span class="s3">'&lt;i class=&quot;pe-7s-close-circle&quot;&gt;&lt;/i&gt;&lt;br/&gt;' </span><span class="s1">+ resp</span><span class="s2">.</span><span class="s1">msg</span><span class="s2">).</span><span class="s1">fadeIn</span><span class="s2">(</span><span class="s5">1000</span><span class="s2">)</span><span class="s1">; 
+        </span><span class="s2">}</span><span class="s1"> 
+    </span><span class="s2">}</span><span class="s1"> 
+</span><span class="s2">})</span><span class="s1">; 
+ 
+ 
+ 
+</span><span class="s0">//CONTACT FORM VALIDATION</span><span class="s1"> 
+$</span><span class="s2">(</span><span class="s1">document</span><span class="s2">).</span><span class="s1">ready</span><span class="s2">(</span><span class="s4">function</span><span class="s2">() {</span><span class="s1"> 
+ 
+    </span><span class="s3">&quot;use strict&quot;</span><span class="s1">; 
+     
+    $</span><span class="s2">(</span><span class="s3">&quot;.form_submit&quot;</span><span class="s2">).</span><span class="s1">click</span><span class="s2">(</span><span class="s4">function</span><span class="s2">() {</span><span class="s1"> 
+ 
+        </span><span class="s3">&quot;use strict&quot;</span><span class="s1">; 
+         
+        </span><span class="s4">var </span><span class="s1">name = $</span><span class="s2">(</span><span class="s3">&quot;#name&quot;</span><span class="s2">).</span><span class="s1">val</span><span class="s2">()</span><span class="s1">; 
+        </span><span class="s4">var </span><span class="s1">emaild = $</span><span class="s2">(</span><span class="s3">&quot;#email&quot;</span><span class="s2">).</span><span class="s1">val</span><span class="s2">()</span><span class="s1">; 
+        </span><span class="s4">var </span><span class="s1">subject = $</span><span class="s2">(</span><span class="s3">&quot;#subject&quot;</span><span class="s2">).</span><span class="s1">val</span><span class="s2">()</span><span class="s1">; 
+        </span><span class="s4">var </span><span class="s1">message = $</span><span class="s2">(</span><span class="s3">&quot;#message&quot;</span><span class="s2">).</span><span class="s1">val</span><span class="s2">()</span><span class="s1">; 
+        </span><span class="s4">var </span><span class="s1">testEmail = </span><span class="s5">/^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i</span><span class="s1">; 
+        </span><span class="s4">if </span><span class="s2">(</span><span class="s1">!name</span><span class="s2">) {</span><span class="s1"> 
+            $</span><span class="s2">(</span><span class="s3">&quot;.form_error .name_error&quot;</span><span class="s2">).</span><span class="s1">addClass</span><span class="s2">(</span><span class="s3">&quot;show&quot;</span><span class="s2">).</span><span class="s1">removeClass</span><span class="s2">(</span><span class="s3">&quot;hide&quot;</span><span class="s2">)</span><span class="s1">; 
+            </span><span class="s4">return false</span><span class="s1">; 
+        </span><span class="s2">} </span><span class="s4">else </span><span class="s2">{</span><span class="s1"> 
+            $</span><span class="s2">(</span><span class="s3">&quot;.form_error .name_error&quot;</span><span class="s2">).</span><span class="s1">addClass</span><span class="s2">(</span><span class="s3">&quot;hide&quot;</span><span class="s2">).</span><span class="s1">removeClass</span><span class="s2">(</span><span class="s3">&quot;show&quot;</span><span class="s2">)</span><span class="s1">; 
+        </span><span class="s2">}</span><span class="s1"> 
+        </span><span class="s4">if </span><span class="s2">(</span><span class="s1">!emaild</span><span class="s2">) {</span><span class="s1"> 
+            $</span><span class="s2">(</span><span class="s3">&quot;.form_error .email_error&quot;</span><span class="s2">).</span><span class="s1">addClass</span><span class="s2">(</span><span class="s3">&quot;show&quot;</span><span class="s2">).</span><span class="s1">removeClass</span><span class="s2">(</span><span class="s3">&quot;hide&quot;</span><span class="s2">)</span><span class="s1">; 
+            </span><span class="s4">return false</span><span class="s1">; 
+        </span><span class="s2">} </span><span class="s4">else </span><span class="s2">{</span><span class="s1"> 
+            $</span><span class="s2">(</span><span class="s3">&quot;.form_error .email_error&quot;</span><span class="s2">).</span><span class="s1">addClass</span><span class="s2">(</span><span class="s3">&quot;hide&quot;</span><span class="s2">).</span><span class="s1">removeClass</span><span class="s2">(</span><span class="s3">&quot;show&quot;</span><span class="s2">)</span><span class="s1">; 
+            </span><span class="s4">if </span><span class="s2">(</span><span class="s1">testEmail</span><span class="s2">.</span><span class="s1">test</span><span class="s2">(</span><span class="s1">emaild</span><span class="s2">)) {</span><span class="s1"> 
+                $</span><span class="s2">(</span><span class="s3">&quot;.form_error .email_val_error&quot;</span><span class="s2">).</span><span class="s1">addClass</span><span class="s2">(</span><span class="s3">&quot;hide&quot;</span><span class="s2">).</span><span class="s1">removeClass</span><span class="s2">(</span><span class="s3">&quot;show&quot;</span><span class="s2">)</span><span class="s1">; 
+            </span><span class="s2">} </span><span class="s4">else </span><span class="s2">{</span><span class="s1"> 
+                $</span><span class="s2">(</span><span class="s3">&quot;.form_error .email_val_error&quot;</span><span class="s2">).</span><span class="s1">addClass</span><span class="s2">(</span><span class="s3">&quot;show&quot;</span><span class="s2">).</span><span class="s1">removeClass</span><span class="s2">(</span><span class="s3">&quot;hide&quot;</span><span class="s2">)</span><span class="s1">; 
+                </span><span class="s4">return false</span><span class="s1">; 
+            </span><span class="s2">}</span><span class="s1"> 
+        </span><span class="s2">}</span><span class="s1"> 
+        </span><span class="s4">if </span><span class="s2">(</span><span class="s1">!message</span><span class="s2">) {</span><span class="s1"> 
+            $</span><span class="s2">(</span><span class="s3">&quot;.form_error .message_error&quot;</span><span class="s2">).</span><span class="s1">addClass</span><span class="s2">(</span><span class="s3">&quot;show&quot;</span><span class="s2">).</span><span class="s1">removeClass</span><span class="s2">(</span><span class="s3">&quot;hide&quot;</span><span class="s2">)</span><span class="s1">; 
+            </span><span class="s4">return false</span><span class="s1">; 
+        </span><span class="s2">} </span><span class="s4">else </span><span class="s2">{</span><span class="s1"> 
+            $</span><span class="s2">(</span><span class="s3">&quot;.form_error .message_error&quot;</span><span class="s2">).</span><span class="s1">addClass</span><span class="s2">(</span><span class="s3">&quot;hide&quot;</span><span class="s2">).</span><span class="s1">removeClass</span><span class="s2">(</span><span class="s3">&quot;show&quot;</span><span class="s2">)</span><span class="s1">; 
+        </span><span class="s2">}</span><span class="s1"> 
+        </span><span class="s4">if </span><span class="s2">(</span><span class="s1">name &amp;&amp; emaild &amp;&amp; message</span><span class="s2">) {</span><span class="s1"> 
+            $</span><span class="s2">.</span><span class="s1">ajax</span><span class="s2">({</span><span class="s1"> 
+                url: </span><span class="s3">'contact.php'</span><span class="s1">, 
+                data: </span><span class="s2">{</span><span class="s1"> 
+                    name: name, 
+                    emaild: emaild, 
+                    subject: subject, 
+                    message: message 
+                </span><span class="s2">}</span><span class="s1">, 
+                type: </span><span class="s3">'POST'</span><span class="s1">, 
+                success: </span><span class="s4">function</span><span class="s2">(</span><span class="s1">data</span><span class="s2">) {</span><span class="s1"> 
+                    $</span><span class="s2">(</span><span class="s3">&quot;.Sucess&quot;</span><span class="s2">).</span><span class="s1">show</span><span class="s2">()</span><span class="s1">; 
+                    $</span><span class="s2">(</span><span class="s3">&quot;.Sucess&quot;</span><span class="s2">).</span><span class="s1">fadeIn</span><span class="s2">(</span><span class="s5">2000</span><span class="s2">)</span><span class="s1">; 
+                    $</span><span class="s2">(</span><span class="s3">&quot;.Sucess&quot;</span><span class="s2">).</span><span class="s1">html</span><span class="s2">(</span><span class="s3">&quot;&lt;i class='fa fa-check'&gt;&lt;/i&gt; Dear &lt;b&gt;&quot; </span><span class="s1">+ name + </span><span class="s3">&quot;&lt;/b&gt; Thank you for your inquiry we will respond to you as soon as possible!&quot;</span><span class="s2">)</span><span class="s1">; 
+                    $</span><span class="s2">(</span><span class="s3">&quot;#Name&quot;</span><span class="s2">).</span><span class="s1">val</span><span class="s2">(</span><span class="s3">&quot;&quot;</span><span class="s2">)</span><span class="s1">; 
+                    $</span><span class="s2">(</span><span class="s3">&quot;#Email&quot;</span><span class="s2">).</span><span class="s1">val</span><span class="s2">(</span><span class="s3">&quot;&quot;</span><span class="s2">)</span><span class="s1">; 
+                    $</span><span class="s2">(</span><span class="s3">&quot;#Subject&quot;</span><span class="s2">).</span><span class="s1">val</span><span class="s2">(</span><span class="s3">&quot;&quot;</span><span class="s2">)</span><span class="s1">; 
+                    $</span><span class="s2">(</span><span class="s3">&quot;#Message&quot;</span><span class="s2">).</span><span class="s1">val</span><span class="s2">(</span><span class="s3">&quot;&quot;</span><span class="s2">)</span><span class="s1">; 
+                    $</span><span class="s2">(</span><span class="s3">&quot;.form_error .name_error, .form_error .email_error, .form_error .email_val_error, .form_error .message_error&quot;</span><span class="s2">).</span><span class="s1">addClass</span><span class="s2">(</span><span class="s3">&quot;hide&quot;</span><span class="s2">).</span><span class="s1">removeClass</span><span class="s2">(</span><span class="s3">&quot;show&quot;</span><span class="s2">)</span><span class="s1">; 
+                    $</span><span class="s2">(</span><span class="s3">&quot;#name&quot;</span><span class="s2">).</span><span class="s1">val</span><span class="s2">(</span><span class="s3">&quot;&quot;</span><span class="s2">)</span><span class="s1">; 
+                    $</span><span class="s2">(</span><span class="s3">&quot;#email&quot;</span><span class="s2">).</span><span class="s1">val</span><span class="s2">(</span><span class="s3">&quot;&quot;</span><span class="s2">)</span><span class="s1">; 
+                    $</span><span class="s2">(</span><span class="s3">&quot;#subject&quot;</span><span class="s2">).</span><span class="s1">val</span><span class="s2">(</span><span class="s3">&quot;&quot;</span><span class="s2">)</span><span class="s1">; 
+                    $</span><span class="s2">(</span><span class="s3">&quot;#message&quot;</span><span class="s2">).</span><span class="s1">val</span><span class="s2">(</span><span class="s3">&quot;&quot;</span><span class="s2">)</span><span class="s1">; 
+                </span><span class="s2">}</span><span class="s1"> 
+            </span><span class="s2">})</span><span class="s1">; 
+        </span><span class="s2">}</span><span class="s1"> 
+        </span><span class="s4">return false</span><span class="s1">; 
+    </span><span class="s2">})</span><span class="s1">; 
+</span><span class="s2">})</span><span class="s1">; 
+ 
+ 
+  
+</span><span class="s0">/// SMOOTH SCROLL           </span><span class="s1"> 
+ 
+$</span><span class="s2">(</span><span class="s1">document</span><span class="s2">).</span><span class="s1">ready</span><span class="s2">(</span><span class="s4">function</span><span class="s2">() {</span><span class="s1"> 
+ 
+    </span><span class="s3">&quot;use strict&quot;</span><span class="s1">; 
+     
+    </span><span class="s4">var </span><span class="s1">scrollAnimationTime = </span><span class="s5">1200</span><span class="s1">, 
+        scrollAnimation = </span><span class="s3">'easeInOutExpo'</span><span class="s1">; 
+    $</span><span class="s2">(</span><span class="s3">'a.scrollto'</span><span class="s2">).</span><span class="s1">bind</span><span class="s2">(</span><span class="s3">'click.smoothscroll'</span><span class="s1">, </span><span class="s4">function</span><span class="s2">(</span><span class="s1">event</span><span class="s2">) {</span><span class="s1"> 
+        event</span><span class="s2">.</span><span class="s1">preventDefault</span><span class="s2">()</span><span class="s1">; 
+        </span><span class="s4">var </span><span class="s1">target = </span><span class="s4">this</span><span class="s2">.</span><span class="s1">hash; 
+        $</span><span class="s2">(</span><span class="s3">'html, body'</span><span class="s2">).</span><span class="s1">stop</span><span class="s2">().</span><span class="s1">animate</span><span class="s2">({</span><span class="s1"> 
+            </span><span class="s3">'scrollTop'</span><span class="s1">: $</span><span class="s2">(</span><span class="s1">target</span><span class="s2">).</span><span class="s1">offset</span><span class="s2">().</span><span class="s1">top 
+        </span><span class="s2">}</span><span class="s1">, scrollAnimationTime, scrollAnimation, </span><span class="s4">function</span><span class="s2">() {</span><span class="s1"> 
+            window</span><span class="s2">.</span><span class="s1">location</span><span class="s2">.</span><span class="s1">hash = target; 
+        </span><span class="s2">})</span><span class="s1">; 
+    </span><span class="s2">})</span><span class="s1">; 
+    </span><span class="s0">//COUNTER</span><span class="s1"> 
+    $</span><span class="s2">(</span><span class="s3">'.counter_num'</span><span class="s2">).</span><span class="s1">counterUp</span><span class="s2">({</span><span class="s1"> 
+        delay: </span><span class="s5">10</span><span class="s1">, 
+        time: </span><span class="s5">2000</span><span class="s1"> 
+    </span><span class="s2">})</span><span class="s1">; 
+</span><span class="s2">})</span><span class="s1">; 
+ 
+ 
+ 
+ 
+ 
+ 
+</span><span class="s0">//VIDEO BACKGROUND</span><span class="s1"> 
+$</span><span class="s2">(</span><span class="s1">document</span><span class="s2">).</span><span class="s1">ready</span><span class="s2">(</span><span class="s4">function</span><span class="s2">() {</span><span class="s1"> 
+  </span><span class="s4">var </span><span class="s1">videobackground = </span><span class="s4">new </span><span class="s1">$</span><span class="s2">.</span><span class="s1">backgroundVideo</span><span class="s2">(</span><span class="s1">$</span><span class="s2">(</span><span class="s3">'body'</span><span class="s2">)</span><span class="s1">, </span><span class="s2">{</span><span class="s1"> 
+    </span><span class="s3">&quot;align&quot;</span><span class="s1">: </span><span class="s3">&quot;centerXY&quot;</span><span class="s1">, 
+    </span><span class="s3">&quot;width&quot;</span><span class="s1">: </span><span class="s5">1280</span><span class="s1">, 
+    </span><span class="s3">&quot;height&quot;</span><span class="s1">: </span><span class="s5">720</span><span class="s1">, 
+    </span><span class="s3">&quot;path&quot;</span><span class="s1">: </span><span class="s3">&quot;media/&quot;</span><span class="s1">, 
+    </span><span class="s3">&quot;filename&quot;</span><span class="s1">: </span><span class="s3">&quot;cloud&quot;</span><span class="s1">, 
+    </span><span class="s3">&quot;types&quot;</span><span class="s1">: </span><span class="s2">[</span><span class="s3">&quot;mp4&quot;</span><span class="s1">,</span><span class="s3">&quot;ogg&quot;</span><span class="s1">,</span><span class="s3">&quot;webm&quot;</span><span class="s2">]</span><span class="s1"> 
+  </span><span class="s2">})</span><span class="s1">; 
+</span><span class="s2">})</span><span class="s1">;</span></pre>
+</body>
+</html>

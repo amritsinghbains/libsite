@@ -1,0 +1,90 @@
+{% extends 'libapp/base.html' %}
+{% load staticfiles %}
+{% block body_block %}
+
+    <!-- PRELOADER -->
+    <div class="spn_hol">
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+
+ <!-- END PRELOADER -->
+
+ <!-- =========================
+     START ABOUT US SECTION
+============================== -->
+    <section class="header parallax home-parallax page" id="HOME">
+        <h2></h2>
+        <div class="section_overlay">
+            
+
+            <div class="container home-container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="logo text-center">
+                                <!-- LOGO -->
+                            <img src="{% static 'images/logo.png' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 col-sm-8">
+                        <div class="home_text">
+                            <!-- TITLE AND DESC -->
+                            <h1>Internet Applications and Distributed Systems</h1>
+                            <p>1. Add validators for pubyr so that it is between 1900 and 2016</p>
+                            <p>2. Click on a specific Suggestion from the list to get more detailed info on it</p>
+                            <p>3. Write an overdue() method for Libitem model in models.py. This method checks in the item is checked out. If so, it returns ‘Yes’ if the duedate is earlier than today’s date. Include this in the list_display of appropriate items in admin.py.</p>
+                            <p>4. Use Bootstrap to style your pages</p>
+                            <p>5. Add ‘register’ view that allows a user to register as a Libuser.</p>
+
+                            <div class="download-btn">
+                                <a class="tuor btn wow fadeInLeft" href="/libapp/">Start <i class="fa fa-angle-down"></i></a>
+                            </div>
+
+                            <div style="float: right">
+                            <p>Guided By: <b>Dr. Arunita Jaekel </b></p>
+                            <p>Team: <b>Amrit, Danish, Neel, Sappy</b></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-md-offset-1 col-sm-4">
+                        <div class="home-iphone">
+                            <img src="{% static 'images/iPhone_Home.png' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- END HEADER SECTION -->
+
+
+
+
+
+<!-- =========================
+     SCRIPTS 
+============================== -->
+
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.js' %}"></script>
+    <script src="{% static 'js/jquery.fitvids.js' %}"></script>
+    <script src="{% static 'js/smoothscroll.js' %}"></script>
+    <script src="{% static 'js/jquery.parallax-1.1.3.js' %}"></script>
+    <script src="{% static 'js/jquery.prettyPhoto.js' %}"></script>
+    <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+    <script src="{% static 'js/jquery.ajaxchimp.langs.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <script src="{% static 'js/waypoints.min.js' %}"></script>
+    <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+
+
+{% endblock %}

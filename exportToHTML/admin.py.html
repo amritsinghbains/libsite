@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>admin.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,128); font-weight: bold; }
+.s1 { color: rgb(0,0,0); }
+.s2 { color: rgb(0,0,0); }
+.s3 { color: rgb(128,128,128); font-style: italic; }
+.s4 { color: rgb(0,128,128); font-weight: bold; }
+.s5 { color: rgb(0,0,255); }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+admin.py</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">import </span><span class="s1">datetime 
+</span><span class="s0">from </span><span class="s1">django</span><span class="s2">.</span><span class="s1">contrib </span><span class="s0">import </span><span class="s1">admin 
+</span><span class="s0">from </span><span class="s1">libapp</span><span class="s2">.</span><span class="s1">models </span><span class="s0">import </span><span class="s1">Book, Dvd, Libuser, Libitem, Suggestion 
+ 
+ 
+</span><span class="s0">class </span><span class="s1">BookInline</span><span class="s2">(</span><span class="s1">admin</span><span class="s2">.</span><span class="s1">StackedInline</span><span class="s2">)</span><span class="s1">: 
+    model = Book  </span><span class="s3"># This shows all fields of Book.</span><span class="s1"> 
+    fields = </span><span class="s2">[(</span><span class="s4">'title'</span><span class="s1">, </span><span class="s4">'author'</span><span class="s2">)</span><span class="s1">, </span><span class="s4">'duedate'</span><span class="s1">,</span><span class="s2">]   </span><span class="s3">#  Customizes to show only certain fields</span><span class="s1"> 
+    extra = </span><span class="s5">0</span><span class="s1"> 
+ 
+</span><span class="s0">class </span><span class="s1">DvdInline</span><span class="s2">(</span><span class="s1">admin</span><span class="s2">.</span><span class="s1">TabularInline</span><span class="s2">)</span><span class="s1">: 
+    model = Dvd  </span><span class="s3"># This shows all fields of Dvd.</span><span class="s1"> 
+    fields = </span><span class="s2">[(</span><span class="s4">'title'</span><span class="s1">, </span><span class="s4">'maker'</span><span class="s1">, </span><span class="s4">'pubyr'</span><span class="s2">)</span><span class="s1">, </span><span class="s2">(</span><span class="s4">'checked_out'</span><span class="s1">, </span><span class="s4">'itemtype'</span><span class="s1">, </span><span class="s4">'user'</span><span class="s1">, </span><span class="s4">'duedate'</span><span class="s2">)</span><span class="s1">, </span><span class="s2">(</span><span class="s4">'rating'</span><span class="s1">,</span><span class="s4">'num_chkout'</span><span class="s1">,</span><span class="s4">'duration'</span><span class="s2">)]</span><span class="s1"> 
+    extra = </span><span class="s5">0</span><span class="s1"> 
+ 
+</span><span class="s0">class </span><span class="s1">LibuserAdmin</span><span class="s2">(</span><span class="s1">admin</span><span class="s2">.</span><span class="s1">ModelAdmin</span><span class="s2">)</span><span class="s1">: 
+    </span><span class="s3"># fields = [('username'), ('first_name', 'last_name')]</span><span class="s1"> 
+    inlines = </span><span class="s2">[</span><span class="s1">BookInline, DvdInline</span><span class="s2">]</span><span class="s1"> 
+ 
+ 
+</span><span class="s0">def </span><span class="s1">renew</span><span class="s2">(</span><span class="s1">modeladmin, request, queryset</span><span class="s2">)</span><span class="s1">: 
+    </span><span class="s0">for </span><span class="s1">item </span><span class="s0">in </span><span class="s1">queryset: 
+        </span><span class="s0">if </span><span class="s1">item</span><span class="s2">.</span><span class="s1">checked_out== </span><span class="s0">True</span><span class="s1">: 
+            item</span><span class="s2">.</span><span class="s1">duedate = datetime</span><span class="s2">.</span><span class="s1">date</span><span class="s2">.</span><span class="s1">today</span><span class="s2">() </span><span class="s1">+ datetime</span><span class="s2">.</span><span class="s1">timedelta</span><span class="s2">(</span><span class="s5">21</span><span class="s2">)</span><span class="s1"> 
+            item</span><span class="s2">.</span><span class="s1">save</span><span class="s2">()</span><span class="s1"> 
+ 
+</span><span class="s0">class </span><span class="s1">BookAdmin</span><span class="s2">(</span><span class="s1">admin</span><span class="s2">.</span><span class="s1">ModelAdmin</span><span class="s2">)</span><span class="s1">: 
+    fields = </span><span class="s2">[(</span><span class="s4">'title'</span><span class="s1">, </span><span class="s4">'author'</span><span class="s1">, </span><span class="s4">'pubyr'</span><span class="s2">)</span><span class="s1">, </span><span class="s2">(</span><span class="s4">'checked_out'</span><span class="s1">, </span><span class="s4">'itemtype'</span><span class="s1">, </span><span class="s4">'user'</span><span class="s1">, </span><span class="s4">'duedate'</span><span class="s2">)</span><span class="s1">,</span><span class="s4">'category'</span><span class="s2">]</span><span class="s1"> 
+    list_display = </span><span class="s2">(</span><span class="s4">'title'</span><span class="s1">, </span><span class="s4">'borrower'</span><span class="s1">,</span><span class="s4">'overdue'</span><span class="s2">)</span><span class="s1"> 
+    actions = </span><span class="s2">[</span><span class="s1">renew</span><span class="s2">]</span><span class="s1"> 
+    </span><span class="s0">def </span><span class="s1">borrower</span><span class="s2">(</span><span class="s1">self, obj=</span><span class="s0">None</span><span class="s2">)</span><span class="s1">: 
+        </span><span class="s0">if </span><span class="s1">obj</span><span class="s2">.</span><span class="s1">checked_out == </span><span class="s0">True</span><span class="s1">: 
+            </span><span class="s0">return </span><span class="s1">obj</span><span class="s2">.</span><span class="s1">user     </span><span class="s3">#Returns the user who has borrowed this book</span><span class="s1"> 
+        </span><span class="s0">else</span><span class="s1">: 
+            </span><span class="s0">return </span><span class="s4">''</span><span class="s1"> 
+ 
+</span><span class="s0">class </span><span class="s1">DvdAdmin</span><span class="s2">(</span><span class="s1">admin</span><span class="s2">.</span><span class="s1">ModelAdmin</span><span class="s2">)</span><span class="s1">: 
+    fields = </span><span class="s2">[(</span><span class="s4">'title'</span><span class="s1">, </span><span class="s4">'maker'</span><span class="s1">, </span><span class="s4">'pubyr'</span><span class="s2">)</span><span class="s1">, </span><span class="s2">(</span><span class="s4">'checked_out'</span><span class="s1">, </span><span class="s4">'itemtype'</span><span class="s1">, </span><span class="s4">'user'</span><span class="s1">, </span><span class="s4">'duedate'</span><span class="s2">)</span><span class="s1">, </span><span class="s4">'rating'</span><span class="s2">]</span><span class="s1"> 
+    list_display = </span><span class="s2">(</span><span class="s4">'title'</span><span class="s1">,</span><span class="s4">'rating'</span><span class="s1">, </span><span class="s4">'borrower'</span><span class="s1">,</span><span class="s4">'overdue'</span><span class="s2">)</span><span class="s1"> 
+    actions = </span><span class="s2">[</span><span class="s1">renew</span><span class="s2">]</span><span class="s1"> 
+    </span><span class="s0">def </span><span class="s1">borrower</span><span class="s2">(</span><span class="s1">self, obj=</span><span class="s0">None</span><span class="s2">)</span><span class="s1">: 
+        </span><span class="s0">if </span><span class="s1">obj</span><span class="s2">.</span><span class="s1">checked_out == </span><span class="s0">True</span><span class="s1">: 
+            </span><span class="s0">return </span><span class="s1">obj</span><span class="s2">.</span><span class="s1">user  </span><span class="s3"># Returns the user who has borrowed this book</span><span class="s1"> 
+        </span><span class="s0">else</span><span class="s1">: 
+            </span><span class="s0">return </span><span class="s4">''</span><span class="s1"> 
+ 
+ 
+ 
+</span><span class="s3"># Register your models here.</span><span class="s1"> 
+admin</span><span class="s2">.</span><span class="s1">site</span><span class="s2">.</span><span class="s1">register</span><span class="s2">(</span><span class="s1">Book, BookAdmin</span><span class="s2">)</span><span class="s1"> 
+admin</span><span class="s2">.</span><span class="s1">site</span><span class="s2">.</span><span class="s1">register</span><span class="s2">(</span><span class="s1">Dvd, DvdAdmin</span><span class="s2">)</span><span class="s1"> 
+admin</span><span class="s2">.</span><span class="s1">site</span><span class="s2">.</span><span class="s1">register</span><span class="s2">(</span><span class="s1">Libuser,LibuserAdmin</span><span class="s2">)</span><span class="s1"> 
+admin</span><span class="s2">.</span><span class="s1">site</span><span class="s2">.</span><span class="s1">register</span><span class="s2">(</span><span class="s1">Suggestion</span><span class="s2">)</span></pre>
+</body>
+</html>

@@ -1,0 +1,327 @@
+<html>
+<head>
+<title>smoothscroll.js</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(128,128,128); font-style: italic; }
+.s1 { color: rgb(0,0,0); }
+.s2 { color: rgb(0,0,128); font-weight: bold; }
+.s3 { color: rgb(0,0,0); }
+.s4 { color: rgb(0,128,0); font-weight: bold; }
+.s5 { color: rgb(0,0,255); }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+smoothscroll.js</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">// SmoothScroll v0.9.9</span><span class="s1"> 
+</span><span class="s0">// Licensed under the terms of the MIT license.</span><span class="s1"> 
+ 
+</span><span class="s0">// People involved</span><span class="s1"> 
+</span><span class="s0">// - Balazs Galambosi: maintainer (CHANGELOG.txt)</span><span class="s1"> 
+</span><span class="s0">// - Patrick Brunner (patrickb1991@gmail.com)</span><span class="s1"> 
+</span><span class="s0">// - Michael Herf: ssc_pulse Algorithm</span><span class="s1"> 
+ 
+</span><span class="s2">function </span><span class="s1">ssc_init</span><span class="s3">() {</span><span class="s1"> 
+    </span><span class="s2">if </span><span class="s3">(</span><span class="s1">!document</span><span class="s3">.</span><span class="s1">body</span><span class="s3">) </span><span class="s2">return</span><span class="s1">; 
+    </span><span class="s2">var </span><span class="s1">e = document</span><span class="s3">.</span><span class="s1">body; 
+    </span><span class="s2">var </span><span class="s1">t = document</span><span class="s3">.</span><span class="s1">documentElement; 
+    </span><span class="s2">var </span><span class="s1">n = window</span><span class="s3">.</span><span class="s1">innerHeight; 
+    </span><span class="s2">var </span><span class="s1">r = e</span><span class="s3">.</span><span class="s1">scrollHeight; 
+    ssc_root = document</span><span class="s3">.</span><span class="s1">compatMode</span><span class="s3">.</span><span class="s1">indexOf</span><span class="s3">(</span><span class="s4">&quot;CSS&quot;</span><span class="s3">) </span><span class="s1">&gt;= </span><span class="s5">0 </span><span class="s1">? t : e; 
+    ssc_activeElement = e; 
+    ssc_initdone = </span><span class="s2">true</span><span class="s1">; 
+    </span><span class="s2">if </span><span class="s3">(</span><span class="s1">top != self</span><span class="s3">) {</span><span class="s1"> 
+        ssc_frame = </span><span class="s2">true</span><span class="s1"> 
+    </span><span class="s3">} </span><span class="s2">else if </span><span class="s3">(</span><span class="s1">r &gt; n &amp;&amp; </span><span class="s3">(</span><span class="s1">e</span><span class="s3">.</span><span class="s1">offsetHeight &lt;= n || t</span><span class="s3">.</span><span class="s1">offsetHeight &lt;= n</span><span class="s3">)) {</span><span class="s1"> 
+        ssc_root</span><span class="s3">.</span><span class="s1">style</span><span class="s3">.</span><span class="s1">height = </span><span class="s4">&quot;auto&quot;</span><span class="s1">; 
+        </span><span class="s2">if </span><span class="s3">(</span><span class="s1">ssc_root</span><span class="s3">.</span><span class="s1">offsetHeight &lt;= n</span><span class="s3">) {</span><span class="s1"> 
+            </span><span class="s2">var </span><span class="s1">i = document</span><span class="s3">.</span><span class="s1">createElement</span><span class="s3">(</span><span class="s4">&quot;div&quot;</span><span class="s3">)</span><span class="s1">; 
+            i</span><span class="s3">.</span><span class="s1">style</span><span class="s3">.</span><span class="s1">clear = </span><span class="s4">&quot;both&quot;</span><span class="s1">; 
+            e</span><span class="s3">.</span><span class="s1">appendChild</span><span class="s3">(</span><span class="s1">i</span><span class="s3">)</span><span class="s1"> 
+        </span><span class="s3">}</span><span class="s1"> 
+    </span><span class="s3">}</span><span class="s1"> 
+    </span><span class="s2">if </span><span class="s3">(</span><span class="s1">!ssc_fixedback</span><span class="s3">) {</span><span class="s1"> 
+        e</span><span class="s3">.</span><span class="s1">style</span><span class="s3">.</span><span class="s1">backgroundAttachment = </span><span class="s4">&quot;scroll&quot;</span><span class="s1">; 
+        t</span><span class="s3">.</span><span class="s1">style</span><span class="s3">.</span><span class="s1">backgroundAttachment = </span><span class="s4">&quot;scroll&quot;</span><span class="s1"> 
+    </span><span class="s3">}</span><span class="s1"> 
+    </span><span class="s2">if </span><span class="s3">(</span><span class="s1">ssc_keyboardsupport</span><span class="s3">) {</span><span class="s1"> 
+        ssc_addEvent</span><span class="s3">(</span><span class="s4">&quot;keydown&quot;</span><span class="s1">, ssc_keydown</span><span class="s3">)</span><span class="s1"> 
+    </span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">}</span><span class="s1"> 
+ 
+</span><span class="s2">function </span><span class="s1">ssc_scrollArray</span><span class="s3">(</span><span class="s1">e, t, n, r</span><span class="s3">) {</span><span class="s1"> 
+    r || </span><span class="s3">(</span><span class="s1">r = </span><span class="s5">1e3</span><span class="s3">)</span><span class="s1">; 
+    ssc_directionCheck</span><span class="s3">(</span><span class="s1">t, n</span><span class="s3">)</span><span class="s1">; 
+    ssc_que</span><span class="s3">.</span><span class="s1">push</span><span class="s3">({</span><span class="s1"> 
+        x: t, 
+        y: n, 
+        lastX: t &lt; </span><span class="s5">0 </span><span class="s1">? </span><span class="s5">.99 </span><span class="s1">: -</span><span class="s5">.99</span><span class="s1">, 
+        lastY: n &lt; </span><span class="s5">0 </span><span class="s1">? </span><span class="s5">.99 </span><span class="s1">: -</span><span class="s5">.99</span><span class="s1">, 
+        start: +</span><span class="s3">(</span><span class="s2">new </span><span class="s1">Date</span><span class="s3">)</span><span class="s1"> 
+    </span><span class="s3">})</span><span class="s1">; 
+    </span><span class="s2">if </span><span class="s3">(</span><span class="s1">ssc_pending</span><span class="s3">) {</span><span class="s1"> 
+        </span><span class="s2">return</span><span class="s1"> 
+    </span><span class="s3">}</span><span class="s1"> 
+    </span><span class="s2">var </span><span class="s1">i = </span><span class="s2">function </span><span class="s3">() {</span><span class="s1"> 
+        </span><span class="s2">var </span><span class="s1">s = +</span><span class="s3">(</span><span class="s2">new </span><span class="s1">Date</span><span class="s3">)</span><span class="s1">; 
+        </span><span class="s2">var </span><span class="s1">o = </span><span class="s5">0</span><span class="s1">; 
+        </span><span class="s2">var </span><span class="s1">u = </span><span class="s5">0</span><span class="s1">; 
+        </span><span class="s2">for </span><span class="s3">(</span><span class="s2">var </span><span class="s1">a = </span><span class="s5">0</span><span class="s1">; a &lt; ssc_que</span><span class="s3">.</span><span class="s1">length; a++</span><span class="s3">) {</span><span class="s1"> 
+            </span><span class="s2">var </span><span class="s1">f = ssc_que</span><span class="s3">[</span><span class="s1">a</span><span class="s3">]</span><span class="s1">; 
+            </span><span class="s2">var </span><span class="s1">l = s - f</span><span class="s3">.</span><span class="s1">start; 
+            </span><span class="s2">var </span><span class="s1">c = l &gt;= ssc_animtime; 
+            </span><span class="s2">var </span><span class="s1">h = c ? </span><span class="s5">1 </span><span class="s1">: l / ssc_animtime; 
+            </span><span class="s2">if </span><span class="s3">(</span><span class="s1">ssc_pulseAlgorithm</span><span class="s3">) {</span><span class="s1"> 
+                h = ssc_pulse</span><span class="s3">(</span><span class="s1">h</span><span class="s3">)</span><span class="s1"> 
+            </span><span class="s3">}</span><span class="s1"> 
+            </span><span class="s2">var </span><span class="s1">p = f</span><span class="s3">.</span><span class="s1">x * h - f</span><span class="s3">.</span><span class="s1">lastX &gt;&gt; </span><span class="s5">0</span><span class="s1">; 
+            </span><span class="s2">var </span><span class="s1">d = f</span><span class="s3">.</span><span class="s1">y * h - f</span><span class="s3">.</span><span class="s1">lastY &gt;&gt; </span><span class="s5">0</span><span class="s1">; 
+            o += p; 
+            u += d; 
+            f</span><span class="s3">.</span><span class="s1">lastX += p; 
+            f</span><span class="s3">.</span><span class="s1">lastY += d; 
+            </span><span class="s2">if </span><span class="s3">(</span><span class="s1">c</span><span class="s3">) {</span><span class="s1"> 
+                ssc_que</span><span class="s3">.</span><span class="s1">splice</span><span class="s3">(</span><span class="s1">a, </span><span class="s5">1</span><span class="s3">)</span><span class="s1">; 
+                a-- 
+            </span><span class="s3">}</span><span class="s1"> 
+        </span><span class="s3">}</span><span class="s1"> 
+        </span><span class="s2">if </span><span class="s3">(</span><span class="s1">t</span><span class="s3">) {</span><span class="s1"> 
+            </span><span class="s2">var </span><span class="s1">v = e</span><span class="s3">.</span><span class="s1">scrollLeft; 
+            e</span><span class="s3">.</span><span class="s1">scrollLeft += o; 
+            </span><span class="s2">if </span><span class="s3">(</span><span class="s1">o &amp;&amp; e</span><span class="s3">.</span><span class="s1">scrollLeft === v</span><span class="s3">) {</span><span class="s1"> 
+                t = </span><span class="s5">0</span><span class="s1"> 
+            </span><span class="s3">}</span><span class="s1"> 
+        </span><span class="s3">}</span><span class="s1"> 
+        </span><span class="s2">if </span><span class="s3">(</span><span class="s1">n</span><span class="s3">) {</span><span class="s1"> 
+            </span><span class="s2">var </span><span class="s1">m = e</span><span class="s3">.</span><span class="s1">scrollTop; 
+            e</span><span class="s3">.</span><span class="s1">scrollTop += u; 
+            </span><span class="s2">if </span><span class="s3">(</span><span class="s1">u &amp;&amp; e</span><span class="s3">.</span><span class="s1">scrollTop === m</span><span class="s3">) {</span><span class="s1"> 
+                n = </span><span class="s5">0</span><span class="s1"> 
+            </span><span class="s3">}</span><span class="s1"> 
+        </span><span class="s3">}</span><span class="s1"> 
+        </span><span class="s2">if </span><span class="s3">(</span><span class="s1">!t &amp;&amp; !n</span><span class="s3">) {</span><span class="s1"> 
+            ssc_que = </span><span class="s3">[]</span><span class="s1"> 
+        </span><span class="s3">}</span><span class="s1"> 
+        </span><span class="s2">if </span><span class="s3">(</span><span class="s1">ssc_que</span><span class="s3">.</span><span class="s1">length</span><span class="s3">) {</span><span class="s1"> 
+            setTimeout</span><span class="s3">(</span><span class="s1">i, r / ssc_framerate + </span><span class="s5">1</span><span class="s3">)</span><span class="s1"> 
+        </span><span class="s3">} </span><span class="s2">else </span><span class="s3">{</span><span class="s1"> 
+            ssc_pending = </span><span class="s2">false</span><span class="s1"> 
+        </span><span class="s3">}</span><span class="s1"> 
+    </span><span class="s3">}</span><span class="s1">; 
+    setTimeout</span><span class="s3">(</span><span class="s1">i, </span><span class="s5">0</span><span class="s3">)</span><span class="s1">; 
+    ssc_pending = </span><span class="s2">true</span><span class="s1"> 
+</span><span class="s3">}</span><span class="s1"> 
+ 
+</span><span class="s2">function </span><span class="s1">ssc_wheel</span><span class="s3">(</span><span class="s1">e</span><span class="s3">) {</span><span class="s1"> 
+    </span><span class="s2">if </span><span class="s3">(</span><span class="s1">!ssc_initdone</span><span class="s3">) {</span><span class="s1"> 
+        ssc_init</span><span class="s3">()</span><span class="s1"> 
+    </span><span class="s3">}</span><span class="s1"> 
+    </span><span class="s2">var </span><span class="s1">t = e</span><span class="s3">.</span><span class="s1">target; 
+    </span><span class="s2">var </span><span class="s1">n = ssc_overflowingAncestor</span><span class="s3">(</span><span class="s1">t</span><span class="s3">)</span><span class="s1">; 
+    </span><span class="s2">if </span><span class="s3">(</span><span class="s1">!n || e</span><span class="s3">.</span><span class="s1">defaultPrevented || ssc_isNodeName</span><span class="s3">(</span><span class="s1">ssc_activeElement, </span><span class="s4">&quot;embed&quot;</span><span class="s3">) </span><span class="s1">|| ssc_isNodeName</span><span class="s3">(</span><span class="s1">t, </span><span class="s4">&quot;embed&quot;</span><span class="s3">) </span><span class="s1">&amp;&amp; </span><span class="s5">/\.pdf/i</span><span class="s3">.</span><span class="s1">test</span><span class="s3">(</span><span class="s1">t</span><span class="s3">.</span><span class="s1">src</span><span class="s3">)) {</span><span class="s1"> 
+        </span><span class="s2">return true</span><span class="s1"> 
+    </span><span class="s3">}</span><span class="s1"> 
+    </span><span class="s2">var </span><span class="s1">r = e</span><span class="s3">.</span><span class="s1">wheelDeltaX || </span><span class="s5">0</span><span class="s1">; 
+    </span><span class="s2">var </span><span class="s1">i = e</span><span class="s3">.</span><span class="s1">wheelDeltaY || </span><span class="s5">0</span><span class="s1">; 
+    </span><span class="s2">if </span><span class="s3">(</span><span class="s1">!r &amp;&amp; !i</span><span class="s3">) {</span><span class="s1"> 
+        i = e</span><span class="s3">.</span><span class="s1">wheelDelta || </span><span class="s5">0</span><span class="s1"> 
+    </span><span class="s3">}</span><span class="s1"> 
+    </span><span class="s2">if </span><span class="s3">(</span><span class="s1">Math</span><span class="s3">.</span><span class="s1">abs</span><span class="s3">(</span><span class="s1">r</span><span class="s3">) </span><span class="s1">&gt; </span><span class="s5">1.2</span><span class="s3">) {</span><span class="s1"> 
+        r *= ssc_stepsize / </span><span class="s5">120</span><span class="s1"> 
+    </span><span class="s3">}</span><span class="s1"> 
+    </span><span class="s2">if </span><span class="s3">(</span><span class="s1">Math</span><span class="s3">.</span><span class="s1">abs</span><span class="s3">(</span><span class="s1">i</span><span class="s3">) </span><span class="s1">&gt; </span><span class="s5">1.2</span><span class="s3">) {</span><span class="s1"> 
+        i *= ssc_stepsize / </span><span class="s5">120</span><span class="s1"> 
+    </span><span class="s3">}</span><span class="s1"> 
+    ssc_scrollArray</span><span class="s3">(</span><span class="s1">n, -r, -i</span><span class="s3">)</span><span class="s1">; 
+    e</span><span class="s3">.</span><span class="s1">preventDefault</span><span class="s3">()</span><span class="s1"> 
+</span><span class="s3">}</span><span class="s1"> 
+ 
+</span><span class="s2">function </span><span class="s1">ssc_keydown</span><span class="s3">(</span><span class="s1">e</span><span class="s3">) {</span><span class="s1"> 
+    </span><span class="s2">var </span><span class="s1">t = e</span><span class="s3">.</span><span class="s1">target; 
+    </span><span class="s2">var </span><span class="s1">n = e</span><span class="s3">.</span><span class="s1">ctrlKey || e</span><span class="s3">.</span><span class="s1">altKey || e</span><span class="s3">.</span><span class="s1">metaKey; 
+    </span><span class="s2">if </span><span class="s3">(</span><span class="s5">/input|textarea|embed/i</span><span class="s3">.</span><span class="s1">test</span><span class="s3">(</span><span class="s1">t</span><span class="s3">.</span><span class="s1">nodeName</span><span class="s3">) </span><span class="s1">|| t</span><span class="s3">.</span><span class="s1">isContentEditable || e</span><span class="s3">.</span><span class="s1">defaultPrevented || n</span><span class="s3">) {</span><span class="s1"> 
+        </span><span class="s2">return true</span><span class="s1"> 
+    </span><span class="s3">}</span><span class="s1"> 
+    </span><span class="s2">if </span><span class="s3">(</span><span class="s1">ssc_isNodeName</span><span class="s3">(</span><span class="s1">t, </span><span class="s4">&quot;button&quot;</span><span class="s3">) </span><span class="s1">&amp;&amp; e</span><span class="s3">.</span><span class="s1">keyCode === ssc_key</span><span class="s3">.</span><span class="s1">spacebar</span><span class="s3">) {</span><span class="s1"> 
+        </span><span class="s2">return true</span><span class="s1"> 
+    </span><span class="s3">}</span><span class="s1"> 
+    </span><span class="s2">var </span><span class="s1">r, i = </span><span class="s5">0</span><span class="s1">, 
+        s = </span><span class="s5">0</span><span class="s1">; 
+    </span><span class="s2">var </span><span class="s1">o = ssc_overflowingAncestor</span><span class="s3">(</span><span class="s1">ssc_activeElement</span><span class="s3">)</span><span class="s1">; 
+    </span><span class="s2">var </span><span class="s1">u = o</span><span class="s3">.</span><span class="s1">clientHeight; 
+    </span><span class="s2">if </span><span class="s3">(</span><span class="s1">o == document</span><span class="s3">.</span><span class="s1">body</span><span class="s3">) {</span><span class="s1"> 
+        u = window</span><span class="s3">.</span><span class="s1">innerHeight 
+    </span><span class="s3">}</span><span class="s1"> 
+    </span><span class="s2">switch </span><span class="s3">(</span><span class="s1">e</span><span class="s3">.</span><span class="s1">keyCode</span><span class="s3">) {</span><span class="s1"> 
+    </span><span class="s2">case </span><span class="s1">ssc_key</span><span class="s3">.</span><span class="s1">up: 
+        s = -ssc_arrowscroll; 
+        </span><span class="s2">break</span><span class="s1">; 
+    </span><span class="s2">case </span><span class="s1">ssc_key</span><span class="s3">.</span><span class="s1">down: 
+        s = ssc_arrowscroll; 
+        </span><span class="s2">break</span><span class="s1">; 
+    </span><span class="s2">case </span><span class="s1">ssc_key</span><span class="s3">.</span><span class="s1">spacebar: 
+        r = e</span><span class="s3">.</span><span class="s1">shiftKey ? </span><span class="s5">1 </span><span class="s1">: -</span><span class="s5">1</span><span class="s1">; 
+        s = -r * u * </span><span class="s5">.9</span><span class="s1">; 
+        </span><span class="s2">break</span><span class="s1">; 
+    </span><span class="s2">case </span><span class="s1">ssc_key</span><span class="s3">.</span><span class="s1">pageup: 
+        s = -u * </span><span class="s5">.9</span><span class="s1">; 
+        </span><span class="s2">break</span><span class="s1">; 
+    </span><span class="s2">case </span><span class="s1">ssc_key</span><span class="s3">.</span><span class="s1">pagedown: 
+        s = u * </span><span class="s5">.9</span><span class="s1">; 
+        </span><span class="s2">break</span><span class="s1">; 
+    </span><span class="s2">case </span><span class="s1">ssc_key</span><span class="s3">.</span><span class="s1">home: 
+        s = -o</span><span class="s3">.</span><span class="s1">scrollTop; 
+        </span><span class="s2">break</span><span class="s1">; 
+    </span><span class="s2">case </span><span class="s1">ssc_key</span><span class="s3">.</span><span class="s1">end: 
+        </span><span class="s2">var </span><span class="s1">a = o</span><span class="s3">.</span><span class="s1">scrollHeight - o</span><span class="s3">.</span><span class="s1">scrollTop - u; 
+        s = a &gt; </span><span class="s5">0 </span><span class="s1">? a + </span><span class="s5">10 </span><span class="s1">: </span><span class="s5">0</span><span class="s1">; 
+        </span><span class="s2">break</span><span class="s1">; 
+    </span><span class="s2">case </span><span class="s1">ssc_key</span><span class="s3">.</span><span class="s1">left: 
+        i = -ssc_arrowscroll; 
+        </span><span class="s2">break</span><span class="s1">; 
+    </span><span class="s2">case </span><span class="s1">ssc_key</span><span class="s3">.</span><span class="s1">right: 
+        i = ssc_arrowscroll; 
+        </span><span class="s2">break</span><span class="s1">; 
+    </span><span class="s2">default</span><span class="s1">: 
+        </span><span class="s2">return true</span><span class="s1"> 
+    </span><span class="s3">}</span><span class="s1"> 
+    ssc_scrollArray</span><span class="s3">(</span><span class="s1">o, i, s</span><span class="s3">)</span><span class="s1">; 
+    e</span><span class="s3">.</span><span class="s1">preventDefault</span><span class="s3">()</span><span class="s1"> 
+</span><span class="s3">}</span><span class="s1"> 
+ 
+</span><span class="s2">function </span><span class="s1">ssc_mousedown</span><span class="s3">(</span><span class="s1">e</span><span class="s3">) {</span><span class="s1"> 
+    ssc_activeElement = e</span><span class="s3">.</span><span class="s1">target 
+</span><span class="s3">}</span><span class="s1"> 
+ 
+</span><span class="s2">function </span><span class="s1">ssc_setCache</span><span class="s3">(</span><span class="s1">e, t</span><span class="s3">) {</span><span class="s1"> 
+    </span><span class="s2">for </span><span class="s3">(</span><span class="s2">var </span><span class="s1">n = e</span><span class="s3">.</span><span class="s1">length; n--;</span><span class="s3">) </span><span class="s1">ssc_cache</span><span class="s3">[</span><span class="s1">ssc_uniqueID</span><span class="s3">(</span><span class="s1">e</span><span class="s3">[</span><span class="s1">n</span><span class="s3">])] </span><span class="s1">= t; 
+    </span><span class="s2">return </span><span class="s1">t 
+</span><span class="s3">}</span><span class="s1"> 
+ 
+</span><span class="s2">function </span><span class="s1">ssc_overflowingAncestor</span><span class="s3">(</span><span class="s1">e</span><span class="s3">) {</span><span class="s1"> 
+    </span><span class="s2">var </span><span class="s1">t = </span><span class="s3">[]</span><span class="s1">; 
+    </span><span class="s2">var </span><span class="s1">n = ssc_root</span><span class="s3">.</span><span class="s1">scrollHeight; 
+    </span><span class="s2">do </span><span class="s3">{</span><span class="s1"> 
+        </span><span class="s2">var </span><span class="s1">r = ssc_cache</span><span class="s3">[</span><span class="s1">ssc_uniqueID</span><span class="s3">(</span><span class="s1">e</span><span class="s3">)]</span><span class="s1">; 
+        </span><span class="s2">if </span><span class="s3">(</span><span class="s1">r</span><span class="s3">) {</span><span class="s1"> 
+            </span><span class="s2">return </span><span class="s1">ssc_setCache</span><span class="s3">(</span><span class="s1">t, r</span><span class="s3">)</span><span class="s1"> 
+        </span><span class="s3">}</span><span class="s1"> 
+        t</span><span class="s3">.</span><span class="s1">push</span><span class="s3">(</span><span class="s1">e</span><span class="s3">)</span><span class="s1">; 
+        </span><span class="s2">if </span><span class="s3">(</span><span class="s1">n === e</span><span class="s3">.</span><span class="s1">scrollHeight</span><span class="s3">) {</span><span class="s1"> 
+            </span><span class="s2">if </span><span class="s3">(</span><span class="s1">!ssc_frame || ssc_root</span><span class="s3">.</span><span class="s1">clientHeight + </span><span class="s5">10 </span><span class="s1">&lt; n</span><span class="s3">) {</span><span class="s1"> 
+                </span><span class="s2">return </span><span class="s1">ssc_setCache</span><span class="s3">(</span><span class="s1">t, document</span><span class="s3">.</span><span class="s1">body</span><span class="s3">)</span><span class="s1"> 
+            </span><span class="s3">}</span><span class="s1"> 
+        </span><span class="s3">} </span><span class="s2">else if </span><span class="s3">(</span><span class="s1">e</span><span class="s3">.</span><span class="s1">clientHeight + </span><span class="s5">10 </span><span class="s1">&lt; e</span><span class="s3">.</span><span class="s1">scrollHeight</span><span class="s3">) {</span><span class="s1"> 
+            overflow = getComputedStyle</span><span class="s3">(</span><span class="s1">e, </span><span class="s4">&quot;&quot;</span><span class="s3">).</span><span class="s1">getPropertyValue</span><span class="s3">(</span><span class="s4">&quot;overflow&quot;</span><span class="s3">)</span><span class="s1">; 
+            </span><span class="s2">if </span><span class="s3">(</span><span class="s1">overflow === </span><span class="s4">&quot;scroll&quot; </span><span class="s1">|| overflow === </span><span class="s4">&quot;auto&quot;</span><span class="s3">) {</span><span class="s1"> 
+                </span><span class="s2">return </span><span class="s1">ssc_setCache</span><span class="s3">(</span><span class="s1">t, e</span><span class="s3">)</span><span class="s1"> 
+            </span><span class="s3">}</span><span class="s1"> 
+        </span><span class="s3">}</span><span class="s1"> 
+    </span><span class="s3">} </span><span class="s2">while </span><span class="s3">(</span><span class="s1">e = e</span><span class="s3">.</span><span class="s1">parentNode</span><span class="s3">)</span><span class="s1"> 
+</span><span class="s3">}</span><span class="s1"> 
+ 
+</span><span class="s2">function </span><span class="s1">ssc_addEvent</span><span class="s3">(</span><span class="s1">e, t, n</span><span class="s3">) {</span><span class="s1"> 
+    window</span><span class="s3">.</span><span class="s1">addEventListener</span><span class="s3">(</span><span class="s1">e, t, n || </span><span class="s2">false</span><span class="s3">)</span><span class="s1"> 
+</span><span class="s3">}</span><span class="s1"> 
+ 
+</span><span class="s2">function </span><span class="s1">ssc_removeEvent</span><span class="s3">(</span><span class="s1">e, t, n</span><span class="s3">) {</span><span class="s1"> 
+    window</span><span class="s3">.</span><span class="s1">removeEventListener</span><span class="s3">(</span><span class="s1">e, t, n || </span><span class="s2">false</span><span class="s3">)</span><span class="s1"> 
+</span><span class="s3">}</span><span class="s1"> 
+ 
+</span><span class="s2">function </span><span class="s1">ssc_isNodeName</span><span class="s3">(</span><span class="s1">e, t</span><span class="s3">) {</span><span class="s1"> 
+    </span><span class="s2">return </span><span class="s1">e</span><span class="s3">.</span><span class="s1">nodeName</span><span class="s3">.</span><span class="s1">toLowerCase</span><span class="s3">() </span><span class="s1">=== t</span><span class="s3">.</span><span class="s1">toLowerCase</span><span class="s3">()</span><span class="s1"> 
+</span><span class="s3">}</span><span class="s1"> 
+ 
+</span><span class="s2">function </span><span class="s1">ssc_directionCheck</span><span class="s3">(</span><span class="s1">e, t</span><span class="s3">) {</span><span class="s1"> 
+    e = e &gt; </span><span class="s5">0 </span><span class="s1">? </span><span class="s5">1 </span><span class="s1">: -</span><span class="s5">1</span><span class="s1">; 
+    t = t &gt; </span><span class="s5">0 </span><span class="s1">? </span><span class="s5">1 </span><span class="s1">: -</span><span class="s5">1</span><span class="s1">; 
+    </span><span class="s2">if </span><span class="s3">(</span><span class="s1">ssc_direction</span><span class="s3">.</span><span class="s1">x !== e || ssc_direction</span><span class="s3">.</span><span class="s1">y !== t</span><span class="s3">) {</span><span class="s1"> 
+        ssc_direction</span><span class="s3">.</span><span class="s1">x = e; 
+        ssc_direction</span><span class="s3">.</span><span class="s1">y = t; 
+        ssc_que = </span><span class="s3">[]</span><span class="s1"> 
+    </span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">}</span><span class="s1"> 
+ 
+</span><span class="s2">function </span><span class="s1">ssc_pulse_</span><span class="s3">(</span><span class="s1">e</span><span class="s3">) {</span><span class="s1"> 
+    </span><span class="s2">var </span><span class="s1">t, n, r; 
+    e = e * ssc_pulseScale; 
+    </span><span class="s2">if </span><span class="s3">(</span><span class="s1">e &lt; </span><span class="s5">1</span><span class="s3">) {</span><span class="s1"> 
+        t = e - </span><span class="s3">(</span><span class="s5">1 </span><span class="s1">- Math</span><span class="s3">.</span><span class="s1">exp</span><span class="s3">(</span><span class="s1">-e</span><span class="s3">))</span><span class="s1"> 
+    </span><span class="s3">} </span><span class="s2">else </span><span class="s3">{</span><span class="s1"> 
+        n = Math</span><span class="s3">.</span><span class="s1">exp</span><span class="s3">(</span><span class="s1">-</span><span class="s5">1</span><span class="s3">)</span><span class="s1">; 
+        e -= </span><span class="s5">1</span><span class="s1">; 
+        r = </span><span class="s5">1 </span><span class="s1">- Math</span><span class="s3">.</span><span class="s1">exp</span><span class="s3">(</span><span class="s1">-e</span><span class="s3">)</span><span class="s1">; 
+        t = n + r * </span><span class="s3">(</span><span class="s5">1 </span><span class="s1">- n</span><span class="s3">)</span><span class="s1"> 
+    </span><span class="s3">}</span><span class="s1"> 
+    </span><span class="s2">return </span><span class="s1">t * ssc_pulseNormalize 
+</span><span class="s3">}</span><span class="s1"> 
+ 
+</span><span class="s2">function </span><span class="s1">ssc_pulse</span><span class="s3">(</span><span class="s1">e</span><span class="s3">) {</span><span class="s1"> 
+    </span><span class="s2">if </span><span class="s3">(</span><span class="s1">e &gt;= </span><span class="s5">1</span><span class="s3">) </span><span class="s2">return </span><span class="s5">1</span><span class="s1">; 
+    </span><span class="s2">if </span><span class="s3">(</span><span class="s1">e &lt;= </span><span class="s5">0</span><span class="s3">) </span><span class="s2">return </span><span class="s5">0</span><span class="s1">; 
+    </span><span class="s2">if </span><span class="s3">(</span><span class="s1">ssc_pulseNormalize == </span><span class="s5">1</span><span class="s3">) {</span><span class="s1"> 
+        ssc_pulseNormalize /= ssc_pulse_</span><span class="s3">(</span><span class="s5">1</span><span class="s3">)</span><span class="s1"> 
+    </span><span class="s3">}</span><span class="s1"> 
+    </span><span class="s2">return </span><span class="s1">ssc_pulse_</span><span class="s3">(</span><span class="s1">e</span><span class="s3">)</span><span class="s1"> 
+</span><span class="s3">}</span><span class="s1"> 
+ 
+</span><span class="s2">var </span><span class="s1">ssc_framerate = </span><span class="s5">150</span><span class="s1">; 
+</span><span class="s2">var </span><span class="s1">ssc_animtime = </span><span class="s5">500</span><span class="s1">; 
+</span><span class="s2">var </span><span class="s1">ssc_stepsize = </span><span class="s5">150</span><span class="s1">; 
+</span><span class="s2">var </span><span class="s1">ssc_pulseAlgorithm = </span><span class="s2">true</span><span class="s1">; 
+</span><span class="s2">var </span><span class="s1">ssc_pulseScale = </span><span class="s5">6</span><span class="s1">; 
+</span><span class="s2">var </span><span class="s1">ssc_pulseNormalize = </span><span class="s5">1</span><span class="s1">; 
+</span><span class="s2">var </span><span class="s1">ssc_keyboardsupport = </span><span class="s2">true</span><span class="s1">; 
+</span><span class="s2">var </span><span class="s1">ssc_arrowscroll = </span><span class="s5">50</span><span class="s1">; 
+</span><span class="s2">var </span><span class="s1">ssc_frame = </span><span class="s2">false</span><span class="s1">; 
+</span><span class="s2">var </span><span class="s1">ssc_direction = </span><span class="s3">{</span><span class="s1"> 
+    x: </span><span class="s5">0</span><span class="s1">, 
+    y: </span><span class="s5">0</span><span class="s1"> 
+</span><span class="s3">}</span><span class="s1">; 
+ 
+</span><span class="s2">var </span><span class="s1">ssc_initdone = </span><span class="s2">false</span><span class="s1">; 
+</span><span class="s2">var </span><span class="s1">ssc_fixedback = </span><span class="s2">true</span><span class="s1">; 
+</span><span class="s2">var </span><span class="s1">ssc_root = document</span><span class="s3">.</span><span class="s1">documentElement; 
+</span><span class="s2">var </span><span class="s1">ssc_activeElement; 
+</span><span class="s2">var </span><span class="s1">ssc_key = </span><span class="s3">{</span><span class="s1"> 
+    left: </span><span class="s5">37</span><span class="s1">, 
+    up: </span><span class="s5">38</span><span class="s1">, 
+    right: </span><span class="s5">39</span><span class="s1">, 
+    down: </span><span class="s5">40</span><span class="s1">, 
+    spacebar: </span><span class="s5">32</span><span class="s1">, 
+    pageup: </span><span class="s5">33</span><span class="s1">, 
+    pagedown: </span><span class="s5">34</span><span class="s1">, 
+    end: </span><span class="s5">35</span><span class="s1">, 
+    home: </span><span class="s5">36</span><span class="s1"> 
+</span><span class="s3">}</span><span class="s1">; 
+ 
+</span><span class="s2">var </span><span class="s1">ssc_que = </span><span class="s3">[]</span><span class="s1">; 
+</span><span class="s2">var </span><span class="s1">ssc_pending = </span><span class="s2">false</span><span class="s1">; 
+</span><span class="s2">var </span><span class="s1">ssc_cache = </span><span class="s3">{}</span><span class="s1">; 
+ 
+setInterval</span><span class="s3">(</span><span class="s2">function </span><span class="s3">() {</span><span class="s1"> 
+    ssc_cache = </span><span class="s3">{}</span><span class="s1"> 
+</span><span class="s3">}</span><span class="s1">, </span><span class="s5">10 </span><span class="s1">* </span><span class="s5">1e3</span><span class="s3">)</span><span class="s1">; 
+ 
+</span><span class="s2">var </span><span class="s1">ssc_uniqueID = </span><span class="s2">function </span><span class="s3">() {</span><span class="s1"> 
+    </span><span class="s2">var </span><span class="s1">e = </span><span class="s5">0</span><span class="s1">; 
+    </span><span class="s2">return function </span><span class="s3">(</span><span class="s1">t</span><span class="s3">) {</span><span class="s1"> 
+        </span><span class="s2">return </span><span class="s1">t</span><span class="s3">.</span><span class="s1">ssc_uniqueID || </span><span class="s3">(</span><span class="s1">t</span><span class="s3">.</span><span class="s1">ssc_uniqueID = e++</span><span class="s3">)</span><span class="s1"> 
+    </span><span class="s3">}</span><span class="s1"> 
+</span><span class="s3">}()</span><span class="s1">; 
+ 
+</span><span class="s2">var </span><span class="s1">ischrome = </span><span class="s5">/chrome/</span><span class="s3">.</span><span class="s1">test</span><span class="s3">(</span><span class="s1">navigator</span><span class="s3">.</span><span class="s1">userAgent</span><span class="s3">.</span><span class="s1">toLowerCase</span><span class="s3">())</span><span class="s1">; 
+ 
+</span><span class="s2">if </span><span class="s3">(</span><span class="s1">ischrome</span><span class="s3">) {</span><span class="s1"> 
+    ssc_addEvent</span><span class="s3">(</span><span class="s4">&quot;mousedown&quot;</span><span class="s1">, ssc_mousedown</span><span class="s3">)</span><span class="s1">; 
+    ssc_addEvent</span><span class="s3">(</span><span class="s4">&quot;mousewheel&quot;</span><span class="s1">, ssc_wheel</span><span class="s3">)</span><span class="s1">; 
+    ssc_addEvent</span><span class="s3">(</span><span class="s4">&quot;load&quot;</span><span class="s1">, ssc_init</span><span class="s3">)</span><span class="s1"> 
+</span><span class="s3">}</span></pre>
+</body>
+</html>
