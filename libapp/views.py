@@ -222,7 +222,7 @@ def newitem(request):
             suggestion = form.save(commit=False)
             suggestion.num_interested = 1
             suggestion.save()
-            return HttpResponseRedirect('/libapp/suggestions/')
+            return HttpResponseRedirect('http://13.85.67.124:8080/libapp/suggestions/')
         else:
             return render(request, 'libapp/newitem.html', {'form':form, 'suggestions':suggestions})
     else:
