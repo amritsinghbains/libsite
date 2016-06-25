@@ -75,7 +75,7 @@ def newitem1(request):
     return  render(request,'libapp/newitem.html')
 
 def suggestions(request):
-    suggestionlist = Suggestion.objects.all()[:10]
+    suggestionlist = Suggestion.objects.all()[:20]
     return render(request, 'libapp/suggestions.html', {'itemlist':   suggestionlist})
 
 
@@ -182,7 +182,7 @@ def user_login(request):
             request.session['userob'] = serializers.serialize('json', userob)
 
 
-            return HttpResponseRedirect('libapp/')
+            return HttpResponseRedirect('/libapp/')
         elif user is None:
             return render(request, 'libapp/login.html', {'notlogin': True, 'form': form})
         else:
@@ -194,7 +194,7 @@ def user_login(request):
 def user_logout(request):
     logout(request)
     # return HttpResponseRedirect(reverse(('libapp:index')))
-    return HttpResponseRedirect('libapp/')
+    return HttpResponseRedirect('/libapp/')
 
 from django.contrib.auth.hashers import make_password
 
@@ -207,7 +207,7 @@ def register(request):
             libuser.num_interested = 1
             libuser.password = make_password(form.cleaned_data['password'])
             libuser.save()
-            return HttpResponseRedirect('libapp/login/')
+            return HttpResponseRedirect('/libapp/login/')
         else:
             return render(request, 'libapp/register.html', {'form':form})
     else:
@@ -222,7 +222,7 @@ def newitem(request):
             suggestion = form.save(commit=False)
             suggestion.num_interested = 1
             suggestion.save()
-            return HttpResponseRedirect('/libapp/suggestions/')
+            return HttpResponseRedirect('libapp/suggestions/')
         else:
             return render(request, 'libapp/newitem.html', {'form':form, 'suggestions':suggestions})
     else:
