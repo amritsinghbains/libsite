@@ -141,6 +141,8 @@ def index1(request):
         response.write(para1)
     return response
 
+def home(request):
+    return render(request, 'libapp/home.html', {})
 
 def about(request):
     try:

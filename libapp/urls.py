@@ -3,6 +3,7 @@ from . import views
 from django.contrib.auth.views import password_reset
 
 urlpatterns = [
+        url(r'^home/$', views.home, name='home'),
         url(r'^$', views.index, name='index'),
         url(r'^about/$', views.about, name='about'),
         url(r'^(?P<item_id>\d+)/$', views.detail, name='detail'),
