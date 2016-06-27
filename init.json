@@ -1,0 +1,24 @@
+[
+  {
+    "model": "libapp.Book",
+    "pk": 1,
+    "fields": {
+      "author": "John",
+      "category": "Education",
+      "title": "Network Security",
+      "itemtype": "Book",
+      "pubyr": 1990
+    }
+  },
+  {
+    "model": "libapp.DVD",
+    "pk": 2,
+    "fields": {
+      "author": "Conner",
+      "category": "Education",
+      "title": "Network Admin",
+      "itemtype": "DVD",
+      "pubyr": 2009
+    }
+  }
+]
